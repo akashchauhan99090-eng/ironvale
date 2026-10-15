@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Ironvale</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Crect width='22' height='22' rx='4' fill='%230A1A33'/%3E%3Crect x='4' y='4' width='6' height='6' rx='1.5' fill='%23F3F6FA'/%3E%3Crect x='12' y='4' width='6' height='6' rx='1.5' fill='%23FF5A1F'/%3E%3Crect x='4' y='12' width='6' height='6' rx='1.5' fill='%23F3F6FA'/%3E%3Crect x='12' y='12' width='6' height='6' rx='1.5' fill='%23F3F6FA'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF9F5;--ink:#1B1A17;--ink-2:#5E5A52;--line:rgba(27,26,23,.12);--accent:#FF5A1F;--sea:#0A1A33}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+header{background:var(--sea);color:#F3F6FA;padding:20px clamp(16px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:16px}
+header a{color:inherit;text-decoration:none;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+header a.back{font-weight:600;letter-spacing:0;text-transform:none;font-size:15px;opacity:.8}
+main{max-width:760px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(16px,4vw,32px)}
+.eyebrow{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+h1{font-size:clamp(38px,6vw,64px);line-height:1;letter-spacing:-.04em;margin:14px 0 18px;text-wrap:balance}
+h2{font-size:22px;letter-spacing:-.02em;margin:38px 0 10px}
+p,li{color:#3D3A34;max-width:68ch}
+ul{padding-left:22px;display:grid;gap:6px;margin:8px 0}
+.fill{background:#FFF1E9;border:1px dashed var(--accent);border-radius:10px;padding:14px 16px;font-size:15px;margin-top:22px}
+mark{background:#FFE2D3;color:var(--ink);padding:0 3px;border-radius:3px}
+footer{border-top:1px solid var(--line);padding:24px clamp(16px,4vw,56px);font-size:14px;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><a href="index.html"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect width="9" height="9" rx="2" fill="#F3F6FA"/><rect x="13" width="9" height="9" rx="2" fill="#FF5A1F"/><rect y="13" width="9" height="9" rx="2" fill="#F3F6FA"/><rect x="13" y="13" width="9" height="9" rx="2" fill="#F3F6FA"/></svg>Ironvale</a><a class="back" href="index.html">← Back to site</a></header>
+<main>
+<span class="eyebrow">Error 404</span>
+<h1>This page has sailed.</h1>
+<p>The page you were looking for does not exist or has moved.</p>
+<p style="margin-top:22px"><a href="index.html" style="display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:10px;background:#1B1A17;color:#FBF9F5;text-decoration:none;font-weight:600">Back to the home page →</a></p>
+</main>
+<footer><span>© <span id="yr"></span> Ironvale. All rights reserved.</span><span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></span></footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
