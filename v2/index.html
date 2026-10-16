@@ -22,10 +22,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --sea:#E8EEF2;
+  --sea:#0A1A33;
   --paper:#FBF9F5;
   --ink:#1B1A17; --ink-2:#5E5A52; --line:rgba(27,26,23,.12);
-  --on-sea:#0A1A33; --on-sea-2:rgba(10,26,51,.72); --line-sea:rgba(10,26,51,.16);
+  --on-sea:#F3F6FA; --on-sea-2:rgba(243,246,250,.72); --line-sea:rgba(243,246,250,.16);
   --accent:#FF5A1F; --night:#14130F;
   --pad:clamp(16px,4vw,56px);
   --sans:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
@@ -41,7 +41,7 @@ svg{display:block}
 .tilt{position:fixed;left:0;right:0;z-index:0;pointer-events:none;backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);transition:opacity .6s}
 .tilt.top{top:0;height:22vh;-webkit-mask-image:linear-gradient(#000 15%,transparent);mask-image:linear-gradient(#000 15%,transparent)}
 .tilt.bot{bottom:0;height:20vh;-webkit-mask-image:linear-gradient(transparent,#000 85%);mask-image:linear-gradient(transparent,#000 85%)}
-.vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(214,224,232,.85) 100%);transition:opacity .6s}
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(6,14,28,.75) 100%);transition:opacity .6s}
 main,footer{position:relative;z-index:1}
 
 @media (hover:hover) and (pointer:fine){ html.has-cur, html.has-cur *{cursor:none!important} html.has-cur input, html.has-cur textarea{cursor:text!important} }
@@ -68,7 +68,7 @@ main,footer{position:relative;z-index:1}
 .nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);transition:background .3s,border-color .3s,color .3s;border-bottom:1px solid transparent;color:var(--ink)}
 .nav.solid{background:rgba(251,249,245,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
 .nav.dark{color:var(--on-sea)}
-.nav.dark.scrolled{background:rgba(232,238,242,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-sea)}
+.nav.dark.scrolled{background:rgba(8,18,36,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-sea)}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.06em;text-transform:uppercase}
 .logo .tm{font-size:.42em;letter-spacing:0;margin-left:-8px;align-self:flex-start;margin-top:3px;opacity:.7;font-weight:600}
 .logo svg{width:30px;height:30px;flex:none}
@@ -94,10 +94,10 @@ main,footer{position:relative;z-index:1}
 
 .hero{height:100vh;position:relative;pointer-events:none}
 .hero-content{position:fixed;left:var(--pad);top:50%;width:min(940px,92vw);transform:translateY(-50%);z-index:2;pointer-events:none;color:var(--on-sea)}
-.hero-content::before{content:"";position:absolute;left:-14%;top:-35%;width:90%;height:170%;z-index:-1;background:radial-gradient(ellipse at 35% 50%,rgba(236,242,246,.75) 0%,rgba(236,242,246,.4) 42%,rgba(236,242,246,0) 70%);filter:blur(12px)}
+.hero-content::before{content:"";position:absolute;left:-14%;top:-35%;width:90%;height:170%;z-index:-1;background:radial-gradient(ellipse at 35% 50%,rgba(6,15,30,.7) 0%,rgba(6,15,30,.4) 42%,rgba(6,15,30,0) 70%);filter:blur(12px)}
 .hero-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-sea-2);display:flex;align-items:center;gap:10px;margin-bottom:22px}
 .hero-kicker::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px}
-.hero-title{font-size:clamp(42px,6.2vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:800;transition:transform .25s ease-out;text-wrap:balance;text-shadow:0 2px 24px rgba(232,238,242,.9)}
+.hero-title{font-size:clamp(42px,6.2vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:800;transition:transform .25s ease-out;text-wrap:balance;text-shadow:0 10px 40px rgba(4,10,22,.55)}
 .hero-title .ln{display:block}
 .hero-title em{font-style:normal;color:var(--accent)}
 .hero-sub{margin-top:24px;max-width:500px;font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:var(--on-sea-2);font-weight:500}
@@ -1303,17 +1303,18 @@ const pointer = { over: false, x: 0, y: 0 };
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputEncoding = THREE.sRGBEncoding;
-  renderer.toneMapping = THREE.NoToneMapping;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.25;
 
-  const SEA = new THREE.Color('#0A1A33'), HAZE = new THREE.Color('#E8EEF2');
+  const SEA = new THREE.Color('#0A1A33'), HAZE = new THREE.Color('#12284A');
   const scene = new THREE.Scene();
   scene.background = HAZE;
   scene.fog = new THREE.Fog(HAZE, 380, 980);
   const camera = new THREE.PerspectiveCamera(19, 1, 1, 1400);
 
 
-  scene.add(new THREE.HemisphereLight(0xeaf3ff, 0x8a9cb0, .8));
-  const sun = new THREE.DirectionalLight(0xfff3e0, 3.1);
+  scene.add(new THREE.HemisphereLight(0x7f9fd8, 0x0e1a34, .95));
+  const sun = new THREE.DirectionalLight(0xc4d6ff, 2.6);
   sun.castShadow = true;
   sun.shadow.mapSize.set(4096, 4096);
   Object.assign(sun.shadow.camera, { left: -58, right: 58, top: 58, bottom: -58, near: 1, far: 320 });
@@ -1325,13 +1326,13 @@ const pointer = { over: false, x: 0, y: 0 };
   const M = (c, o = {}) => {
     const opts = Object.assign({}, o, { roughness: 1, metalness: 0, envMapIntensity: 0 });
     if (opts.emissive) opts.emissive = lin(opts.emissive);
-    const m = new THREE.MeshStandardMaterial(opts); const cc = new THREE.Color(c), hs = {}; cc.getHSL(hs); cc.setHSL(hs.h, Math.min(1, hs.s * 1.18), hs.l * .96 + .02); m.color = cc.convertSRGBToLinear(); return m;
+    const m = new THREE.MeshStandardMaterial(opts); const cc = new THREE.Color(c), hs = {}; cc.getHSL(hs); cc.setHSL(hs.h, Math.min(1, hs.s * 1.18), hs.l * .9 + .08); m.color = cc.convertSRGBToLinear(); return m;
   };
 
   /* ---------- procedural textures, painted on canvas ---------- */
   let rs = 7; const rnd = () => (rs = (rs * 16807) % 2147483647) / 2147483647;
   const maxAniso = renderer.capabilities.getMaxAnisotropy();
-  const canvasTex = (draw, w = 512, h = 512) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d'); draw(g, w, h); const sm = document.createElement('canvas'); sm.width = Math.max(16, w >> 3); sm.height = Math.max(16, h >> 3); const sg = sm.getContext('2d'); sg.imageSmoothingQuality = 'high'; try { sg.filter = 'saturate(1.3) brightness(1.06)'; } catch (e) {} sg.drawImage(c, 0, 0, sm.width, sm.height); const t = new THREE.CanvasTexture(sm); t.encoding = THREE.sRGBEncoding; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = maxAniso; return t; };
+  const canvasTex = (draw, w = 512, h = 512) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d'); draw(g, w, h); const sm = document.createElement('canvas'); sm.width = Math.max(16, w >> 3); sm.height = Math.max(16, h >> 3); const sg = sm.getContext('2d'); sg.imageSmoothingQuality = 'high'; try { sg.filter = 'saturate(1.3) brightness(1.12)'; } catch (e) {} sg.drawImage(c, 0, 0, sm.width, sm.height); const t = new THREE.CanvasTexture(sm); t.encoding = THREE.sRGBEncoding; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = maxAniso; return t; };
   const speckle = (g, w, h, n, light = .05, dark = .07) => { for (let i = 0; i < n; i++) { g.fillStyle = rnd() < .5 ? `rgba(255,255,255,${light * rnd()})` : `rgba(0,0,0,${dark * rnd()})`; const z = 1 + rnd() * 3; g.fillRect(rnd() * w, rnd() * h, z, z); } };
   const streaks = (g, w, h, n, rgb, a, maxLen = 140) => { for (let i = 0; i < n; i++) { const x = rnd() * w, y = rnd() * h, l = 20 + rnd() * maxLen; const gr = g.createLinearGradient(0, y, 0, y + l); gr.addColorStop(0, `rgba(${rgb},${a})`); gr.addColorStop(1, `rgba(${rgb},0)`); g.fillStyle = gr; g.fillRect(x, y, 1 + rnd() * 3, l); } };
   const rust = (g, w, h, n, a = .35) => { for (let i = 0; i < n; i++) { const x = rnd() * w, y = rnd() * h, r = 4 + rnd() * 18; const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, `rgba(120,58,22,${a})`); gr.addColorStop(1, 'rgba(120,58,22,0)'); g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2); const l = 30 + rnd() * 90, sg = g.createLinearGradient(0, y, 0, y + l); sg.addColorStop(0, `rgba(110,52,20,${a * .7})`); sg.addColorStop(1, 'rgba(110,52,20,0)'); g.fillStyle = sg; g.fillRect(x - 1, y, 2 + rnd() * 2, l); } };
@@ -1560,15 +1561,15 @@ const pointer = { over: false, x: 0, y: 0 };
           crest += a*k*pow(max(sn, 0.), 8.);
         }
         float hv = hs*1.25 + vH*.35;
-        vec3 deepC = vec3(.17,.55,.84), lightC = vec3(.36,.72,.93);
+        vec3 deepC = vec3(.03,.18,.40), lightC = vec3(.07,.33,.58);
         float bnd = step(-.1, hv)*.5 + step(.28, hv)*.5;
         vec3 col = mix(deepC, lightC, bnd);
         float sh = 0.;
         for (int i = 0; i < 9; i++) { float dd = length(p - uIsl[i].xy) - uIsl[i].z; sh = max(sh, 1. - smoothstep(-2., 7., dd)); }
-        col = mix(col, vec3(.45,.82,.90), sh*.5);
+        col = mix(col, vec3(.08,.50,.62), sh*.5);
         float fn = noise(p*3.2 + vec2(-uTime*.35, uTime*.12))*.6 + noise(p*8. + uTime*.2)*.4;
         float foam = step(.7, crest*1.05 + (fn - .5)*.3);
-        col = mix(col, vec3(1.), foam*.9);
+        col = mix(col, vec3(.85,.93,1.), foam*.85);
         float dist = length(cameraPosition - vW);
         col = mix(col, uFog, smoothstep(uFogNear, uFogFar, dist));
         gl_FragColor = vec4(col, 1.);
@@ -1585,7 +1586,7 @@ const pointer = { over: false, x: 0, y: 0 };
         c += uSunC * s * .5 + vec3(.15,.12,.08) * pow(1. - h, 8.);
         gl_FragColor = vec4(c, 1.); }`
   }));
-  sky.visible = false;
+  scene.add(sky);
   ocean.rotation.x = -Math.PI / 2;
   ocean.position.set(30, 0, -26);
   scene.add(ocean);
@@ -1626,7 +1627,7 @@ const pointer = { over: false, x: 0, y: 0 };
     const a = hash2(xi, yi), b = hash2(xi + 1, yi), c = hash2(xi, yi + 1), d = hash2(xi + 1, yi + 1); return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v; };
   const fbm2 = (x, y, o = 5) => { let v = 0, a = .5; for (let i = 0; i < o; i++) { v += a * vnoise(x, y); x *= 2.03; y *= 2.03; a *= .5; } return v; };
   const C = h => new THREE.Color(h);
-  const cGrass = C('#5FB074'), cGrass2 = C('#86CC84'), cDry = C('#C8D98E'), cWet = C('#9BB3AE'), cRockD = C('#8E8F9A'), cRockL = C('#C9C8CE'), cMoss = C('#6DBB7C'), cMoss2 = C('#9ED68E'), cPave = C('#DAD8D2');
+  const cGrass = C('#3F9157'), cGrass2 = C('#62B56C'), cDry = C('#AABB70'), cWet = C('#6F8A88'), cRockD = C('#5E6072'), cRockL = C('#9C9CA8'), cMoss = C('#4DA262'), cMoss2 = C('#7DC474'), cPave = C('#B9B7B2');
 
   function island(cx, cz, R, seed, height = 3, plateau = null) {
     const rFn = a => R * (1 + .24 * Math.sin(3 * a + seed) + .12 * Math.sin(7 * a + seed * 2) + .06 * Math.sin(13 * a + seed * 3));
@@ -2302,12 +2303,12 @@ const pointer = { over: false, x: 0, y: 0 };
 
     /* lighthouse, cranes, flare */
     // lighthouse: the lamp flares each time a beam swings toward the viewer
-    beamPivot.rotation.y = t * .9; beamPivot.visible = false;
+    beamPivot.rotation.y = t * .9;
     lh.getWorldPosition(tmpO);
     const toCam = camera.position.clone().sub(tmpO).setY(0).normalize();
     const facing = Math.pow(Math.abs(Math.cos(beamPivot.rotation.y) * toCam.x - Math.sin(beamPivot.rotation.y) * toCam.z), 14);
-    lamp.visible = false;
-    lights.forEach(L => { L.s.visible = false; return;
+    lamp.material.opacity = .6 + facing * .4; lamp.scale.setScalar(3.6 + facing * 6);
+    lights.forEach(L => {
       const tt = t + L.ph; let o;
       if (L.mode === 'blink') o = (tt % 2) < .9 ? 1 : .06;
       else if (L.mode === 'strobe') o = (tt % 1.7) < .1 ? 1 : 0;
@@ -2385,6 +2386,7 @@ const pointer = { over: false, x: 0, y: 0 };
     renderer.render(scene, camera);
     if (first) { first = false; finish(); }
   }
+  [[ship, 0, 5, 0, 1.5, 20], [plat, 0, 9, 0, 1.6, 26], [lh, 0, 8, 0, 1.4, 22]].forEach(([o, x, y, z, i, d]) => { const pl = new THREE.PointLight(0xffb870, i, d, 1.6); pl.position.set(x, y, z); o.add(pl); });
   loop();
 })();
 </script>
