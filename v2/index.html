@@ -1,0 +1,2390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ironvale | Vetted offshore and marine crews</title>
+<meta name="description" content="Ironvale vets, trains and delivers certified offshore and marine crews for oil and gas, offshore wind, vessels, shutdowns and ports.">
+<meta name="theme-color" content="#0A1A33">
+<meta name="robots" content="index,follow">
+<!-- If you move to your own domain, replace https://akashchauhan99090-eng.github.io/ironvale here, in sitemap.xml and robots.txt -->
+<link rel="canonical" href="https://akashchauhan99090-eng.github.io/ironvale/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ironvale">
+<meta property="og:title" content="Ironvale | Vetted offshore and marine crews">
+<meta property="og:description" content="Certified offshore teams, vetted and trained, from our harbour to your platform in days.">
+<meta property="og:url" content="https://akashchauhan99090-eng.github.io/ironvale/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 256 256%22 width=%22256%22 height=%22256%22 role=%22img%22 aria-label=%22Ironvale%22%3E%3Crect width=%22256%22 height=%22256%22 fill=%22%230A1A33%22/%3E%3Cg transform=%22translate%2836 36%29 scale%283.6%29%22%3E%3Cpath d=%22M24 3 42 13.5v21L24 45 6 34.5v-21Z%22 fill=%22none%22 stroke=%22%23F3F6FA%22 stroke-width=%223%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M14.5 15.5 24 33l9.5-17.5%22 fill=%22none%22 stroke=%22%23F3F6FA%22 stroke-width=%224.6%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M12.5 28q2.75-4 5.5 0t5.5 0 5.5 0 5.5 0%22 fill=%22none%22 stroke=%22%23FF5A1F%22 stroke-width=%222.8%22 stroke-linecap=%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sea:#E8EEF2;
+  --paper:#FBF9F5;
+  --ink:#1B1A17; --ink-2:#5E5A52; --line:rgba(27,26,23,.12);
+  --on-sea:#0A1A33; --on-sea-2:rgba(10,26,51,.72); --line-sea:rgba(10,26,51,.16);
+  --accent:#FF5A1F; --night:#14130F;
+  --pad:clamp(16px,4vw,56px);
+  --sans:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:var(--sea);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+
+#scene{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;display:block;transition:opacity .6s}
+.tilt{position:fixed;left:0;right:0;z-index:0;pointer-events:none;backdrop-filter:blur(1.5px);-webkit-backdrop-filter:blur(1.5px);transition:opacity .6s}
+.tilt.top{top:0;height:22vh;-webkit-mask-image:linear-gradient(#000 15%,transparent);mask-image:linear-gradient(#000 15%,transparent)}
+.tilt.bot{bottom:0;height:20vh;-webkit-mask-image:linear-gradient(transparent,#000 85%);mask-image:linear-gradient(transparent,#000 85%)}
+.vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(214,224,232,.85) 100%);transition:opacity .6s}
+main,footer{position:relative;z-index:1}
+
+@media (hover:hover) and (pointer:fine){ html.has-cur, html.has-cur *{cursor:none!important} html.has-cur input, html.has-cur textarea{cursor:text!important} }
+.cur{position:fixed;inset:0;z-index:300;pointer-events:none;opacity:0;transition:opacity .25s;--cx:-100px;--cy:-100px}
+.cur>.cur-ring,.cur>.cur-shadow{translate:var(--cx) var(--cy)}
+.cur-dot{top:0!important;left:0!important;margin:-3px 0 0 -3px}
+.cur.on{opacity:1}
+.cur-ring{position:absolute;left:-22px;top:-22px;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(255,255,255,.92);box-shadow:0 0 0 1px rgba(0,0,0,.18),inset 0 0 14px rgba(255,90,31,.28);transition:width .3s,height .3s,left .3s,top .3s,background .3s,border-color .3s}
+.cur-ring i{position:absolute;inset:0}
+.cur-ring i::before{content:"";position:absolute;left:50%;top:-6px;width:2px;height:8px;margin-left:-1px;background:#FF5A1F;border-radius:1px}
+.cur-ring i:nth-child(2){transform:rotate(90deg)}.cur-ring i:nth-child(3){transform:rotate(180deg)}.cur-ring i:nth-child(4){transform:rotate(270deg)}
+.cur-dot{position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#FF5A1F;box-shadow:0 0 10px #FF5A1F}
+.cur-shadow{position:absolute;left:-18px;top:-6px;will-change:transform,translate;width:36px;height:12px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.5),rgba(0,0,0,0) 70%);filter:blur(2px)}
+.cur.hover .cur-ring{left:-32px;top:-32px;width:64px;height:64px;background:rgba(255,90,31,.14);border-color:#FF5A1F}
+.cur.light .cur-ring{border-color:rgba(27,26,23,.85)}
+.loader{position:fixed;inset:0;z-index:100;background:var(--sea);display:grid;place-items:center;transition:opacity .8s .2s,visibility .8s .2s}
+.loader.done{opacity:0;visibility:hidden}
+.loader-mark{display:grid;grid-template-columns:repeat(2,14px);gap:6px}
+.loader-mark i{width:14px;height:14px;border-radius:3px;background:var(--on-sea);animation:lm 1.2s infinite}
+.loader-mark i:nth-child(2){background:var(--accent);animation-delay:.15s}
+.loader-mark i:nth-child(3){animation-delay:.45s}.loader-mark i:nth-child(4){animation-delay:.3s}
+@keyframes lm{50%{transform:scale(.55);opacity:.5}}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:20px var(--pad);transition:background .3s,border-color .3s,color .3s;border-bottom:1px solid transparent;color:var(--ink)}
+.nav.solid{background:rgba(251,249,245,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav.dark{color:var(--on-sea)}
+.nav.dark.scrolled{background:rgba(232,238,242,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-sea)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.06em;text-transform:uppercase}
+.logo .tm{font-size:.42em;letter-spacing:0;margin-left:-8px;align-self:flex-start;margin-top:3px;opacity:.7;font-weight:600}
+.logo svg{width:30px;height:30px;flex:none}
+.nav-links{display:flex;gap:30px;font-size:15px;font-weight:500;opacity:.8}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:6px}
+.nav-cta{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid currentColor;white-space:nowrap;transition:background .25s,color .25s,transform .25s,border-color .25s}
+.btn:hover{transform:translateY(-1px)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.nav.dark .btn-ghost:hover{background:var(--on-sea);color:var(--ink);border-color:var(--on-sea)}
+.btn-solid{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-solid:hover,.nav.dark .btn-solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn .arr{transition:transform .25s}.btn:hover .arr{transform:translateX(3px)}
+.burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;flex-direction:column;justify-content:center;gap:5px;align-items:flex-end;color:inherit}
+.burger i{display:block;height:2px;width:26px;background:currentColor;transition:transform .35s,opacity .3s}
+.burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0}
+.burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:55;background:var(--paper);color:var(--ink);padding:110px var(--pad) 40px;display:flex;flex-direction:column;gap:6px;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.7,0,.2,1)}
+.mobile-menu.open{clip-path:inset(0 0 0 0)}
+.mobile-menu a{font-size:36px;font-weight:700;letter-spacing:-.03em;padding:6px 0;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{font-size:16px;margin-top:24px;align-self:flex-start;padding:0 22px;border-bottom:1px solid var(--ink)}
+
+.hero{height:100vh;position:relative;pointer-events:none}
+.hero-content{position:fixed;left:var(--pad);top:50%;width:min(940px,92vw);transform:translateY(-50%);z-index:2;pointer-events:none;color:var(--on-sea)}
+.hero-content::before{content:"";position:absolute;left:-14%;top:-35%;width:90%;height:170%;z-index:-1;background:radial-gradient(ellipse at 35% 50%,rgba(236,242,246,.75) 0%,rgba(236,242,246,.4) 42%,rgba(236,242,246,0) 70%);filter:blur(12px)}
+.hero-kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-sea-2);display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.hero-kicker::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px}
+.hero-title{font-size:clamp(42px,6.2vw,96px);line-height:.98;letter-spacing:-.045em;font-weight:800;transition:transform .25s ease-out;text-wrap:balance;text-shadow:0 2px 24px rgba(232,238,242,.9)}
+.hero-title .ln{display:block}
+.hero-title em{font-style:normal;color:var(--accent)}
+.hero-sub{margin-top:24px;max-width:500px;font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:var(--on-sea-2);font-weight:500}
+.fly{opacity:0;transform:perspective(1000px) translate3d(180px,-150px,0) rotateY(-58deg) rotateX(-34deg);transition:transform 1.6s cubic-bezier(.16,1,.3,1),opacity 1.1s ease}
+.ready .fly{opacity:1;transform:none}
+.ready .fly.d1{transition-delay:.15s}.ready .fly.d2{transition-delay:.3s}.ready .fly.d3{transition-delay:.5s}
+.scroll-btn{position:fixed;left:var(--pad);bottom:36px;z-index:2;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:14px;color:var(--on-sea-2)}
+.scroll-btn .mouse{width:22px;height:34px;border:1.5px solid var(--on-sea-2);border-radius:12px;position:relative}
+.scroll-btn .mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:var(--accent);transform:translateX(-50%);animation:wheel 1.8s infinite}
+@keyframes wheel{60%{transform:translate(-50%,9px);opacity:0}100%{opacity:0}}
+.coords{position:fixed;right:var(--pad);bottom:36px;z-index:2;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--on-sea-2);text-align:right;line-height:1.7;font-variant-numeric:tabular-nums}
+.coords b{color:var(--on-sea);font-weight:500}
+
+.flow{height:460vh;position:relative}
+.flow-wrap{position:sticky;top:0;height:100vh;display:flex;align-items:flex-end;padding:0 var(--pad) clamp(28px,6vh,72px);pointer-events:none}
+.flow-panel{width:min(450px,100%);pointer-events:auto;background:rgba(251,249,245,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:10px 22px;box-shadow:0 30px 80px -30px rgba(0,0,0,.55);opacity:0;transform:translateY(30px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1)}
+.flow-panel.show{opacity:1;transform:none}
+.fstep{border-bottom:1px solid var(--line)}
+.fstep:last-child{border-bottom:0}
+.fhead{display:flex;align-items:center;gap:16px;padding:13px 0;cursor:pointer}
+.fnum{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-size:13px;color:var(--ink-2);transition:background .4s,color .4s,width .4s,height .4s}
+.ftitle{font-size:16px;font-weight:600;letter-spacing:-.01em;transition:font-size .4s}
+.fstep.active .fnum{background:var(--ink);color:var(--paper);width:46px;height:46px}
+.fstep.active .ftitle{font-size:22px}
+.fbody{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.8,.2,1)}
+.fstep.active .fbody{grid-template-rows:1fr}
+.fbody-in{overflow:hidden;display:flex;gap:20px;padding-left:18px}
+.ftrack{width:2px;flex:none;background:var(--line);border-radius:2px;margin:2px 0 18px;position:relative}
+.ftrack i{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(0);border-radius:2px}
+.fdesc{color:var(--ink-2);font-size:15.5px;padding:0 0 18px 12px}
+.flow-count{position:absolute;right:var(--pad);bottom:clamp(28px,6vh,72px);font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--on-sea-2);display:flex;align-items:baseline;gap:12px;opacity:0;transition:opacity .5s}
+.flow-count.show{opacity:1}
+.flow-count b{font-size:64px;font-family:var(--sans);font-weight:800;letter-spacing:-.05em;color:var(--on-sea);line-height:1}
+
+.tag3d{position:fixed;left:0;top:0;z-index:1;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--paper);color:var(--ink);padding:6px 10px;border-radius:6px;white-space:nowrap;opacity:0;transition:opacity .4s;box-shadow:0 8px 24px -8px rgba(0,0,0,.5)}
+.tag3d::after{content:"";position:absolute;left:12px;bottom:-5px;border:5px solid transparent;border-bottom:0;border-top-color:var(--paper)}
+.tag3d.on{opacity:1}
+.tag3d .d{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:1px}
+
+.paper{background:var(--paper);position:relative}
+.section{padding:clamp(90px,12vw,170px) var(--pad)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:8px;height:8px;background:var(--accent);border-radius:2px}
+.h2{font-size:clamp(40px,5.8vw,84px);line-height:.98;letter-spacing:-.045em;font-weight:800;text-wrap:balance}
+.lead{color:var(--ink-2);font-size:18px;max-width:480px}
+.rv{opacity:0;transform:translateY(50px);transition:opacity 1s,transform 1.1s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv-3d{opacity:0;transform:perspective(1000px) translateY(60px) rotateX(-28deg);transform-origin:50% 100%;transition:opacity 1s,transform 1.2s cubic-bezier(.16,1,.3,1)}
+.rv-3d.in{opacity:1;transform:none}
+
+.feat-head{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin:22px 0 70px}
+.feat-head .lead{justify-self:end}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.fcard{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px;min-height:300px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .3s,opacity 1s,transform 1.1s cubic-bezier(.16,1,.3,1)}
+.fcard:hover{border-color:rgba(255,90,31,.5)}
+.fcard .glow{position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,90,31,.18),transparent 65%);pointer-events:none;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+.fcard:hover .glow{opacity:1}
+.fcard .ico{width:64px;height:64px;position:relative}
+.fcard h3{font-size:28px;line-height:1.05;letter-spacing:-.03em;font-weight:700;margin:40px 0 12px;position:relative}
+.fcard p{color:var(--ink-2);max-width:420px;position:relative}
+.fcard .idx{position:absolute;top:30px;right:34px;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.iso-ico{animation:bob 4s ease-in-out infinite}
+.fcard:nth-child(2) .iso-ico{animation-delay:-1s}.fcard:nth-child(3) .iso-ico{animation-delay:-2s}.fcard:nth-child(4) .iso-ico{animation-delay:-3s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+
+.std{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.std-vis{aspect-ratio:1/1;max-width:100%;border-radius:28px;background:linear-gradient(160deg,#16305A,#0A1A33);position:relative;overflow:hidden}
+.std-vis svg{position:absolute;inset:0;width:100%;height:100%}
+.std-copy .h2{margin:22px 0 24px}
+.std-copy .lead{margin-bottom:34px}
+.std-list{list-style:none;margin-bottom:36px;border-top:1px solid var(--line)}
+.std-list li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-weight:600}
+.std-list li span{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500}
+
+.faq{display:grid;grid-template-columns:1fr 1.35fr;gap:64px}
+.faq .h2{position:sticky;top:120px;margin-top:22px}
+.qa{border-top:1px solid var(--line)}
+.qa:last-child{border-bottom:1px solid var(--line)}
+.qa button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px 0;font-size:clamp(18px,1.7vw,23px);font-weight:600;letter-spacing:-.02em}
+.qa button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.chev{flex:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;transition:transform .45s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s}
+.chev svg{width:14px;height:14px}
+.qa.open .chev{transform:rotate(180deg);background:var(--ink);border-color:var(--ink)}
+.qa.open .chev path{stroke:var(--paper)}
+.qa .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.8,.2,1)}
+.qa.open .ans{grid-template-rows:1fr}
+.qa .ans>div{overflow:hidden}
+.qa .ans p{color:var(--ink-2);padding:0 64px 28px 0;max-width:640px}
+
+.cta{background:var(--night);color:var(--paper);padding:clamp(90px,12vw,160px) var(--pad);position:relative;overflow:hidden;text-align:center}
+.cta canvas{position:absolute;inset:0;width:100%;height:100%}
+.cta-in{position:relative}
+.cta .eyebrow{color:rgba(251,249,245,.6)}
+.cta h2{font-size:clamp(46px,8vw,128px);line-height:.92;letter-spacing:-.055em;font-weight:800;margin:24px auto 30px;max-width:12ch}
+.cta p{color:rgba(251,249,245,.7);max-width:460px;margin:0 auto 40px;font-size:18px}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#fff;height:56px;padding:0 30px;font-size:16px}
+.btn-accent:hover{background:#fff;color:var(--ink);border-color:#fff}
+
+footer{background:var(--night);color:var(--paper);padding:0 var(--pad) 28px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding:64px 0;border-top:1px solid rgba(255,255,255,.1)}
+.foot h4{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(251,249,245,.45);margin-bottom:16px}
+.foot ul{list-style:none;display:grid;gap:10px}
+.foot a:hover{color:var(--accent)}
+.foot p{color:rgba(251,249,245,.55);max-width:300px;margin-top:14px}
+.foot-note{font-size:12.5px;line-height:1.6;color:rgba(251,249,245,.45);max-width:820px;margin:0 0 22px}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:14px;color:rgba(251,249,245,.45);padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.foot-bottom div{display:flex;gap:20px}
+
+/* ---------- demo app components ---------- */
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.fld>span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;width:100%}
+.fld textarea{resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.err{color:#B2321C;font-size:13px;min-height:0}
+.err:empty{display:none}
+.bad input,.bad select{border-color:#B2321C}
+.chk{display:flex;align-items:center;gap:10px;font-size:15px;flex-wrap:wrap}
+.chk input{width:18px;height:18px;accent-color:#FF5A1F;flex:none}
+.full{grid-column:1/-1}
+.grow{flex:1 1 220px}
+.link-btn{all:unset;color:#D9441A;font-weight:600;font-size:15px;padding:6px 0}
+.link-btn:hover{text-decoration:underline}
+.link-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sector{all:unset;box-sizing:border-box;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;min-height:220px;transition:border-color .25s,transform .25s}
+.sector:hover,.sector:focus-visible{border-color:var(--accent);transform:translateY(-3px)}
+.sector h3{font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.sector p{color:var(--ink-2);font-size:15px}
+.sector .meta{margin-top:auto;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);display:flex;justify-content:space-between;gap:10px}
+.sector .meta b{color:#D9441A;font-weight:500}
+.finder-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.finder-bar .fld{flex:1 1 170px}
+.finder-bar .chk{padding-bottom:12px}
+.finder-count{margin:18px 0;font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.worker-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.more-row{display:flex;justify-content:center;margin-top:22px}
+.modal-card.wide{width:min(1100px,100%)}
+.modal-card.wide .worker-grid{margin-top:16px}
+.crew-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-top:10px}
+@media (max-width:980px){.worker-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.worker-grid{grid-template-columns:1fr}}
+.wcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:border-color .2s,box-shadow .2s}
+.wcard.sel{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,90,31,.15)}
+.whead{display:flex;gap:12px;align-items:center;min-width:0}
+.avatar{width:44px;height:44px;flex:none;border-radius:12px;display:grid;place-items:center;font-weight:700;color:#fff;font-size:18px}
+.wname{font-weight:700;font-size:16px}
+.wtrade{font-size:13.5px;color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;background:#F1EEE8;color:var(--ink);white-space:nowrap}
+.chip.ok{background:#E2F1E5;color:#1D6631}.chip.warn{background:#FCEBD9;color:#8F440B}.chip.bad{background:#F8DFDA;color:#9E2D1B}.chip.info{background:#E1EAF6;color:#22508A}
+.wfoot{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap}
+.btn-sm{height:38px;padding:0 14px;font-size:14px;border-radius:9px}
+.shortbar{position:sticky;bottom:16px;z-index:5;margin-top:20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--ink);color:var(--paper);border-radius:14px;padding:10px 10px 10px 20px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.shortbar[hidden]{display:none}
+.shortbar-act{display:flex;gap:8px}
+.shortbar .btn-ghost{border-color:rgba(251,249,245,.4);color:var(--paper)}
+.shortbar .btn-solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.est{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:start}
+.est-in{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:18px;min-width:0}
+.est-row{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.est-row .rate{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.stepper button{all:unset;width:38px;height:38px;display:grid;place-items:center;font-size:18px}
+.stepper button:hover{background:#F1EEE8}
+.stepper button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.stepper output{min-width:30px;text-align:center;font-weight:700;font-variant-numeric:tabular-nums}
+.est-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end}
+.est-out{position:sticky;top:96px;background:var(--ink);color:var(--paper);border-radius:18px;padding:26px;display:grid;gap:14px}
+.est-out .eyebrow{color:rgba(251,249,245,.6)}
+.est-big{font-size:clamp(40px,4.5vw,60px);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.est-sub{color:rgba(251,249,245,.65);font-size:14px}
+.est-bars{display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(0,130px) 1fr auto;gap:10px;align-items:center;font-size:13px}
+.bar span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:rgba(251,249,245,.8)}
+.bar i{height:8px;border-radius:4px;background:var(--accent);display:block;transition:width .4s}
+.bar b{font-variant-numeric:tabular-nums;font-weight:600}
+.est-dl{display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:14px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.est-dl dt{color:rgba(251,249,245,.65)}.est-dl dd{text-align:right;font-variant-numeric:tabular-nums}
+.note{font-size:12px;color:rgba(251,249,245,.5)}
+.checker{display:grid;gap:14px;margin-bottom:30px}
+.checker-sel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cert-list{list-style:none;border-top:1px solid var(--line)}
+.cert-list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600}
+.cert-list li small{display:block;font-weight:400;color:var(--ink-2);font-size:13.5px;margin-top:3px}
+.cert-list li .chip{align-self:center;flex:none}
+.portal{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.tabs{display:flex;gap:4px;padding:8px;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{all:unset;padding:10px 16px;border-radius:10px;font-weight:600;font-size:15px;white-space:nowrap;display:flex;gap:8px;align-items:center}
+.tab:hover{background:#F1EEE8}
+.tab:focus-visible{outline:2px solid var(--accent)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tab .count{font-family:var(--mono);font-size:11px;background:var(--accent);color:#fff;border-radius:999px;padding:1px 7px}
+.tabpanel{padding:22px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px}
+.kpi{border:1px solid var(--line);border-radius:14px;padding:16px}
+.kpi b{display:block;font-size:34px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:var(--ink-2)}
+.kpi.alert{border-color:#F0B28C;background:#FFF6EF}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.two h4{font-size:16px;margin-bottom:8px}
+.list{list-style:none}
+.list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.tbl-wrap{overflow-x:auto}
+table.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:640px}
+.tbl th{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:400;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl .num{font-variant-numeric:tabular-nums;text-align:right}
+.tbl .acts{display:flex;gap:6px;justify-content:flex-end}
+.empty{padding:28px;text-align:center;color:var(--ink-2);border:1px dashed var(--line);border-radius:14px}
+.modal{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:16px}
+.modal[hidden]{display:none!important}
+.modal-bg{position:absolute;inset:0;background:rgba(8,12,20,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.modal-card{position:relative;background:var(--paper);color:var(--ink);border-radius:22px;width:min(640px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:30px;box-shadow:0 40px 100px -30px rgba(0,0,0,.6);animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+.modal-card:focus{outline:none}
+@keyframes pop{from{transform:translateY(20px) scale(.98);opacity:0}}
+.modal-x{all:unset;position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:24px}
+.modal-x:hover{background:#ECE8E1}
+.modal-x:focus-visible{outline:2px solid var(--accent)}
+.modal-card h3{font-size:28px;letter-spacing:-.03em;margin-bottom:6px;padding-right:40px}
+.modal-card .sub{color:var(--ink-2);margin-bottom:6px}
+.modal-card fieldset{border:0;min-width:0}
+.steps-ind{display:flex;gap:6px;margin:16px 0 20px}
+.steps-ind span{flex:1;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding-top:10px;border-top:3px solid var(--line);transition:border-color .3s,color .3s}
+.steps-ind span.on{color:var(--ink);border-color:var(--accent)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:22px}
+.role-rows{display:grid;gap:10px;margin-bottom:8px}
+.role-row{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:end}
+.role-row .rm{all:unset;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;color:var(--ink-2);font-size:18px}
+.role-row .rm:hover{background:#ECE8E1;color:var(--ink)}
+.short-note{font-size:14px;color:var(--ink-2);margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.cert-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 14px;margin-top:4px}
+.cert-checks .chk{font-size:14px;text-transform:none;letter-spacing:0;font-family:var(--sans);color:var(--ink)}
+.done{text-align:center;padding:16px 0 4px}
+.done h3{padding-right:0}
+.done .ref{font-family:var(--mono);font-size:22px;background:#fff;border:1px dashed var(--line);border-radius:12px;padding:12px 18px;margin:16px 0;display:inline-block;user-select:all}
+.done .sum{text-align:left;list-style:none;border-top:1px solid var(--line);margin:8px 0 20px}
+.done .sum li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.done .sum li span{color:var(--ink-2)}
+.done .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.info-roles{list-style:none;display:grid;gap:0;border-top:1px solid var(--line);margin:14px 0}
+.info-roles li{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.info-roles li span{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);z-index:220;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:12px;font-size:14px;opacity:0;transition:opacity .3s,transform .3s;pointer-events:none;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.contact-line{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:22px;color:rgba(251,249,245,.75);font-size:15px}
+.contact-line code{font-family:var(--mono);background:rgba(255,255,255,.08);padding:6px 10px;border-radius:8px;user-select:all}
+.contact-line .btn-ghost{color:var(--paper);border-color:rgba(251,249,245,.4)}
+.foot .link-btn{color:inherit;font-weight:400;padding:0}
+@media (max-width:980px){
+  .sector-grid{grid-template-columns:1fr 1fr}
+  .est{grid-template-columns:1fr}
+  .est-out{position:static}
+  .kpis{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .sector-grid,.est-opts,.form-grid,.checker-sel,.cert-checks{grid-template-columns:1fr}
+  .est-row{grid-template-columns:1fr auto}
+  .est-row .rate{display:none}
+  .modal-card{padding:22px}
+  .kpi b{font-size:28px}
+}
+@media (max-width:980px){
+  .feat-head,.std,.faq{grid-template-columns:1fr}
+  .feat-head .lead{justify-self:start}
+  .faq .h2{position:static}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:820px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:flex}
+  .flow-count,.coords{display:none}
+  .flow-wrap{padding-bottom:16px}
+  .flow-panel{padding:4px 16px}
+  .fhead{padding:10px 0}
+  .fstep.active .ftitle{font-size:19px}
+  .fdesc{font-size:14.5px}
+  .hero-content{top:auto;bottom:100px;transform:none}
+  .hero-sub{margin-top:18px}
+  .scroll-btn{bottom:30px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .feat-grid{grid-template-columns:1fr}
+  .fcard{min-height:250px;padding:26px}
+  .fcard .idx{right:26px;top:24px}
+  .foot{grid-template-columns:1fr}
+  .qa .ans p{padding-right:0}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .fly,.rv,.rv-3d{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="cur" id="cur" aria-hidden="true"><div class="cur-shadow"></div><div class="cur-ring"><i></i><i></i><i></i><i></i></div><div class="cur-dot"></div></div>
+<noscript><style>.loader{display:none}.fly,.rv,.rv-3d{opacity:1!important;transform:none!important}</style></noscript>
+<div class="loader" id="loader"><div class="loader-mark"><i></i><i></i><i></i><i></i></div></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="tilt top" aria-hidden="true"></div><div class="tilt bot" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav dark" id="nav">
+  <a class="logo" href="#top" aria-label="Ironvale home">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M14.5 15.5 24 33l9.5-17.5" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 28q2.75-4 5.5 0t5.5 0 5.5 0 5.5 0" fill="none" stroke="#FF5A1F" stroke-width="2.8" stroke-linecap="round"/></svg>
+    Ironvale<sup class="tm">™</sup>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#flow">Process</a><a href="#sectors">Sectors</a><a href="#finder">Crew finder</a><a href="#estimate">Estimate</a><a href="#portal">Portal</a>
+  </nav>
+  <div class="nav-cta">
+    <button class="btn btn-ghost" type="button" data-open="mJoin">Join a crew</button>
+    <button class="btn btn-solid" type="button" data-open="mBook">Book a crew <span class="arr">→</span></button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</header>
+<nav class="mobile-menu" id="menu" aria-label="Mobile">
+  <a href="#flow">Process</a><a href="#sectors">Sectors</a><a href="#finder">Crew finder</a><a href="#estimate">Estimate</a><a href="#portal">Portal</a>
+  <button class="btn btn-solid" type="button" data-open="mBook">Book a crew →</button>
+</nav>
+
+<div class="tag3d"><span class="d"></span>Harbour ops</div>
+<div class="tag3d"><span class="d"></span>Training barge</div>
+<div class="tag3d"><span class="d"></span>Crew dock</div>
+<div class="tag3d"><span class="d"></span>Your platform</div>
+
+<main id="top">
+  <section class="hero" aria-label="Intro">
+    <div class="hero-content" id="heroContent">
+      <div class="hero-kicker fly">Offshore &amp; marine crews</div>
+      <h1 class="hero-title">
+        <span class="ln fly">Crews that arrive</span>
+        <span class="ln fly d1"><em>ready to work.</em></span>
+      </h1>
+      <p class="hero-sub fly d2">We vet, train and deliver certified offshore teams, from our harbour to your platform, in days instead of weeks.</p>
+    </div>
+    <div class="scroll-btn fly d3" id="scrollBtn"><span class="mouse"></span>Scroll to set sail</div>
+    <div class="coords fly d3" id="coords">Sea state <b>3 · moderate</b><br>Wind <b>14 kn SW</b><br>Vessel <b id="knots">0.0 kn</b></div>
+  </section>
+
+  <section class="flow" id="flow" aria-label="How it works">
+    <div class="flow-wrap">
+      <div class="flow-panel" id="flowPanel">
+        <div class="fstep active"><div class="fhead"><div class="fnum">01</div><div class="ftitle">Send the brief</div></div>
+          <div class="fbody"><div class="fbody-in"><div class="ftrack"><i></i></div><p class="fdesc">Tell us the trades, rotation and mobilisation date. Our harbour ops team starts matching from a bench of pre-cleared offshore workers within minutes.</p></div></div></div>
+        <div class="fstep"><div class="fhead"><div class="fnum">02</div><div class="ftitle">Train on the barge</div></div>
+          <div class="fbody"><div class="fbody-in"><div class="ftrack"><i></i></div><p class="fdesc">Every candidate is assessed on our training barge. Certificates are checked at source, and sea survival and practical skills are tested by people who have done the job.</p></div></div></div>
+        <div class="fstep"><div class="fhead"><div class="fnum">03</div><div class="ftitle">Form the crew</div></div>
+          <div class="fbody"><div class="fbody-in"><div class="ftrack"><i></i></div><p class="fdesc">We group people who work well together, assign a lead hand and muster them at the crew dock, ready to sail as one team.</p></div></div></div>
+        <div class="fstep"><div class="fhead"><div class="fnum">04</div><div class="ftitle">Arrive on the platform</div></div>
+          <div class="fbody"><div class="fbody-in"><div class="ftrack"><i></i></div><p class="fdesc">Your crew steps onto the platform inducted and equipped, with a coordinator on call for the whole rotation.</p></div></div></div>
+      </div>
+      <div class="flow-count" id="flowCount"><b id="flowNum">01</b>/ 04</div>
+    </div>
+  </section>
+
+  <div class="paper">
+    <section class="section" id="features">
+      <span class="eyebrow rv">Why Ironvale</span>
+      <div class="feat-head">
+        <h2 class="h2 rv-3d">Not an agency.<br>An operating system for crews.</h2>
+        <p class="lead rv">Most staffing firms send whoever is free. We run a standing bench of people we already know, so you get certainty instead of a gamble.</p>
+      </div>
+      <div class="feat-grid">
+        <article class="fcard rv"><span class="glow"></span><span class="idx">01</span>
+          <svg class="ico iso-ico" viewBox="0 0 64 64"><path d="M32 6 56 20 32 34 8 20z" fill="#FF5A1F"/><path d="M8 20v24l24 14V34z" fill="#E9E1D4"/><path d="M56 20v24L32 58V34z" fill="#D6CBB8"/></svg>
+          <div><h3>Days, not weeks</h3><p>A bench of pre-cleared offshore workers means most crews are confirmed within one business day of your brief.</p></div></article>
+        <article class="fcard rv"><span class="glow"></span><span class="idx">02</span>
+          <svg class="ico iso-ico" viewBox="0 0 64 64"><path d="M32 10 54 23 32 36 10 23z" fill="#F4EEE4" stroke="#1B1A17" stroke-width="1.5"/><path d="M32 22 54 35 32 48 10 35z" fill="#E9E1D4" stroke="#1B1A17" stroke-width="1.5"/><path d="M32 34 54 47 32 60 10 47z" fill="#FF5A1F"/></svg>
+          <div><h3>Vetted in layers</h3><p>Identity, certificates, references and a hands-on skills test. Each layer is a hard stop, not a checkbox.</p></div></article>
+        <article class="fcard rv"><span class="glow"></span><span class="idx">03</span>
+          <svg class="ico iso-ico" viewBox="0 0 64 64"><circle cx="20" cy="22" r="7" fill="#1B1A17"/><circle cx="44" cy="22" r="7" fill="#1B1A17"/><circle cx="32" cy="14" r="7" fill="#FF5A1F"/><path d="M8 50c2-10 8-15 12-15s10 5 12 15M32 50c2-10 8-15 12-15s10 5 12 15" fill="none" stroke="#1B1A17" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div><h3>Teams, pre-built</h3><p>Crews are assembled around a lead hand and complementary trades, so nobody meets their team on the helideck.</p></div></article>
+        <article class="fcard rv"><span class="glow"></span><span class="idx">04</span>
+          <svg class="ico iso-ico" viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="36" rx="6" fill="#F4EEE4" stroke="#1B1A17" stroke-width="1.5"/><path d="M16 38l9-9 7 6 14-13" fill="none" stroke="#FF5A1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 56h16" stroke="#1B1A17" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <div><h3>Live visibility</h3><p>Rotations, attendance and crew notes in one view your installation manager will actually open.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="sectors" style="padding-top:0">
+      <span class="eyebrow rv">Sectors</span>
+      <div class="feat-head">
+        <h2 class="h2 rv-3d">Where our crews work.</h2>
+        <p class="lead rv">Choose a sector to see the roles we staff, the certificates each role needs and a typical rotation.</p>
+      </div>
+      <div class="sector-grid" id="sectorGrid"></div>
+    </section>
+
+    <section class="section" id="finder" style="padding-top:0">
+      <span class="eyebrow rv">Crew finder</span>
+      <div class="feat-head">
+        <h2 class="h2 rv-3d">Search the bench.</h2>
+        <p class="lead rv">Filter by trade, certificate and start date, then shortlist people for your brief. Profiles shown are samples that illustrate how your shortlist works.</p>
+      </div>
+      <div class="finder-bar">
+        <label class="fld grow"><span>Search</span><input id="fSearch" type="search" placeholder="Name, trade or base" autocomplete="off"></label>
+        <label class="fld"><span>Trade</span><select id="fTrade"></select></label>
+        <label class="fld"><span>Certificate</span><select id="fCert"></select></label>
+        <label class="fld"><span>Sort by</span><select id="fSort"><option value="avail">Soonest available</option><option value="exp">Most experience</option><option value="name">Name</option></select></label>
+        <label class="chk"><input id="fNow" type="checkbox"> Free within 7 days</label>
+      </div>
+      <p class="finder-count" id="fCount" aria-live="polite"></p>
+      <div class="worker-grid" id="workerGrid"></div>
+      <div class="more-row" id="moreRow" hidden><button class="btn btn-ghost" type="button" id="viewAll">View all profiles</button></div>
+      <div class="shortbar" id="shortBar" hidden><span id="shortTxt"></span><span class="shortbar-act"><button class="btn btn-sm btn-ghost" type="button" id="shortClear">Clear</button><button class="btn btn-solid btn-sm" type="button" id="shortBook">Request this crew →</button></span></div>
+    </section>
+
+    <section class="section" id="estimate" style="padding-top:0">
+      <span class="eyebrow rv">Cost estimator</span>
+      <div class="feat-head">
+        <h2 class="h2 rv-3d">Price a crew in seconds.</h2>
+        <p class="lead rv">Set the headcount for each role and the job conditions. The estimate updates as you go and can be sent straight into a booking.</p>
+      </div>
+      <div class="est">
+        <div class="est-in">
+          <div id="estRows"></div>
+          <div class="est-opts">
+            <label class="fld"><span>Rotation</span><select id="eRot"><option value="14">14 days</option><option value="21">21 days</option><option value="28" selected>28 days</option></select></label>
+            <label class="fld"><span>Location</span><select id="eLoc"><option value="1">Onshore</option><option value="1.25" selected>Offshore</option><option value="1.4">Remote offshore</option></select></label>
+            <label class="fld"><span>Shift</span><select id="eShift"><option value="1">Days</option><option value="1.08">Days and nights</option><option value="1.15">Nights</option></select></label>
+          </div>
+          <label class="chk"><input type="checkbox" id="eUrgent"> Mobilise in under 72 hours</label>
+        </div>
+        <aside class="est-out" aria-live="polite">
+          <span class="eyebrow">Indicative rotation cost</span>
+          <div class="est-big" id="eTotal">$0</div>
+          <p class="est-sub" id="eSub"></p>
+          <div class="est-bars" id="eBars"></div>
+          <dl class="est-dl"><dt>Crew cost per day</dt><dd id="eDaily">$0</dd><dt>Coordination (8%)</dt><dd id="eFee">$0</dd><dt>Headcount</dt><dd id="eHeads">0</dd></dl>
+          <button class="btn btn-accent" type="button" id="eBook">Book this crew <span class="arr">→</span></button>
+          <p class="note">Indicative day rates in US dollars. Your written quote confirms the final price.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="standards" style="padding-top:0">
+      <div class="std">
+        <div class="std-vis rv"><svg viewBox="0 0 400 400" aria-hidden="true"><g id="isoStack" transform="translate(200 250)"></g></svg></div>
+        <div class="std-copy">
+          <span class="eyebrow rv">The standard</span>
+          <h2 class="h2 rv-3d">Vetted for the sites where mistakes cost most.</h2>
+          <p class="lead rv">Our checks were built for offshore energy, where one missing certificate grounds a whole crew. Every team we send, onshore or off, clears the same bar.</p>
+          <div class="checker rv">
+            <div class="checker-sel">
+              <label class="fld"><span>Sector</span><select id="cSector"></select></label>
+              <label class="fld"><span>Role</span><select id="cRole"></select></label>
+            </div>
+            <ul class="cert-list" id="cList" aria-live="polite"></ul>
+          </div>
+          <a class="btn btn-solid rv" href="#finder">Find certified crew <span class="arr">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portal" style="padding-top:0">
+      <span class="eyebrow rv">Client portal · preview</span>
+      <div class="feat-head">
+        <h2 class="h2 rv-3d">Your crews, live.</h2>
+        <p class="lead rv">See who is on site, approve timesheets and track every request you send. This preview uses sample data and keeps your requests in this browser.</p>
+      </div>
+      <div class="portal rv">
+        <div class="tabs" role="tablist" aria-label="Portal">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="pOverview" id="tOverview" type="button">Overview</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="pCrew" id="tCrew" type="button">Crew on site</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="pTime" id="tTime" type="button">Timesheets <span class="count" id="tsCount">0</span></button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="pReq" id="tReq" type="button">Requests <span class="count" id="reqCount">0</span></button>
+        </div>
+        <div class="tabpanel" role="tabpanel" id="pOverview" aria-labelledby="tOverview"></div>
+        <div class="tabpanel" role="tabpanel" id="pCrew" aria-labelledby="tCrew" hidden></div>
+        <div class="tabpanel" role="tabpanel" id="pTime" aria-labelledby="tTime" hidden></div>
+        <div class="tabpanel" role="tabpanel" id="pReq" aria-labelledby="tReq" hidden></div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" style="padding-top:0">
+      <div class="faq">
+        <div><span class="eyebrow rv">FAQ</span><h2 class="h2 rv-3d">Good questions.</h2></div>
+        <div class="faq-list rv">
+          <div class="qa"><button aria-expanded="false">How fast can a crew mobilise?<span class="chev"><svg viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="#1B1A17" stroke-width="1.6"/></svg></span></button>
+            <div class="ans"><div><p>Most standard crews are ready to travel within 48 hours of a confirmed brief. Large or specialised teams usually take three to five days, and you'll get a firm date at intake.</p></div></div></div>
+          <div class="qa"><button aria-expanded="false">Which sectors do you cover?<span class="chev"><svg viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="#1B1A17" stroke-width="1.6"/></svg></span></button>
+            <div class="ans"><div><p>Offshore oil and gas, offshore wind, marine construction, shutdowns and port operations. We also staff onshore energy and heavy civil sites.</p></div></div></div>
+          <div class="qa"><button aria-expanded="false">What if someone isn't working out?<span class="chev"><svg viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="#1B1A17" stroke-width="1.6"/></svg></span></button>
+            <div class="ans"><div><p>Tell your coordinator. We replace them on the next available transfer at no extra cost. Every engagement includes that guarantee.</p></div></div></div>
+          <div class="qa"><button aria-expanded="false">How does pricing work?<span class="chev"><svg viewBox="0 0 14 14"><path d="M2 5l5 5 5-5" fill="none" stroke="#1B1A17" stroke-width="1.6"/></svg></span></button>
+            <div class="ans"><div><p>One clear day rate per role covering payroll, insurance and coordination. No placement fees and no minimum term.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="cta" id="cta">
+    <canvas id="ctaDots" aria-hidden="true"></canvas>
+    <div class="cta-in">
+      <span class="eyebrow rv">Ready when you are</span>
+      <h2 class="rv-3d">Book your next crew today.</h2>
+      <p class="rv">Send the brief and we'll come back with a confirmed team and a mobilisation date, usually the same day.</p>
+      <button class="btn btn-accent rv" type="button" data-open="mBook">Book a crew <span class="arr">→</span></button>
+      <p class="contact-line rv">Or email us at <code id="mailAddr">crews@yourdomain.com</code> <button class="btn btn-ghost btn-sm" type="button" id="copyMail">Copy</button></p>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="mBook" role="dialog" aria-modal="true" aria-labelledby="mBookT" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card" tabindex="-1">
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+    <div id="bookFlow">
+      <h3 id="mBookT">Book a crew</h3>
+      <p class="sub">Three short steps. We reply with a confirmed team and start date, usually the same day.</p>
+      <div class="steps-ind" aria-hidden="true"><span class="on">1 · Project</span><span>2 · Crew</span><span>3 · Contact</span></div>
+      <form id="bookForm" novalidate>
+        <fieldset data-step="1">
+          <div class="form-grid">
+            <label class="fld"><span>Company</span><input name="company" id="bCompany" required autocomplete="organization"><small class="err"></small></label>
+            <label class="fld"><span>Site or project</span><input name="site" id="bSite" required><small class="err"></small></label>
+            <label class="fld"><span>Sector</span><select name="sector" id="bSector"></select></label>
+            <label class="fld"><span>Location</span><select name="loc" id="bLoc"><option>Offshore</option><option>Remote offshore</option><option>Onshore</option></select></label>
+            <label class="fld"><span>Start date</span><input type="date" name="start" id="bStart" required><small class="err"></small></label>
+            <label class="fld"><span>Rotation</span><select name="rot" id="bRot"><option>14/14</option><option>21/21</option><option selected>28/28</option><option>Campaign</option></select></label>
+          </div>
+        </fieldset>
+        <fieldset data-step="2" hidden>
+          <div id="roleRows" class="role-rows"></div>
+          <button class="link-btn" type="button" id="addRole">+ Add another role</button>
+          <p class="short-note" id="bShortNote" hidden></p>
+          <label class="fld full" style="margin-top:14px"><span>Anything else we should know</span><textarea name="notes" id="bNotes" rows="3" placeholder="Shift pattern, site access, special tickets"></textarea></label>
+        </fieldset>
+        <fieldset data-step="3" hidden>
+          <div class="form-grid">
+            <label class="fld"><span>Your name</span><input name="name" id="bName" required autocomplete="name"><small class="err"></small></label>
+            <label class="fld"><span>Work email</span><input type="email" name="email" id="bEmail" required autocomplete="email"><small class="err"></small></label>
+            <label class="fld"><span>Phone (optional)</span><input type="tel" name="phone" id="bPhone" autocomplete="tel"></label>
+            <label class="fld"><span>Role</span><input name="title" id="bTitle" placeholder="e.g. Maintenance lead"></label>
+            <label class="chk full"><input type="checkbox" id="bConsent" required> Ironvale may contact me about this request<small class="err"></small></label>
+          </div>
+        </fieldset>
+        <div class="form-nav"><button class="btn btn-ghost" type="button" id="bBack" hidden>← Back</button><span></span><button class="btn btn-solid" type="submit" id="bNext">Continue →</button></div>
+      </form>
+    </div>
+    <div class="done" id="bookDone" hidden></div>
+  </div>
+</div>
+
+<div class="modal" id="mJoin" role="dialog" aria-modal="true" aria-labelledby="mJoinT" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card" tabindex="-1">
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+    <div id="joinFlow">
+      <h3 id="mJoinT">Join the bench</h3>
+      <p class="sub">Tell us about your trade and tickets. Vetted workers hear about rotations first.</p>
+      <form id="joinForm" novalidate>
+        <div class="form-grid">
+          <label class="fld"><span>Full name</span><input name="name" required autocomplete="name"><small class="err"></small></label>
+          <label class="fld"><span>Email</span><input type="email" name="email" required autocomplete="email"><small class="err"></small></label>
+          <label class="fld"><span>Trade</span><select name="trade" id="jTrade"></select></label>
+          <label class="fld"><span>Years in trade</span><input type="number" name="years" min="0" max="50" value="5" required><small class="err"></small></label>
+          <label class="fld"><span>Home base</span><input name="base" placeholder="City, country" required><small class="err"></small></label>
+          <label class="fld"><span>Available from</span><input type="date" name="avail" id="jAvail" required><small class="err"></small></label>
+          <div class="fld full"><span>Certificates you hold</span><div class="cert-checks" id="jCerts"></div></div>
+          <p class="sub full" style="font-size:14px;margin:0">You can send your CV when we reply to your application.</p>
+        </div>
+        <div class="form-nav"><span></span><button class="btn btn-solid" type="submit">Send application →</button></div>
+      </form>
+    </div>
+    <div class="done" id="joinDone" hidden></div>
+  </div>
+</div>
+
+<div class="modal" id="mCrew" role="dialog" aria-modal="true" aria-labelledby="mCrewT" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card wide" tabindex="-1">
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+    <h3 id="mCrewT">All matching crew</h3>
+    <div class="crew-bar"><p class="sub" id="crewSub" style="margin:0"></p><button class="btn btn-solid btn-sm" type="button" id="crewBook" hidden>Request shortlisted crew →</button></div>
+    <div class="worker-grid" id="crewAll"></div>
+  </div>
+</div>
+
+<div class="modal" id="mInfo" role="dialog" aria-modal="true" aria-labelledby="mInfoT" hidden>
+  <div class="modal-bg" data-close></div>
+  <div class="modal-card" tabindex="-1">
+    <button class="modal-x" type="button" data-close aria-label="Close">×</button>
+    <div id="infoBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="foot">
+    <div>
+      <a class="logo" href="#top"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 3 42 13.5v21L24 45 6 34.5v-21Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M14.5 15.5 24 33l9.5-17.5" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12.5 28q2.75-4 5.5 0t5.5 0 5.5 0 5.5 0" fill="none" stroke="#FF5A1F" stroke-width="2.8" stroke-linecap="round"/></svg>Ironvale<sup class="tm">™</sup></a>
+      <p>Vetted offshore crews, ready to work.</p>
+    </div>
+    <div><h4>Company</h4><ul><li><a href="#flow">Process</a></li><li><a href="#sectors">Sectors</a></li><li><a href="#standards">Standards</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+    <div><h4>Tools</h4><ul><li><a href="#finder">Crew finder</a></li><li><a href="#estimate">Cost estimator</a></li><li><a href="#portal">Client portal</a></li><li><button class="link-btn" type="button" data-open="mJoin">Join a crew</button></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+  </div>
+  <p class="foot-note">Certificate and training names such as BOSIET, FOET, MIST, GWO, STCW, CompEx, IRATA and NEBOSH belong to their respective owners and are used only to describe requirements. Ironvale is not affiliated with these bodies. Sample profiles, sites and rates shown on this page are illustrative.</p>
+  <div class="foot-bottom"><span>© <span id="yr"></span> Ironvale. All rights reserved.</span><div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div>
+</footer>
+
+<script>
+/* ============ SITE SETTINGS: edit these before going live ============ */
+window.SITE = {
+  company: 'Ironvale',
+  email: 'crews@yourdomain.com',          // shown on the page for people to contact you
+  // Where booking and join forms are sent. Paste a form endpoint from any form service
+  // (for example a Formspree, Getform or Basin form URL, or your own API). Leave empty to keep forms in preview mode.
+  formEndpoint: ''
+};
+</script>
+<script src="../vendor/three.min.js"></script>
+<script>
+const REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+const smooth = t => t * t * (3 - 2 * t);
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ================= Page UI ================= */
+const ui = (() => {
+  const nav = document.getElementById('nav');
+  const heroContent = document.getElementById('heroContent');
+  const scrollBtn = document.getElementById('scrollBtn');
+  const coords = document.getElementById('coords');
+  const flow = document.getElementById('flow');
+  const panel = document.getElementById('flowPanel');
+  const count = document.getElementById('flowCount'), num = document.getElementById('flowNum');
+  const steps = [...document.querySelectorAll('.fstep')];
+  const fills = steps.map(s => s.querySelector('.ftrack i'));
+  const ctaEl = document.getElementById('cta');
+  const state = { hero: 0, flow: 0, after: false };
+
+  const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  const setMenu = o => { menu.classList.toggle('open', o); burger.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); document.body.style.overflow = o ? 'hidden' : ''; onScroll(); };
+  burger.onclick = () => setMenu(!menu.classList.contains('open'));
+  menu.querySelectorAll('a,button').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  const heroTitle = heroContent.querySelector('.hero-title');
+  if (!REDUCE && matchMedia('(hover:hover)').matches) addEventListener('pointermove', e => {
+    const x = e.clientX / innerWidth - .5, y = e.clientY / innerHeight - .5;
+    heroTitle.style.transform = `perspective(1200px) rotateY(${x * 6}deg) rotateX(${-y * 4}deg)`;
+  }, { passive: true });
+
+  steps.forEach((s, i) => s.querySelector('.fhead').addEventListener('click', () => {
+    const total = flow.offsetHeight - innerHeight;
+    const y = flow.offsetTop + total * (i + 0.3) / 4; window.smoothTo ? smoothTo(y) : scrollTo(0, y);
+  }));
+
+  function onScroll() {
+    const vh = innerHeight, y = scrollY;
+    const h = clamp(y / (vh * 0.7));
+    state.hero = h;
+    if (document.body.classList.contains('ready')) {
+      heroContent.style.opacity = 1 - h;
+      const base = innerWidth < 820 ? '' : 'translateY(-50%) ';
+      heroContent.style.transform = `${base}perspective(1000px) translate3d(${-h * 140}px,${-h * 170}px,0) rotateY(${h * 42}deg) rotateX(${h * 28}deg)`;
+      scrollBtn.style.opacity = 1 - h * 3;
+      coords.style.opacity = 1 - h * 3;
+    }
+    const r = flow.getBoundingClientRect(), total = r.height - vh;
+    const p = clamp(-r.top / total);
+    state.flow = p;
+    const s = Math.min(3, Math.floor(p * 4 * 0.9999));
+    const inFlow = r.top < vh * 0.35 && r.bottom > vh * 0.75;
+    panel.classList.toggle('show', inFlow); count.classList.toggle('show', inFlow);
+    steps.forEach((el, i) => el.classList.toggle('active', i === s));
+    fills.forEach((f, i) => f.style.transform = `scaleY(${clamp(p * 4 - i)})`);
+    num.textContent = '0' + (s + 1);
+    state.after = r.bottom < vh * 0.15;
+    const open = menu.classList.contains('open');
+    const overSea = r.bottom > 70;
+    const overCta = ctaEl.getBoundingClientRect().top < 70;
+    nav.classList.toggle('dark', !open && (overSea || overCta));
+    nav.classList.toggle('solid', open || (!overSea && !overCta));
+    nav.classList.toggle('scrolled', y > 20);
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  state.refresh = onScroll;
+  onScroll();
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+  document.querySelectorAll('.rv,.rv-3d').forEach(el => io.observe(el));
+  document.querySelectorAll('.feat-grid .fcard').forEach((c, i) => c.style.transitionDelay = (i % 2) * .12 + 's');
+
+  document.querySelectorAll('.fcard').forEach(c => {
+    const g = c.querySelector('.glow');
+    c.addEventListener('pointermove', e => { const b = c.getBoundingClientRect(); g.style.left = e.clientX - b.left + 'px'; g.style.top = e.clientY - b.top + 'px'; });
+  });
+
+  document.querySelectorAll('.qa').forEach(q => {
+    const b = q.querySelector('button');
+    b.addEventListener('click', () => {
+      const open = !q.classList.contains('open');
+      document.querySelectorAll('.qa.open').forEach(o => { o.classList.remove('open'); o.querySelector('button').setAttribute('aria-expanded', false); });
+      q.classList.toggle('open', open); b.setAttribute('aria-expanded', open);
+    });
+  });
+
+  const stack = document.getElementById('isoStack');
+  const NS = 'http://www.w3.org/2000/svg';
+  const slab = (top, l, rgt) => {
+    const g = document.createElementNS(NS, 'g');
+    g.innerHTML = `<path d="M0 -60 104 0 0 60 -104 0z" fill="${top}"/><path d="M-104 0 0 60 0 78 -104 18z" fill="${l}"/><path d="M104 0 0 60 0 78 104 18z" fill="${rgt}"/>`;
+    stack.appendChild(g); return g;
+  };
+  const layers = [slab('#F3F6FA','#C9D3E0','#A9B7C9'), slab('#F3F6FA','#C9D3E0','#A9B7C9'), slab('#F3F6FA','#C9D3E0','#A9B7C9'), slab('#FF5A1F','#D9440F','#B8380B')];
+  const visEl = document.querySelector('.std-vis');
+  function stackAnim() {
+    const b = visEl.getBoundingClientRect();
+    const p = smooth(clamp(1.1 - (b.top + b.height * .5) / innerHeight));
+    layers.forEach((l, i) => l.setAttribute('transform', `translate(0 ${-i * (20 + p * 36)})`));
+  }
+  addEventListener('scroll', stackAnim, { passive: true }); stackAnim();
+
+  const cv = document.getElementById('ctaDots'), cx = cv.getContext('2d');
+  let mx = -999, my = -999, dw = 0, dh = 0;
+  cv.parentElement.addEventListener('pointermove', e => { const b = cv.getBoundingClientRect(); mx = e.clientX - b.left; my = e.clientY - b.top; });
+  cv.parentElement.addEventListener('pointerleave', () => { mx = my = -999; });
+  const sizeDots = () => { const d = Math.min(devicePixelRatio, 2); dw = cv.offsetWidth; dh = cv.offsetHeight; cv.width = dw * d; cv.height = dh * d; cx.setTransform(d, 0, 0, d, 0, 0); };
+  addEventListener('resize', sizeDots); sizeDots();
+  let ctaVisible = false;
+  new IntersectionObserver(es => ctaVisible = es[0].isIntersecting).observe(cv);
+  (function dots(t) {
+    requestAnimationFrame(dots);
+    if (!ctaVisible) return;
+    cx.clearRect(0, 0, dw, dh);
+    const gap = 26;
+    for (let x = gap / 2; x < dw; x += gap) for (let y = gap / 2; y < dh; y += gap) {
+      const k = clamp(1 - Math.hypot(x - mx, y - my) / 180);
+      const wave = REDUCE ? .5 : (Math.sin(x * .02 + t * .001) + Math.cos(y * .025 + t * .0012)) * .25 + .5;
+      cx.fillStyle = k > 0.02 ? `rgba(255,90,31,${.3 + k * .7})` : `rgba(251,249,245,${.06 + wave * .12})`;
+      cx.beginPath(); cx.arc(x, y, 1.2 + k * 2.4, 0, 6.283); cx.fill();
+    }
+  })(0);
+
+  return state;
+})();
+
+/* ================= Demo app: data and interactions ================= */
+const app = (() => {
+  const $ = (q, r = document) => r.querySelector(q), $$ = (q, r = document) => [...r.querySelectorAll(q)];
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+  };
+  const esc = v => String(v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+  const daysFrom = d => Math.round((new Date(d) - today) / 864e5);
+  const fmt = d => new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  const iso = d => { const x = new Date(d); return x.getFullYear() + '-' + String(x.getMonth() + 1).padStart(2, '0') + '-' + String(x.getDate()).padStart(2, '0'); };
+  let seed = 42; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647, pick = a => a[Math.floor(rnd() * a.length)];
+  const toastEl = $('#toast'); let toastT;
+  const toast = msg => { toastEl.textContent = msg; toastEl.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('show'), 2600); };
+
+  /* ---- reference data: industry-standard certificate names; rates, people and sites are fictional ---- */
+  const TRADES = [
+    { id: 'scaf', name: 'Scaffolder', rate: 310, certs: ['BOSIET', 'Offshore medical', 'MIST'] },
+    { id: 'rig', name: 'Rigger', rate: 330, certs: ['BOSIET', 'Offshore medical', 'MIST', 'Banksman / slinger'] },
+    { id: 'mech', name: 'Mechanical technician', rate: 380, certs: ['BOSIET', 'Offshore medical', 'MIST'] },
+    { id: 'ei', name: 'E&I technician', rate: 420, certs: ['BOSIET', 'Offshore medical', 'MIST', 'CompEx'] },
+    { id: 'weld', name: 'Coded welder', rate: 450, certs: ['BOSIET', 'Offshore medical', 'MIST'] },
+    { id: 'ndt', name: 'NDT technician', rate: 430, certs: ['BOSIET', 'Offshore medical', 'MIST'] },
+    { id: 'rope', name: 'Rope access technician', rate: 410, certs: ['BOSIET', 'Offshore medical', 'IRATA'] },
+    { id: 'crane', name: 'Crane operator', rate: 440, certs: ['BOSIET', 'Offshore medical', 'MIST', 'Crane operator ticket'] },
+    { id: 'bank', name: 'Banksman / slinger', rate: 290, certs: ['BOSIET', 'Offshore medical', 'Banksman / slinger'] },
+    { id: 'paint', name: 'Painter / blaster', rate: 280, certs: ['BOSIET', 'Offshore medical', 'MIST'] },
+    { id: 'deck', name: 'Deck crew', rate: 260, certs: ['STCW', 'Offshore medical'] },
+    { id: 'wtg', name: 'Wind turbine technician', rate: 400, certs: ['GWO BST', 'Offshore medical'] },
+    { id: 'hse', name: 'HSE advisor', rate: 480, certs: ['BOSIET', 'Offshore medical', 'MIST', 'NEBOSH'] },
+    { id: 'sup', name: 'Supervisor / lead hand', rate: 520, certs: ['BOSIET', 'Offshore medical', 'MIST', 'NEBOSH'] }
+  ];
+  const trade = id => TRADES.find(t => t.id === id) || TRADES[0];
+  const CERTS = {
+    'BOSIET': 'Basic offshore safety induction and emergency training, including helicopter escape. Typically valid for 4 years.',
+    'FOET': 'Refresher for BOSIET holders, usually taken every 4 years.',
+    'Offshore medical': 'Fitness-for-offshore medical, usually renewed every 1 to 2 years.',
+    'MIST': 'Minimum industry safety training: permits to work, hazard spotting and risk assessment.',
+    'CA-EBS': 'Compressed-air emergency breathing training, normally delivered with BOSIET or FOET.',
+    'GWO BST': 'Wind-industry basic safety: working at height, sea survival, fire awareness, first aid and manual handling.',
+    'STCW': 'Basic safety training for crew on commercial vessels.',
+    'CompEx': 'Competence for electrical and instrument work in hazardous areas.',
+    'IRATA': 'Industrial rope access certification, levels 1 to 3.',
+    'NEBOSH': 'Health and safety qualification for supervisors and advisors.',
+    'Banksman / slinger': 'Signalling and slinging for lifting operations.',
+    'Crane operator ticket': 'Competence to operate offshore pedestal cranes.',
+    'H2S': 'Hydrogen sulphide awareness for sour-gas sites.',
+    'Site induction': 'Client site induction, completed before the first shift.'
+  };
+  const SECTORS = [
+    { id: 'og', name: 'Offshore oil & gas', blurb: 'Production platforms, FPSOs and drilling units, from routine maintenance to full campaigns.', rot: '14/14 or 21/21', roles: ['mech', 'ei', 'scaf', 'rig', 'crane', 'ndt', 'hse', 'sup'], certs: ['BOSIET', 'Offshore medical', 'MIST', 'CA-EBS'], extra: ['H2S'] },
+    { id: 'wind', name: 'Offshore wind', blurb: 'Turbine installation, commissioning and service campaigns on fixed and floating arrays.', rot: '14/14', roles: ['wtg', 'ei', 'rope', 'rig', 'hse', 'sup'], certs: ['GWO BST', 'Offshore medical'], extra: ['IRATA', 'BOSIET'] },
+    { id: 'marine', name: 'Marine & vessels', blurb: 'Deck and technical crew for support, construction and installation vessels.', rot: '28/28', roles: ['deck', 'crane', 'rig', 'bank', 'mech'], certs: ['STCW', 'Offshore medical'], extra: ['Crane operator ticket', 'Banksman / slinger'] },
+    { id: 'shut', name: 'Shutdowns & turnarounds', blurb: 'Large crews that mobilise fast for planned outages, where every hour of downtime counts.', rot: 'Campaign, 2 to 6 weeks', roles: ['scaf', 'mech', 'weld', 'ndt', 'paint', 'ei', 'sup'], certs: ['Site induction', 'Offshore medical'], extra: ['CompEx'] },
+    { id: 'port', name: 'Ports & harbours', blurb: 'Quay, crane and yard crews for terminals, fabrication yards and load-outs.', rot: 'Shift patterns', roles: ['crane', 'bank', 'rig', 'deck', 'weld'], certs: ['Site induction', 'Banksman / slinger'], extra: ['Crane operator ticket'] },
+    { id: 'onshore', name: 'Onshore energy', blurb: 'Refineries, terminals and power sites that need the same discipline as offshore work.', rot: '5/2 or 7/7', roles: ['mech', 'ei', 'weld', 'scaf', 'paint', 'hse'], certs: ['Site induction'], extra: ['H2S', 'CompEx', 'NEBOSH'] }
+  ];
+  const sector = id => SECTORS.find(x => x.id === id) || SECTORS[0];
+
+  /* ---- sample crew profiles (fictional) ---- */
+  const FIRST = ['Arjun', 'Liam', 'Mateus', 'Sofia', 'Kofi', 'Hannah', 'Ravi', 'Tomasz', 'Aisha', 'Diego', 'Niamh', 'Kenji', 'Priya', 'Owen', 'Farah', 'Lukas', 'Zanele', 'Marco', 'Ines', 'Dev', 'Erik', 'Amara', 'Callum', 'Yusuf', 'Leila', 'Joao', 'Mei', 'Rohan', 'Siobhan', 'Viktor', 'Nadia', 'Samir', 'Freya', 'Tunde', 'Elena', 'Karan', 'Ewan', 'Ana', 'Hamza', 'Ingrid', 'Ishaan', 'Maya'];
+  const BASES = ['Aberdeen', 'Rotterdam', 'Esbjerg', 'Mumbai', 'Houston', 'Abu Dhabi', 'Singapore', 'Perth', 'Stavanger', 'Chennai'];
+  const COLORS = ['#2F5D8A', '#C2491D', '#3F6B4A', '#6B4A8E', '#8E2F2A', '#1F7A7A', '#7A5A1F', '#2E3E5C'];
+  const EXTRA = ['FOET', 'CA-EBS', 'H2S', 'CompEx', 'IRATA', 'NEBOSH', 'GWO BST', 'STCW'];
+  const WORKERS = FIRST.map((f, i) => {
+    const t = TRADES[i % TRADES.length];
+    const certs = [...new Set([...t.certs, ...(rnd() < .65 ? [pick(EXTRA)] : []), ...(rnd() < .3 ? [pick(EXTRA)] : [])])];
+    return {
+      id: 'W' + (1001 + i), name: f + ' ' + String.fromCharCode(65 + Math.floor(rnd() * 26)) + '.', trade: t.id, base: pick(BASES),
+      years: 3 + Math.floor(rnd() * 22), certs, avail: addDays(today, Math.max(0, Math.floor(rnd() * 32) - 4)),
+      rot: pick(['14/14', '21/21', '28/28']), color: COLORS[i % COLORS.length],
+      expiry: Object.fromEntries(certs.map(c => [c, addDays(today, 8 + Math.floor(rnd() * 900))]))
+    };
+  });
+  const worker = id => WORKERS.find(w => w.id === id);
+
+  /* ---- modals ---- */
+  let lastFocus = null;
+  function openModal(id) {
+    const m = $('#' + id); if (!m) return;
+    lastFocus = document.activeElement; m.hidden = false;
+    document.body.classList.add('modal-open'); document.body.style.overflow = 'hidden';
+    setTimeout(() => { const f = m.querySelector('input:not([type=hidden]),select,textarea'); (f || m.querySelector('.modal-card')).focus(); }, 40);
+  }
+  function closeModal(m) {
+    m.hidden = true;
+    if (!$$('.modal').some(x => !x.hidden)) { document.body.classList.remove('modal-open'); document.body.style.overflow = ''; }
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]');
+    if (o) { e.preventDefault(); if (o.dataset.open === 'mBook') openBook(); else if (o.dataset.open === 'mJoin') openJoin(); else openModal(o.dataset.open); return; }
+    const c = e.target.closest('[data-close]'); if (c) closeModal(c.closest('.modal'));
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { const m = $$('.modal').reverse().find(x => !x.hidden); if (m) closeModal(m); } });
+
+  /* ---- sectors ---- */
+  $('#sectorGrid').innerHTML = SECTORS.map((x, i) => `<button class="sector rv" type="button" data-sector="${x.id}"><span class="eyebrow">${String(i + 1).padStart(2, '0')}</span><h3>${esc(x.name)}</h3><p>${esc(x.blurb)}</p><span class="meta"><span>${x.roles.length} roles</span><b>View roles →</b></span></button>`).join('');
+  $('#sectorGrid').addEventListener('click', e => { const b = e.target.closest('[data-sector]'); if (b) showSector(b.dataset.sector); });
+  function showSector(id) {
+    const x = sector(id);
+    $('#infoBody').innerHTML = `<span class="eyebrow">Sector</span><h3 id="mInfoT">${esc(x.name)}</h3><p class="sub">${esc(x.blurb)} Typical rotation: ${esc(x.rot)}.</p>
+      <h4 style="margin-top:18px">Roles we staff</h4><ul class="info-roles">${x.roles.map(r => `<li>${esc(trade(r).name)}<span>from ${money(trade(r).rate)}/day</span></li>`).join('')}</ul>
+      <h4>Certificates everyone needs</h4><div class="chips" style="margin:10px 0 6px">${x.certs.map(c => `<span class="chip ok">${esc(c)}</span>`).join('')}</div>
+      <p class="sub" style="font-size:14px">Often also asked for: ${x.extra.map(esc).join(', ')}.</p>
+      <div class="form-nav"><a class="btn btn-ghost" href="#finder" data-close>Browse crew</a><button class="btn btn-solid" type="button" data-book-sector="${x.id}">Book a crew for this sector →</button></div>`;
+    openModal('mInfo');
+  }
+  document.addEventListener('click', e => { const b = e.target.closest('[data-book-sector]'); if (b) { closeModal($('#mInfo')); const x = sector(b.dataset.bookSector); openBook({ sector: x.id, roles: x.roles.slice(0, 3).map(t => ({ trade: t, n: 2 })) }); } });
+
+  /* ---- certificate checker ---- */
+  const cSector = $('#cSector'), cRole = $('#cRole');
+  cSector.innerHTML = SECTORS.map(x => `<option value="${x.id}">${esc(x.name)}</option>`).join('');
+  function fillRoles() { const x = sector(cSector.value); cRole.innerHTML = x.roles.map(r => `<option value="${r}">${esc(trade(r).name)}</option>`).join(''); renderChecker(); }
+  function renderChecker() {
+    const x = sector(cSector.value), t = trade(cRole.value);
+    const need = [...new Set([...x.certs, ...t.certs.filter(c => !(x.id === 'wind' && c === 'BOSIET') && !(x.id === 'marine' && c === 'MIST'))])];
+    const extra = x.extra.filter(c => !need.includes(c));
+    $('#cList').innerHTML = need.map(c => `<li><div>${esc(c)}<small>${esc(CERTS[c] || '')}</small></div><span class="chip ok">Required</span></li>`).join('') +
+      extra.map(c => `<li><div>${esc(c)}<small>${esc(CERTS[c] || '')}</small></div><span class="chip info">Often asked</span></li>`).join('');
+  }
+  cSector.addEventListener('change', fillRoles); cRole.addEventListener('change', renderChecker); fillRoles();
+
+  /* ---- crew finder ---- */
+  const shortlist = new Set(store.get('ivl-short', []).filter(id => worker(id)));
+  $('#fTrade').innerHTML = '<option value="">All trades</option>' + TRADES.map(t => `<option value="${t.id}">${esc(t.name)}</option>`).join('');
+  $('#fCert').innerHTML = '<option value="">Any certificate</option>' + Object.keys(CERTS).filter(c => c !== 'Site induction').map(c => `<option>${esc(c)}</option>`).join('');
+  function renderFinder() {
+    const q = $('#fSearch').value.trim().toLowerCase(), tr = $('#fTrade').value, ce = $('#fCert').value, soon = $('#fNow').checked, sort = $('#fSort').value;
+    const list = WORKERS.filter(w => (!tr || w.trade === tr) && (!ce || w.certs.includes(ce)) && (!soon || daysFrom(w.avail) <= 7) &&
+      (!q || (w.name + ' ' + trade(w.trade).name + ' ' + w.base).toLowerCase().includes(q)));
+    list.sort(sort === 'exp' ? (a, b) => b.years - a.years : sort === 'name' ? (a, b) => a.name.localeCompare(b.name) : (a, b) => a.avail - b.avail);
+    $('#fCount').textContent = `Showing ${list.length} of ${WORKERS.length} profiles`;
+    const card = w => {
+      const d = daysFrom(w.avail), sel = shortlist.has(w.id);
+      return `<article class="wcard${sel ? ' sel' : ''}"><div class="whead"><span class="avatar" style="background:${w.color}" aria-hidden="true">${esc(w.name[0])}</span><div><div class="wname">${esc(w.name)}</div><div class="wtrade">${esc(trade(w.trade).name)} · ${w.years} yrs · ${esc(w.base)}</div></div></div>
+        <div class="chips">${w.certs.slice(0, 3).map(c => `<span class="chip">${esc(c)}</span>`).join('')}${w.certs.length > 3 ? `<span class="chip">+${w.certs.length - 3} more</span>` : ''}</div>
+        <div class="chips"><span class="chip ${d <= 0 ? 'ok' : d <= 7 ? 'info' : 'warn'}">${d <= 0 ? 'Available now' : 'From ' + fmt(w.avail)}</span><span class="chip">${w.rot}</span></div>
+        <div class="wfoot"><button class="btn btn-ghost btn-sm" type="button" data-view="${w.id}">Profile</button><button class="btn ${sel ? 'btn-solid' : 'btn-ghost'} btn-sm" type="button" data-short="${w.id}" aria-pressed="${sel}">${sel ? 'Shortlisted ✓' : 'Shortlist'}</button></div></article>`;
+    };
+    const PAGE = 6;
+    $('#fCount').textContent = list.length > PAGE ? `Showing ${PAGE} of ${list.length} matches` : `Showing ${list.length} ${list.length === 1 ? 'match' : 'matches'}`;
+    $('#workerGrid').innerHTML = list.length ? list.slice(0, PAGE).map(card).join('') : `<div class="empty" style="grid-column:1/-1">No one matches those filters. Try removing the certificate or date filter.</div>`;
+    $('#moreRow').hidden = list.length <= PAGE;
+    $('#viewAll').textContent = `View all ${list.length} profiles →`;
+    $('#crewAll').innerHTML = list.map(card).join('');
+    $('#crewSub').textContent = `${list.length} matching profiles. Shortlist anyone here; it updates the main page too.`;
+    const n = shortlist.size; $('#shortBar').hidden = !n; $('#shortTxt').textContent = `${n} ${n === 1 ? 'person' : 'people'} shortlisted`;
+    $('#crewBook').hidden = !n; $('#crewBook').textContent = `Request ${n} shortlisted →`;
+    store.set('ivl-short', [...shortlist]);
+  }
+  ['fSearch', 'fTrade', 'fCert', 'fSort', 'fNow'].forEach(id => $('#' + id).addEventListener(id === 'fSearch' ? 'input' : 'change', renderFinder));
+  function toggleShort(id) { if (shortlist.has(id)) shortlist.delete(id); else { shortlist.add(id); toast(`${worker(id).name} added to your shortlist`); } renderFinder(); }
+  const gridClick = e => {
+    const s = e.target.closest('[data-short]'); if (s) return toggleShort(s.dataset.short);
+    const v = e.target.closest('[data-view]'); if (v) showWorker(v.dataset.view);
+  };
+  $('#workerGrid').addEventListener('click', gridClick);
+  $('#crewAll').addEventListener('click', gridClick);
+  $('#viewAll').addEventListener('click', () => openModal('mCrew'));
+  $('#crewBook').addEventListener('click', () => { closeModal($('#mCrew')); $('#shortBook').click(); });
+  function showWorker(id) {
+    const w = worker(id), t = trade(w.trade), sel = shortlist.has(id);
+    $('#infoBody').innerHTML = `<div class="whead" style="margin-bottom:10px"><span class="avatar" style="background:${w.color};width:56px;height:56px;font-size:22px">${esc(w.name[0])}</span><div><h3 id="mInfoT" style="margin:0">${esc(w.name)}</h3><div class="wtrade">${esc(t.name)} · ${esc(w.base)}</div></div></div>
+      <p class="sub">${w.years} years in trade. Prefers a ${w.rot} rotation. ${daysFrom(w.avail) <= 0 ? 'Available now.' : 'Available from ' + fmt(w.avail) + '.'} Sample profile.</p>
+      <h4 style="margin-top:16px">Certificates on file</h4>
+      <ul class="info-roles">${w.certs.map(c => { const d = daysFrom(w.expiry[c]); return `<li>${esc(c)}<span class="chip ${d < 30 ? 'bad' : d < 90 ? 'warn' : 'ok'}">${d < 30 ? 'Expires ' : 'Valid to '}${fmt(w.expiry[c])}</span></li>`; }).join('')}</ul>
+      <p class="sub" style="font-size:14px">Day rate band from ${money(t.rate)} (onshore, days).</p>
+      <div class="form-nav"><span></span><button class="btn ${sel ? 'btn-ghost' : 'btn-solid'}" type="button" data-short-modal="${id}">${sel ? 'Remove from shortlist' : 'Add to shortlist'}</button></div>`;
+    openModal('mInfo');
+  }
+  document.addEventListener('click', e => { const b = e.target.closest('[data-short-modal]'); if (b) { toggleShort(b.dataset.shortModal); closeModal($('#mInfo')); } });
+  $('#shortClear').addEventListener('click', () => { shortlist.clear(); renderFinder(); });
+  $('#shortBook').addEventListener('click', () => {
+    const counts = {}; [...shortlist].forEach(id => counts[worker(id).trade] = (counts[worker(id).trade] || 0) + 1);
+    openBook({ roles: Object.entries(counts).map(([trade, n]) => ({ trade, n })), named: [...shortlist] });
+  });
+  renderFinder();
+
+  /* ---- cost estimator ---- */
+  const EST = ['scaf', 'rig', 'mech', 'ei', 'weld', 'rope', 'crane', 'bank', 'wtg', 'hse', 'sup'];
+  const est = store.get('ivl-est', { scaf: 4, rig: 2, mech: 3, ei: 2, sup: 1 });
+  $('#estRows').innerHTML = EST.map(id => `<div class="est-row"><b>${esc(trade(id).name)}</b><span class="rate">${money(trade(id).rate)}/day base</span>
+    <div class="stepper" role="group" aria-label="${esc(trade(id).name)} headcount"><button type="button" data-step="${id}" data-d="-1" aria-label="One fewer ${esc(trade(id).name)}">−</button><output id="n-${id}">${est[id] || 0}</output><button type="button" data-step="${id}" data-d="1" aria-label="One more ${esc(trade(id).name)}">+</button></div></div>`).join('');
+  $('#estRows').addEventListener('click', e => { const b = e.target.closest('[data-step]'); if (!b) return; const id = b.dataset.step; est[id] = clamp((est[id] || 0) + +b.dataset.d, 0, 40); $('#n-' + id).textContent = est[id]; renderEst(); });
+  function calcEst() {
+    const loc = +$('#eLoc').value, shift = +$('#eShift').value, rot = +$('#eRot').value, urg = $('#eUrgent').checked ? 1.12 : 1;
+    const lines = EST.map(id => ({ id, n: est[id] || 0, day: trade(id).rate * loc * shift * urg * (est[id] || 0) })).filter(l => l.n);
+    const daily = lines.reduce((a, l) => a + l.day, 0), crewCost = daily * rot, fee = crewCost * .08;
+    return { lines, daily, fee, total: crewCost + fee, heads: lines.reduce((a, l) => a + l.n, 0), rot };
+  }
+  function renderEst() {
+    const r = calcEst(), max = Math.max(1, ...r.lines.map(l => l.day));
+    $('#eTotal').textContent = money(r.total);
+    $('#eSub').textContent = r.heads ? `${r.heads} people for a ${r.rot}-day rotation` : 'Add at least one role to see a price';
+    $('#eBars').innerHTML = r.lines.map(l => `<div class="bar"><span>${esc(trade(l.id).name)} × ${l.n}</span><i style="width:${Math.max(4, l.day / max * 100)}%"></i><b>${money(l.day)}</b></div>`).join('');
+    $('#eDaily').textContent = money(r.daily); $('#eFee').textContent = money(r.fee); $('#eHeads').textContent = r.heads;
+    store.set('ivl-est', est);
+  }
+  ['eRot', 'eLoc', 'eShift', 'eUrgent'].forEach(id => $('#' + id).addEventListener('change', renderEst));
+  $('#eBook').addEventListener('click', () => { const r = calcEst(); openBook({ roles: r.lines.map(l => ({ trade: l.id, n: l.n })), loc: $('#eLoc').selectedOptions[0].text }); });
+  renderEst();
+
+  /* ---- booking (3 steps) ---- */
+  const bookForm = $('#bookForm'); let bStep = 1, roles = [], named = [];
+  $('#bSector').innerHTML = SECTORS.map(x => `<option value="${x.id}">${esc(x.name)}</option>`).join('');
+  $('#bStart').min = iso(today);
+  const tradeOpts = sel => TRADES.map(t => `<option value="${t.id}"${t.id === sel ? ' selected' : ''}>${esc(t.name)}</option>`).join('');
+  function renderRoles() {
+    $('#roleRows').innerHTML = roles.map((r, i) => `<div class="role-row"><label class="fld"><span>Role ${i + 1}</span><select data-ri="${i}">${tradeOpts(r.trade)}</select></label>
+      <div class="stepper" role="group" aria-label="Headcount"><button type="button" data-rs="${i}" data-d="-1" aria-label="Fewer">−</button><output>${r.n}</output><button type="button" data-rs="${i}" data-d="1" aria-label="More">+</button></div>
+      <button class="rm" type="button" data-rm="${i}" aria-label="Remove role"${roles.length < 2 ? ' disabled' : ''}>×</button></div>`).join('');
+  }
+  $('#roleRows').addEventListener('change', e => { const s = e.target.closest('[data-ri]'); if (s) roles[+s.dataset.ri].trade = s.value; });
+  $('#roleRows').addEventListener('click', e => {
+    const b = e.target.closest('[data-rs]'); if (b) { const r = roles[+b.dataset.rs]; r.n = clamp(r.n + +b.dataset.d, 1, 60); renderRoles(); }
+    const rm = e.target.closest('[data-rm]'); if (rm && roles.length > 1) { roles.splice(+rm.dataset.rm, 1); renderRoles(); }
+  });
+  $('#addRole').addEventListener('click', () => { roles.push({ trade: 'rig', n: 1 }); renderRoles(); });
+  function setStep(n) {
+    bStep = n;
+    $$('fieldset', bookForm).forEach(f => f.hidden = +f.dataset.step !== n);
+    $$('.steps-ind span', $('#mBook')).forEach((s, i) => s.classList.toggle('on', i < n));
+    $('#bBack').hidden = n === 1; $('#bNext').textContent = n === 3 ? 'Send request' : 'Continue →';
+  }
+  function openBook(pre = {}) {
+    bookForm.reset(); $$('.bad', bookForm).forEach(x => x.classList.remove('bad')); $$('.err', bookForm).forEach(x => x.textContent = '');
+    $('#bStart').value = iso(addDays(today, 7));
+    if (pre.sector) $('#bSector').value = pre.sector;
+    if (pre.loc) $('#bLoc').value = pre.loc;
+    roles = (pre.roles && pre.roles.length ? pre.roles : [{ trade: 'mech', n: 2 }, { trade: 'scaf', n: 2 }]).map(r => ({ ...r }));
+    named = pre.named || [];
+    $('#bShortNote').hidden = !named.length;
+    $('#bShortNote').textContent = named.length ? 'Shortlisted people we will ask first: ' + named.map(id => worker(id).name).join(', ') : '';
+    renderRoles(); setStep(1);
+    $('#bookFlow').hidden = false; $('#bookDone').hidden = true;
+    openModal('mBook');
+  }
+  function check(input, ok, msg) { const f = input.closest('.fld,.chk'); f.classList.toggle('bad', !ok); const e = f.querySelector('.err'); if (e) e.textContent = ok ? '' : msg; return ok; }
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  function validStep(n) {
+    let ok = true;
+    if (n === 1) {
+      ok = check($('#bCompany'), $('#bCompany').value.trim().length > 1, 'Enter your company name.') && ok;
+      ok = check($('#bSite'), $('#bSite').value.trim().length > 1, 'Enter the site or project.') && ok;
+      ok = check($('#bStart'), !!$('#bStart').value && daysFrom($('#bStart').value) >= 0, 'Choose a start date from today onwards.') && ok;
+    }
+    if (n === 3) {
+      ok = check($('#bName'), $('#bName').value.trim().length > 1, 'Enter your name.') && ok;
+      ok = check($('#bEmail'), EMAIL.test($('#bEmail').value.trim()), 'Enter a valid email, like name@company.com.') && ok;
+      ok = check($('#bConsent'), $('#bConsent').checked, 'Tick this so we can reply.') && ok;
+    }
+    if (!ok) { const b = $('.bad input,.bad select', bookForm); if (b) b.focus(); }
+    return ok;
+  }
+  $('#bBack').addEventListener('click', () => setStep(bStep - 1));
+  async function send(kind, data) {
+    if (!SITE.formEndpoint) return { ok: true, preview: true };
+    try {
+      const r = await fetch(SITE.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(Object.assign({ form: kind, sentAt: new Date().toISOString() }, data)) });
+      return { ok: r.ok };
+    } catch (e) { return { ok: false }; }
+  }
+  const sentNote = res => res.preview ? '<p class="sub" style="font-size:13px;margin-top:14px">Preview mode: this was saved in your browser only. Add a form address in the site settings to receive requests.</p>' : '';
+  bookForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!validStep(bStep)) return;
+    if (bStep < 3) return setStep(bStep + 1);
+    const heads = roles.reduce((a, r) => a + r.n, 0);
+    const req = { ref: 'IV-' + Math.floor(100000 + Math.random() * 899999), created: Date.now(), company: $('#bCompany').value.trim(), site: $('#bSite').value.trim(),
+      sector: $('#bSector').value, loc: $('#bLoc').value, start: $('#bStart').value, rot: $('#bRot').value, roles: roles.map(r => ({ ...r })), heads, named, contact: $('#bName').value.trim() };
+    const btn = $('#bNext'); btn.disabled = true; btn.textContent = 'Sending…';
+    const res = await send('crew-request', Object.assign({}, req, { email: $('#bEmail').value.trim(), phone: $('#bPhone').value.trim(), title: $('#bTitle').value.trim(), notes: $('#bNotes').value.trim(),
+      roles: req.roles.map(r => ({ role: trade(r.trade).name, count: r.n })), named: named.map(id => worker(id).name) }));
+    btn.disabled = false; btn.textContent = 'Send request';
+    if (!res.ok) { toast('Could not send. Check your connection and try again, or email ' + SITE.email); return; }
+    const all = store.get('ivl-requests', []); all.unshift(req); store.set('ivl-requests', all);
+    $('#bookFlow').hidden = true; const d = $('#bookDone'); d.hidden = false;
+    d.innerHTML = `<span class="eyebrow">Request sent</span><h3>Thanks, ${esc(req.contact.split(' ')[0])}.</h3><p class="sub">We have your brief and will reply with a confirmed crew. Your reference:</p><div class="ref">${req.ref}</div>
+      <ul class="sum"><li><span>Site</span>${esc(req.site)}</li><li><span>Sector</span>${esc(sector(req.sector).name)}</li><li><span>Start</span>${fmt(req.start)}</li><li><span>Crew</span>${heads} people, ${req.roles.length} roles</li></ul>
+      <div class="btns"><button class="btn btn-ghost" type="button" data-close>Close</button><button class="btn btn-solid" type="button" id="toPortal">Track it in the portal →</button></div>
+      ${sentNote(res)}`;
+    $('#toPortal').addEventListener('click', () => { closeModal($('#mBook')); selectTab('tReq'); smoothTo(document.getElementById('portal').getBoundingClientRect().top + scrollY - 70); });
+    renderPortal(); toast('Booking request ' + req.ref + ' saved');
+  });
+
+  /* ---- join the bench ---- */
+  const joinForm = $('#joinForm');
+  $('#jTrade').innerHTML = tradeOpts('mech');
+  $('#jCerts').innerHTML = Object.keys(CERTS).filter(c => c !== 'Site induction').map((c, i) => `<label class="chk"><input type="checkbox" name="cert" value="${esc(c)}" id="jc${i}"> ${esc(c)}</label>`).join('');
+  $('#jAvail').min = iso(today);
+  function openJoin() { joinForm.reset(); $('#jAvail').value = iso(addDays(today, 14)); $$('.bad', joinForm).forEach(x => x.classList.remove('bad')); $$('.err', joinForm).forEach(x => x.textContent = ''); $('#joinFlow').hidden = false; $('#joinDone').hidden = true; openModal('mJoin'); }
+  joinForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const f = joinForm.elements; let ok = true;
+    ok = check(f.name, f.name.value.trim().length > 1, 'Enter your full name.') && ok;
+    ok = check(f.email, EMAIL.test(f.email.value.trim()), 'Enter a valid email address.') && ok;
+    ok = check(f.years, f.years.value !== '' && +f.years.value >= 0 && +f.years.value <= 50, 'Enter years between 0 and 50.') && ok;
+    ok = check(f.base, f.base.value.trim().length > 1, 'Tell us where you are based.') && ok;
+    ok = check(f.avail, !!f.avail.value && daysFrom(f.avail.value) >= 0, 'Choose a date from today onwards.') && ok;
+    if (!ok) { const b = $('.bad input', joinForm); if (b) b.focus(); return; }
+    const certs = $$('input[name=cert]:checked', joinForm).map(x => x.value), t = trade(f.trade.value);
+    const missing = t.certs.filter(c => !certs.includes(c));
+    const ref = 'AP-' + Math.floor(10000 + Math.random() * 89999);
+    const jb = $('#joinForm button[type=submit]'); jb.disabled = true; jb.textContent = 'Sending…';
+    const res = await send('join-application', { ref, name: f.name.value.trim(), email: f.email.value.trim(), trade: t.name, years: +f.years.value, base: f.base.value.trim(), available: f.avail.value, certificates: certs });
+    jb.disabled = false; jb.textContent = 'Send application →';
+    if (!res.ok) { toast('Could not send. Check your connection and try again, or email ' + SITE.email); return; }
+    $('#joinFlow').hidden = true; const d = $('#joinDone'); d.hidden = false;
+    d.innerHTML = `<span class="eyebrow">Application received</span><h3>Welcome aboard, ${esc(f.name.value.trim().split(' ')[0])}.</h3><p class="sub">Your application reference:</p><div class="ref">${ref}</div>
+      <p class="sub">${missing.length ? 'For ' + esc(t.name) + ' roles you will also need: <b>' + missing.map(esc).join(', ') + '</b>. We can point you to approved training.' : 'You hold every core certificate for ' + esc(t.name) + ' roles. Next step is a short skills call.'}</p>
+      <div class="btns" style="margin-top:16px"><button class="btn btn-solid" type="button" data-close>Done</button></div>
+      ${sentNote(res)}`;
+    toast('Application ' + ref + ' received');
+  });
+
+  /* ---- client portal ---- */
+  const SITES = ['Platform Alpha', 'Wind array W-14', 'Harbour yard 3', 'FPSO Meridian'];
+  const ONSITE = WORKERS.slice(0, 14).map((w, i) => ({ w, site: SITES[i % 4], status: ['On shift', 'On shift', 'Off rotation', 'On shift', 'Travelling'][i % 5] }));
+  const wk = (() => { const d = new Date(today); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return 'w/c ' + d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); })();
+  let ts = store.get('ivl-ts', null);
+  if (!ts || !Array.isArray(ts) || !ts.length || ts[0].week !== wk) ts = ONSITE.filter(o => o.status !== 'Travelling').slice(0, 9).map((o, i) => ({ id: 'T' + i, wid: o.w.id, site: o.site, week: wk, hours: 72 + (i % 3) * 12, ot: i % 4 === 1 ? 6 : 0, status: 'Pending' }));
+  const reqStatus = r => { const age = (Date.now() - r.created) / 1000; return age < 45 ? ['Matching crew', 'info'] : age < 150 ? ['Shortlist ready', 'warn'] : ['Confirmed', 'ok']; };
+  const chipFor = s => s === 'On shift' ? 'ok' : s === 'Travelling' ? 'info' : '';
+  function renderPortal() {
+    const reqs = store.get('ivl-requests', []);
+    const expiring = ONSITE.flatMap(o => o.w.certs.map(c => ({ o, c, d: daysFrom(o.w.expiry[c]) }))).filter(x => x.d <= 60).sort((a, b) => a.d - b.d);
+    const pending = ts.filter(x => x.status === 'Pending').length;
+    $('#tsCount').textContent = pending; $('#reqCount').textContent = reqs.length;
+    $('#pOverview').innerHTML = `<div class="kpis">
+        <div class="kpi"><b>${ONSITE.filter(o => o.status === 'On shift').length}</b><span>People on shift now</span></div>
+        <div class="kpi${pending ? ' alert' : ''}"><b>${pending}</b><span>Timesheets to approve</span></div>
+        <div class="kpi${expiring.some(x => x.d <= 30) ? ' alert' : ''}"><b>${expiring.filter(x => x.d <= 30).length}</b><span>Certificates expiring in 30 days</span></div>
+        <div class="kpi"><b>${reqs.length}</b><span>Your crew requests</span></div></div>
+      <div class="two"><div><h4>Expiring soon</h4>${expiring.length ? `<ul class="list">${expiring.slice(0, 6).map(x => `<li><span>${esc(x.o.w.name)} · ${esc(x.c)}</span><span class="chip ${x.d <= 30 ? 'bad' : 'warn'}">${x.d <= 0 ? 'Expired' : 'In ' + x.d + ' days'}</span></li>`).join('')}</ul>` : '<p class="empty">Nothing expires in the next 60 days.</p>'}</div>
+      <div><h4>Crew by site</h4><ul class="list">${SITES.map(st => `<li><span>${esc(st)}</span><b>${ONSITE.filter(o => o.site === st).length} people</b></li>`).join('')}</ul></div></div>`;
+    $('#pCrew').innerHTML = `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Name</th><th>Trade</th><th>Site</th><th>Status</th><th>Next expiry</th></tr></thead><tbody>${ONSITE.map(o => {
+      const next = o.w.certs.map(c => ({ c, d: daysFrom(o.w.expiry[c]) })).sort((a, b) => a.d - b.d)[0];
+      return `<tr><td><b>${esc(o.w.name)}</b></td><td>${esc(trade(o.w.trade).name)}</td><td>${esc(o.site)}</td><td><span class="chip ${chipFor(o.status)}">${o.status}</span></td><td><span class="chip ${next.d <= 30 ? 'bad' : next.d <= 90 ? 'warn' : 'ok'}">${esc(next.c)} · ${fmt(o.w.expiry[next.c])}</span></td></tr>`;
+    }).join('')}</tbody></table></div>`;
+    $('#pTime').innerHTML = `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Name</th><th>Site</th><th>Week</th><th class="num">Hours</th><th class="num">Overtime</th><th>Status</th><th class="num">Action</th></tr></thead><tbody>${ts.map(x => {
+      const w = worker(x.wid);
+      return `<tr><td><b>${esc(w.name)}</b></td><td>${esc(x.site)}</td><td>${esc(x.week)}</td><td class="num">${x.hours}</td><td class="num">${x.ot}</td><td><span class="chip ${x.status === 'Approved' ? 'ok' : x.status === 'Queried' ? 'warn' : 'info'}">${x.status}</span></td>
+        <td><div class="acts">${x.status === 'Pending' ? `<button class="btn btn-solid btn-sm" type="button" data-ts="${x.id}" data-act="Approved">Approve</button><button class="btn btn-ghost btn-sm" type="button" data-ts="${x.id}" data-act="Queried">Query</button>` : `<button class="btn btn-ghost btn-sm" type="button" data-ts="${x.id}" data-act="Pending">Undo</button>`}</div></td></tr>`;
+    }).join('')}</tbody></table></div>${pending ? `<div class="form-nav"><span class="sub" style="margin:0">${pending} waiting for you</span><button class="btn btn-solid" type="button" id="approveAll">Approve all</button></div>` : ''}`;
+    $('#pReq').innerHTML = reqs.length ? `<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Reference</th><th>Site</th><th>Sector</th><th>Start</th><th class="num">Crew</th><th>Status</th></tr></thead><tbody>${reqs.map(r => { const [st, c] = reqStatus(r);
+        return `<tr><td><b>${esc(r.ref)}</b></td><td>${esc(r.site)}</td><td>${esc(sector(r.sector).name)}</td><td>${fmt(r.start)}</td><td class="num">${r.heads}</td><td><span class="chip ${c}">${st}</span></td></tr>`; }).join('')}</tbody></table></div>
+        <div class="form-nav"><button class="btn btn-ghost btn-sm" type="button" id="clearReq">Clear requests</button><button class="btn btn-solid" type="button" data-open="mBook">New request →</button></div>`
+      : `<div class="empty">No requests yet. Send a brief and it will show up here with live status.<div style="margin-top:14px"><button class="btn btn-solid" type="button" data-open="mBook">Book a crew →</button></div></div>`;
+    store.set('ivl-ts', ts);
+  }
+  document.getElementById('portal').addEventListener('click', e => {
+    const b = e.target.closest('[data-ts]');
+    if (b) { const x = ts.find(y => y.id === b.dataset.ts); x.status = b.dataset.act; renderPortal(); toast(`Timesheet for ${worker(x.wid).name} ${x.status === 'Pending' ? 'moved back to pending' : x.status.toLowerCase()}`); return; }
+    if (e.target.closest('#approveAll')) { ts.forEach(x => { if (x.status === 'Pending') x.status = 'Approved'; }); renderPortal(); toast('All pending timesheets approved'); return; }
+    if (e.target.closest('#clearReq')) { store.set('ivl-requests', []); renderPortal(); toast('Requests cleared'); }
+  });
+  const tabs = $$('.tab');
+  function selectTab(id) { tabs.forEach(t => { const on = t.id === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; $('#' + t.getAttribute('aria-controls')).hidden = !on; }); }
+  tabs.forEach((t, i) => { t.addEventListener('click', () => selectTab(t.id)); t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; selectTab(n.id); n.focus(); } }); });
+  selectTab('tOverview'); renderPortal();
+  setInterval(() => { if (!$('#pReq').hidden) renderPortal(); }, 15000);
+
+  /* ---- copy email ---- */
+  $('#mailAddr').textContent = SITE.email;
+  $('#copyMail').addEventListener('click', () => {
+    const txt = $('#mailAddr').textContent;
+    const sel = () => { const r = document.createRange(); r.selectNodeContents($('#mailAddr')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast('Address selected, press Ctrl+C to copy'); };
+    try { navigator.clipboard.writeText(txt).then(() => toast('Email address copied'), sel); } catch (e) { sel(); }
+  });
+
+  /* ---- smooth wheel scrolling on desktop ---- */
+  const maxY = () => document.documentElement.scrollHeight - innerHeight;
+  let target = scrollY, cur = scrollY, raf = 0, last = 0;
+  const step = now => {
+    const dt = last ? Math.min(.25, (now - last) / 1000) : 1 / 60; last = now;
+    cur += (target - cur) * (1 - Math.exp(-dt * 7));
+    if (Math.abs(target - cur) < .6) cur = target;
+    window.scrollTo(0, Math.round(cur * 10) / 10);
+    raf = cur !== target ? requestAnimationFrame(step) : (last = 0);
+  };
+  window.smoothTo = y => { if (REDUCE) { window.scrollTo(0, y); return; } if (!raf) cur = scrollY; target = clamp(y, 0, maxY()); if (!raf) raf = requestAnimationFrame(step); };
+  addEventListener('scroll', () => { if (!raf) cur = target = scrollY; }, { passive: true });
+  if (!REDUCE && matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    addEventListener('wheel', e => {
+      if (e.ctrlKey || document.body.classList.contains('modal-open') || document.body.style.overflow === 'hidden' || e.target.closest('.modal,.tbl-wrap,textarea,select')) return;
+      e.preventDefault();
+      if (!raf) cur = target = scrollY;
+      // normalise: every wheel notch moves about 110px, however the OS or mouse reports it;
+      // trackpad swipes keep their natural small steps; never run more than ~70% of a screen ahead
+      let d = e.deltaY * (e.deltaMode === 1 ? 36 : e.deltaMode === 2 ? innerHeight : 1);
+      const notch = Math.abs(d) >= 50;
+      d = notch ? Math.sign(d) * 110 : d * .9;
+      const lead = innerHeight * .7;
+      target = clamp(target + d, Math.max(0, scrollY - lead), Math.min(maxY(), scrollY + lead));
+      if (!raf) raf = requestAnimationFrame(step);
+    }, { passive: false });
+  }
+  // in-page links glide with the same engine
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a || a.hasAttribute('data-open')) return;
+    const id = a.getAttribute('href').slice(1); const t = id ? document.getElementById(id) : document.body;
+    if (!t) return; e.preventDefault();
+    smoothTo(id === 'top' || !id ? 0 : t.getBoundingClientRect().top + scrollY - 70);
+  });
+
+  return { openBook, openJoin };
+})();
+
+/* ================= 3D cursor ================= */
+const pointer = { over: false, x: 0, y: 0 };
+(() => {
+  addEventListener('pointermove', e => { pointer.x = e.clientX; pointer.y = e.clientY; pointer.over = !e.target.closest('.flow-panel,.nav,.mobile-menu,a,button,.paper,.cta,footer,.modal'); }, { passive: true });
+  document.addEventListener('pointerleave', () => pointer.over = false);
+  if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  const el = document.getElementById('cur'), ring = el.querySelector('.cur-ring'), sh = el.querySelector('.cur-shadow');
+  document.documentElement.classList.add('has-cur');
+  const dot = el.querySelector('.cur-dot');
+  let x = innerWidth / 2, y = innerHeight / 2, cx = x, cy = y, vx = 0, vy = 0, spin = 0, down = 1, fr = 0;
+  addEventListener('pointermove', e => {
+    if (e.pointerType && e.pointerType !== 'mouse') { el.classList.remove('on'); return; }
+    x = e.clientX; y = e.clientY;
+    const typing = !!e.target.closest('input:not([type=checkbox]):not([type=file]),textarea');
+    el.classList.toggle('on', !typing);
+    el.classList.toggle('hover', !!e.target.closest('a,button,.fhead,select,label,.tab,.sector,[data-open]'));
+    dot.style.transform = `translate3d(${x}px,${y}px,0)`;
+  }, { passive: true });
+  addEventListener('blur', () => el.classList.remove('on'));
+  addEventListener('pointerdown', () => down = .78); addEventListener('pointerup', () => down = 1);
+  document.addEventListener('pointerleave', () => el.classList.remove('on'));
+  let sc = 1;
+  (function tick() {
+    requestAnimationFrame(tick);
+    const nowT = performance.now(), cdt = Math.min(.1, (nowT - (tick.l || nowT)) / 1000) || 1 / 60; tick.l = nowT;
+    const kk = 1 - Math.exp(-cdt * 16), nx = cx + (x - cx) * kk, ny = cy + (y - cy) * kk;
+    vx += ((nx - cx) - vx) * .2; vy += ((ny - cy) - vy) * .2; cx = nx; cy = ny;
+    spin += REDUCE ? 0 : .15 + Math.min(Math.hypot(vx, vy), 20) * .08; sc += (down - sc) * .25;
+    el.style.setProperty('--cx', cx + 'px'); el.style.setProperty('--cy', cy + 'px');
+    ring.style.transform = `perspective(260px) rotateX(${clamp(-vy * 1.6, -40, 40)}deg) rotateY(${clamp(vx * 1.6, -40, 40)}deg) rotateZ(${spin}deg) scale(${sc})`;
+    sh.style.transform = `translate(${10 + vx * .7}px, ${24 + vy * .7}px) scale(${1 + Math.hypot(vx, vy) * .025})`;
+    if ((fr = (fr + 1) % 6) === 0) { const over = document.elementFromPoint(x, y); el.classList.toggle('light', !!(over && over.closest('.paper,.modal-card'))); }
+  })();
+})();
+
+/* ================= 3D ocean environment ================= */
+(() => {
+  const loader = document.getElementById('loader');
+  const finish = () => { loader.classList.add('done'); setTimeout(() => { document.body.classList.add('ready'); ui.refresh(); }, 150); };
+  if (!window.THREE) { finish(); return; }
+
+  const canvas = document.getElementById('scene');
+  const fades = [...document.querySelectorAll('.tilt,.vignette')];
+  const knots = document.getElementById('knots');
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); } catch (e) { finish(); return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.NoToneMapping;
+
+  const SEA = new THREE.Color('#0A1A33'), HAZE = new THREE.Color('#E8EEF2');
+  const scene = new THREE.Scene();
+  scene.background = HAZE;
+  scene.fog = new THREE.Fog(HAZE, 190, 520);
+  const camera = new THREE.PerspectiveCamera(19, 1, 1, 1400);
+
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0xc9d6df, 1.35));
+  const sun = new THREE.DirectionalLight(0xfff6ea, 1.75);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left: -80, right: 80, top: 80, bottom: -80, near: 1, far: 320 });
+  sun.shadow.bias = -0.0006;
+  scene.add(sun, sun.target);
+  const SUN_DIR = new THREE.Vector3(-34, 52, 30).normalize();
+
+  const lin = c => new THREE.Color(c).convertSRGBToLinear();
+  const M = (c, o = {}) => {
+    const opts = Object.assign({}, o, { roughness: 1, metalness: 0, envMapIntensity: 0 });
+    if (opts.emissive) opts.emissive = lin(opts.emissive);
+    const m = new THREE.MeshStandardMaterial(opts); const cc = new THREE.Color(c), hs = {}; cc.getHSL(hs); cc.setHSL(hs.h, Math.min(1, hs.s * 1.06), hs.l * .8 + .2); m.color = cc.convertSRGBToLinear(); return m;
+  };
+
+  /* ---------- procedural textures, painted on canvas ---------- */
+  let rs = 7; const rnd = () => (rs = (rs * 16807) % 2147483647) / 2147483647;
+  const maxAniso = renderer.capabilities.getMaxAnisotropy();
+  const canvasTex = (draw, w = 512, h = 512) => { const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d'); draw(g, w, h); const sm = document.createElement('canvas'); sm.width = Math.max(16, w >> 3); sm.height = Math.max(16, h >> 3); const sg = sm.getContext('2d'); sg.imageSmoothingQuality = 'high'; try { sg.filter = 'saturate(1.12) brightness(1.18)'; } catch (e) {} sg.drawImage(c, 0, 0, sm.width, sm.height); const t = new THREE.CanvasTexture(sm); t.encoding = THREE.sRGBEncoding; t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = maxAniso; return t; };
+  const speckle = (g, w, h, n, light = .05, dark = .07) => { for (let i = 0; i < n; i++) { g.fillStyle = rnd() < .5 ? `rgba(255,255,255,${light * rnd()})` : `rgba(0,0,0,${dark * rnd()})`; const z = 1 + rnd() * 3; g.fillRect(rnd() * w, rnd() * h, z, z); } };
+  const streaks = (g, w, h, n, rgb, a, maxLen = 140) => { for (let i = 0; i < n; i++) { const x = rnd() * w, y = rnd() * h, l = 20 + rnd() * maxLen; const gr = g.createLinearGradient(0, y, 0, y + l); gr.addColorStop(0, `rgba(${rgb},${a})`); gr.addColorStop(1, `rgba(${rgb},0)`); g.fillStyle = gr; g.fillRect(x, y, 1 + rnd() * 3, l); } };
+  const rust = (g, w, h, n, a = .35) => { for (let i = 0; i < n; i++) { const x = rnd() * w, y = rnd() * h, r = 4 + rnd() * 18; const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, `rgba(120,58,22,${a})`); gr.addColorStop(1, 'rgba(120,58,22,0)'); g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2); const l = 30 + rnd() * 90, sg = g.createLinearGradient(0, y, 0, y + l); sg.addColorStop(0, `rgba(110,52,20,${a * .7})`); sg.addColorStop(1, 'rgba(110,52,20,0)'); g.fillStyle = sg; g.fillRect(x - 1, y, 2 + rnd() * 2, l); } };
+
+  const texSteel = (base, o = {}) => canvasTex((g, w, h) => {
+    g.fillStyle = base; g.fillRect(0, 0, w, h); speckle(g, w, h, 2600, .05, .08);
+    g.fillStyle = 'rgba(0,0,0,.28)'; for (let y = 0; y < h; y += 128) g.fillRect(0, y, w, 2);
+    g.fillStyle = 'rgba(255,255,255,.07)'; for (let y = 2; y < h; y += 128) g.fillRect(0, y, w, 1);
+    g.fillStyle = 'rgba(0,0,0,.2)'; for (let x = 0; x < w; x += 170) g.fillRect(x, 0, 2, h);
+    streaks(g, w, h, 40, '0,0,0', .1); rust(g, w, h, o.rust ?? 14, o.rustA ?? .35);
+    if (o.band) { g.fillStyle = o.band; g.fillRect(0, h * (1 - o.bandH), w, h * o.bandH); g.fillStyle = 'rgba(255,255,255,.55)'; g.fillRect(0, h * (1 - o.bandH) - 4, w, 4); }
+  });
+  const texDeck = (base = '#5F5E59') => canvasTex((g, w, h) => {
+    g.fillStyle = base; g.fillRect(0, 0, w, h);
+    for (let y = 4; y < h; y += 10) for (let x = ((y / 10) % 2) * 5; x < w; x += 10) { g.fillStyle = 'rgba(255,255,255,.07)'; g.fillRect(x, y, 4, 1.5); }
+    speckle(g, w, h, 3000, .04, .1);
+    g.fillStyle = 'rgba(0,0,0,.35)'; for (let i = 0; i <= w; i += 128) { g.fillRect(i, 0, 2, h); g.fillRect(0, i, w, 2); }
+    for (let i = 0; i < 9; i++) { const x = rnd() * w, y = rnd() * h, r = 10 + rnd() * 40, gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, 'rgba(0,0,0,.25)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(x - r, y - r, 2 * r, 2 * r); }
+    g.strokeStyle = 'rgba(0,0,0,.18)'; for (let i = 0; i < 25; i++) { g.lineWidth = 1 + rnd() * 2; g.beginPath(); g.arc(rnd() * w, rnd() * h, 10 + rnd() * 60, rnd() * 6, rnd() * 6); g.stroke(); }
+    rust(g, w, h, 8, .25);
+  });
+  const texContainer = (color, id) => canvasTex((g, w, h) => {
+    g.fillStyle = color; g.fillRect(0, 0, w, h);
+    for (let x = 0; x < w; x += 16) { g.fillStyle = 'rgba(255,255,255,.10)'; g.fillRect(x, 0, 7, h); g.fillStyle = 'rgba(0,0,0,.16)'; g.fillRect(x + 8, 0, 6, h); }
+    g.fillStyle = 'rgba(0,0,0,.35)'; g.fillRect(0, 0, w, 22); g.fillRect(0, h - 22, w, 22); g.fillRect(0, 0, 16, h); g.fillRect(w - 16, 0, 16, h);
+    speckle(g, w, h, 1500, .05, .1); rust(g, w, h, 10, .3); streaks(g, w, h, 30, '0,0,0', .12, 100);
+    g.font = 'bold 34px monospace'; g.fillStyle = 'rgba(255,255,255,.85)'; g.fillText(id, 40, 80);
+    g.font = '20px monospace'; g.fillText('22G1   MAX 30480 KG', 40, 112);
+  }, 512, 282);
+  const texFacade = (wall, lit) => canvasTex((g, w, h) => {
+    g.fillStyle = wall; g.fillRect(0, 0, w, h); speckle(g, w, h, 2500, .05, .06);
+    for (let fy = 0; fy < 2; fy++) for (let fx = 0; fx < 2; fx++) {
+      const x = fx * 256 + 34, y = fy * 256 + 70, ww = 188, wh = 130;
+      g.fillStyle = 'rgba(0,0,0,.25)'; g.fillRect(x - 4, y - 4, ww + 8, wh + 8);
+      let gr;
+      if (rnd() < lit) { gr = g.createLinearGradient(0, y, 0, y + wh); gr.addColorStop(0, '#FFE2B0'); gr.addColorStop(1, '#D9954E'); }
+      else { gr = g.createLinearGradient(x, y, x + ww, y + wh); gr.addColorStop(0, '#20324A'); gr.addColorStop(.55, '#3E5A7A'); gr.addColorStop(1, '#162538'); }
+      g.fillStyle = gr; g.fillRect(x, y, ww, wh);
+      g.fillStyle = 'rgba(255,255,255,.16)'; g.beginPath(); g.moveTo(x + ww * .55, y); g.lineTo(x + ww * .75, y); g.lineTo(x + ww * .35, y + wh); g.lineTo(x + ww * .15, y + wh); g.fill();
+      g.fillStyle = 'rgba(55,55,58,.95)'; g.fillRect(x + ww / 2 - 2, y, 4, wh); g.fillRect(x, y + wh / 2 - 2, ww, 3);
+      const sg = g.createLinearGradient(0, y + wh, 0, y + wh + 60); sg.addColorStop(0, 'rgba(0,0,0,.18)'); sg.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = sg; g.fillRect(x + 10, y + wh + 4, ww - 20, 60);
+    }
+    g.fillStyle = 'rgba(0,0,0,.18)'; g.fillRect(0, 0, w, 14); g.fillRect(0, 256, w, 14);
+  });
+  const texRoof = () => canvasTex((g, w, h) => {
+    g.fillStyle = '#4C4F54'; g.fillRect(0, 0, w, h); speckle(g, w, h, 6000, .06, .12);
+    g.strokeStyle = 'rgba(255,255,255,.15)'; g.lineWidth = 6; g.strokeRect(3, 3, w - 6, h - 6);
+    for (let i = 0; i < 4; i++) { const x = 60 + rnd() * 360, y = 60 + rnd() * 360; g.fillStyle = '#8D9196'; g.fillRect(x, y, 40, 40); g.fillStyle = 'rgba(0,0,0,.4)'; g.fillRect(x + 40, y + 6, 12, 40); }
+  });
+  const texConcrete = () => canvasTex((g, w, h) => {
+    g.fillStyle = '#9A968E'; g.fillRect(0, 0, w, h); speckle(g, w, h, 5000, .06, .08);
+    g.fillStyle = 'rgba(0,0,0,.22)'; for (let i = 0; i <= w; i += 128) { g.fillRect(i, 0, 2, h); g.fillRect(0, i, w, 2); }
+    for (let i = 0; i < 12; i++) { const x = rnd() * w, y = rnd() * h, r = 15 + rnd() * 50, gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, 'rgba(40,35,30,.18)'); gr.addColorStop(1, 'rgba(40,35,30,0)'); g.fillStyle = gr; g.fillRect(x - r, y - r, 2 * r, 2 * r); }
+    g.fillStyle = 'rgba(240,200,60,.85)'; g.fillRect(0, 40, w, 6);
+  });
+  const texCabin = color => canvasTex((g, w, h) => {
+    g.fillStyle = color; g.fillRect(0, 0, w, h);
+    for (let y = 0; y < h; y += 14) { g.fillStyle = 'rgba(0,0,0,.1)'; g.fillRect(0, y, w, 3); }
+    speckle(g, w, h, 1200, .05, .08); streaks(g, w, h, 20, '0,0,0', .1, 90);
+    g.fillStyle = '#3B4048'; g.fillRect(w * .72, h * .28, w * .14, h * .72); g.fillStyle = '#C9CCD0'; g.fillRect(w * .83, h * .62, 6, 14);
+    const gx = w * .12, gy = h * .25; g.fillStyle = '#1E2C3E'; g.fillRect(gx, gy, w * .3, h * .3);
+    g.fillStyle = 'rgba(255,255,255,.2)'; g.fillRect(gx + 8, gy + 6, w * .08, h * .25);
+    g.strokeStyle = '#E8E8E8'; g.lineWidth = 6; g.strokeRect(gx, gy, w * .3, h * .3);
+  }, 512, 300);
+  const texModule = color => canvasTex((g, w, h) => {
+    g.fillStyle = color; g.fillRect(0, 0, w, h); speckle(g, w, h, 2500, .05, .08);
+    g.fillStyle = 'rgba(0,0,0,.2)'; for (let x = 0; x < w; x += 64) g.fillRect(x, 0, 2, h);
+    for (let i = 0; i < 3; i++) { const x = 40 + i * 160, y = 60; g.fillStyle = 'rgba(0,0,0,.35)'; g.fillRect(x, y, 90, 70); g.fillStyle = 'rgba(255,255,255,.12)'; for (let k = 0; k < 7; k++) g.fillRect(x + 4, y + 6 + k * 9, 82, 3); }
+    g.fillStyle = '#3A4048'; g.fillRect(360, 250, 70, 262);
+    for (let x = 0; x < w + 40; x += 40) { g.save(); g.translate(x, h - 26); g.transform(1, 0, -.8, 1, 0, 0); g.fillStyle = (x / 40) % 2 ? '#1E1E1E' : '#E2B53C'; g.fillRect(0, 0, 20, 26); g.fillStyle = (x / 40) % 2 ? '#E2B53C' : '#1E1E1E'; g.fillRect(20, 0, 20, 26); g.restore(); }
+    streaks(g, w, h, 30, '80,40,15', .15, 120);
+  });
+  const texShipHouse = () => canvasTex((g, w, h) => {
+    g.fillStyle = '#ECEBE6'; g.fillRect(0, 0, w, h); speckle(g, w, h, 2000, .04, .06);
+    for (let x = 40; x < w; x += 90) { g.fillStyle = '#1D2A3A'; g.beginPath(); g.arc(x, h * .4, 14, 0, 7); g.fill(); g.strokeStyle = '#9AA0A6'; g.lineWidth = 4; g.stroke(); }
+    streaks(g, w, h, 50, '110,55,20', .18, 160); g.fillStyle = '#5C6168'; g.fillRect(w * .78, h * .45, 50, h * .55);
+  });
+  const texBridge = () => canvasTex((g, w, h) => {
+    g.fillStyle = '#ECEBE6'; g.fillRect(0, 0, w, h); speckle(g, w, h, 1500, .04, .06);
+    const gr = g.createLinearGradient(0, h * .15, 0, h * .55); gr.addColorStop(0, '#2F4660'); gr.addColorStop(1, '#0F1A27'); g.fillStyle = gr; g.fillRect(0, h * .18, w, h * .38);
+    g.fillStyle = 'rgba(60,60,60,.9)'; for (let x = 0; x < w; x += 64) g.fillRect(x, h * .18, 5, h * .38);
+    g.fillStyle = 'rgba(255,255,255,.15)'; g.fillRect(0, h * .2, w, 6); streaks(g, w, h, 30, '110,55,20', .15, 100);
+  });
+  const texLighthouse = canvasTex((g, w, h) => {
+    g.fillStyle = '#EDEBE6'; g.fillRect(0, 0, w, h); g.fillStyle = '#B8322A'; g.fillRect(0, 90, w, 90); g.fillRect(0, 300, w, 90);
+    speckle(g, w, h, 3000, .05, .06); streaks(g, w, h, 60, '60,50,40', .12, 160);
+    g.fillStyle = '#2B2F36'; g.fillRect(240, 450, 34, 62); for (const y of [200, 420]) g.fillRect(250, y, 14, 22);
+  });
+  const texLeg = canvasTex((g, w, h) => {
+    g.fillStyle = '#D9AE3A'; g.fillRect(0, 0, w, h); speckle(g, w, h, 2500, .05, .08); streaks(g, w, h, 50, '90,50,20', .2, 160);
+    const gy = h * .66, gr = g.createLinearGradient(0, gy - 40, 0, gy + 20); gr.addColorStop(0, 'rgba(56,62,40,0)'); gr.addColorStop(1, 'rgba(56,62,40,1)'); g.fillStyle = gr; g.fillRect(0, gy - 40, w, h - gy + 40);
+    for (let i = 0; i < 900; i++) { g.fillStyle = `rgba(${30 + rnd() * 40},${45 + rnd() * 40},${25 + rnd() * 20},.8)`; const z = 2 + rnd() * 5; g.fillRect(rnd() * w, gy + rnd() * (h - gy), z, z); }
+  });
+  const texHeli = canvasTex((g, w, h) => {
+    g.fillStyle = '#2F3B37'; g.fillRect(0, 0, w, h); speckle(g, w, h, 5000, .05, .1);
+    g.strokeStyle = 'rgba(255,255,255,.12)'; g.lineWidth = 2;
+    for (let i = -w; i < w * 2; i += 36) { g.beginPath(); g.moveTo(i, 0); g.lineTo(i + h, h); g.stroke(); g.beginPath(); g.moveTo(i, h); g.lineTo(i + h, 0); g.stroke(); }
+    g.strokeStyle = 'rgba(255,255,255,.85)'; g.lineWidth = 10; g.beginPath(); g.arc(w / 2, h / 2, w / 2 - 14, 0, 7); g.stroke();
+  });
+  const texWorker = (top, bottom) => canvasTex((g, w, h) => { g.fillStyle = top; g.fillRect(0, 0, w, h * .62); g.fillStyle = bottom; g.fillRect(0, h * .62, w, h); g.fillStyle = '#E6E9EC'; g.fillRect(0, h * .18, w, h * .07); g.fillRect(0, h * .4, w, h * .07); g.fillRect(0, h * .78, w, h * .05); }, 128, 128);
+  const glowW = canvasTex((g, w, h) => { const gr = g.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, w / 2); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(.18, 'rgba(255,255,255,.8)'); gr.addColorStop(.45, 'rgba(255,255,255,.18)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, w, h); }, 128, 128);
+
+  // textured material whose UVs are scaled to world size by box(): tile = metres per texture repeat
+  const TM = (tex, o = {}, tx = 4, ty) => { const m = M('#FFFFFF', Object.assign({ map: tex }, o)); m.userData.tile = [tx, ty || tx]; return m; };
+
+  const white = M('#F2F0EC'), white2 = M('#D9D6D0'), steel = M('#3A424D', { roughness: .7 }), hullM = M('#232A33', { roughness: .6 }),
+        deckM = M('#A9A49B'), dark = M('#14181E', { roughness: .6 }), glassM = M('#1C2A3C', { roughness: .08, metalness: .6, envMapIntensity: 1.4 }),
+        acc = M('#FF5A1F', { emissive: '#FF5A1F', emissiveIntensity: .25, roughness: .55 }), accSoft = M('#FF9A6B'),
+        rock = M('#5A5046', { flatShading: true, roughness: 1 }), rock2 = M('#7A6E60', { flatShading: true, roughness: 1 }),
+        moss = M('#4F5F35', { flatShading: true, roughness: 1 }), yellow = M('#F2C14E', { roughness: .6 }), legM = M('#E8E3DA');
+  const steelT = TM(texSteel('#353C45'), { roughness: .7, metalness: .35 }, 6);
+  const deckT = TM(texDeck(), { roughness: .8, metalness: .2 }, 6);
+  const concT = TM(texConcrete(), { roughness: .95 }, 6);
+  const roofT = TM(texRoof(), { roughness: .95 }, 4);
+  const facadeA = TM(texFacade('#DAD5CC', .35), { roughness: .7 }, 4), facadeB = TM(texFacade('#C4C9CE', .2), { roughness: .7 }, 4);
+  const bldA = [facadeA, facadeA, roofT, roofT, facadeA, facadeA], bldB = [facadeB, facadeB, roofT, roofT, facadeB, facadeB];
+  const cont = [['#C2491D', 'IVLU 402118'], ['#2F5D8A', 'IVLU 311742'], ['#C9CCCF', 'IVLU 580063'], ['#3F6B4A', 'IVLU 227409'], ['#8E2F2A', 'IVLU 619035']]
+    .map(([c, id]) => TM(texContainer(c, id), { roughness: .6, metalness: .25 }, 2, 1.1));
+  const cabinW = TM(texCabin('#E4E2DD'), { roughness: .7 }, 2.4, 1.4), cabinO = TM(texCabin('#D9601F'), { roughness: .7 }, 2.4, 1.4), cabinG = TM(texCabin('#AEB4B9'), { roughness: .7 }, 2.4, 1.4);
+  const modW = TM(texModule('#D6D9DC'), { roughness: .65, metalness: .2 }, 3), modG = TM(texModule('#9AA1A8'), { roughness: .65, metalness: .2 }, 3), modO = TM(texModule('#D65E22'), { roughness: .65, metalness: .2 }, 3);
+  const orangeSteel = TM(texSteel('#D2561F', { rust: 10, rustA: .25 }), { roughness: .55, metalness: .2 }, 3);
+  const yellowSteel = TM(texSteel('#D4A93A', { rust: 12 }), { roughness: .6, metalness: .2 }, 3);
+  const greySteel = TM(texSteel('#8A9096', { rust: 8, rustA: .2 }), { roughness: .6, metalness: .3 }, 3);
+  const whiteSteel = TM(texSteel('#D9D9D5', { rust: 10, rustA: .22 }), { roughness: .6, metalness: .2 }, 3);
+  const shipHouse = TM(texShipHouse(), { roughness: .6 }, 2, 1.5), bridgeM = TM(texBridge(), { roughness: .4, metalness: .1 }, 2, .9);
+  // hull sides: a clean vertical paint scheme (antifouling red below the waterline, black topsides, orange sheer line),
+  // mapped by height only so the curved bow can never stretch it
+  const hullSideTex = canvasTex((g, w, h) => {
+    g.fillStyle = '#8A2A20'; g.fillRect(0, 0, w, h * .5);
+    g.fillStyle = '#E9E6E0'; g.fillRect(0, h * .5, w, h * .016);
+    g.fillStyle = '#1B2027'; g.fillRect(0, h * .516, w, h * .41);
+    g.fillStyle = '#E4561F'; g.fillRect(0, h * .926, w, h * .04);
+    g.fillStyle = '#C9CCCF'; g.fillRect(0, h * .966, w, h * .034);
+  }, 4, 512);
+  hullSideTex.repeat.set(1, 1 / 1.5); hullSideTex.offset.set(0, 1 / 3);
+  const shipDeckTex = texDeck('#6A6862'); shipDeckTex.repeat.set(.3, .3);
+  const lhM = M('#FFFFFF', { map: texLighthouse, roughness: .6 }), legT = M('#FFFFFF', { map: texLeg, roughness: .6, metalness: .2 }), heliT = M('#FFFFFF', { map: texHeli, roughness: .8 });
+  const hiVis = M('#FFFFFF', { map: texWorker('#FF6B1A', '#2B3443'), roughness: .7 }), workNavy = M('#FFFFFF', { map: texWorker('#2E3E5C', '#232A36'), roughness: .8 }),
+        workGrey = M('#FFFFFF', { map: texWorker('#7C838C', '#3A3F47'), roughness: .8 }), skin = M('#B98463', { roughness: .8 });
+
+  const box = (w, h, d, mat) => {
+    const geo = new THREE.BoxGeometry(w, h, d);
+    const tl = (Array.isArray(mat) ? mat : [mat]).find(x => x.userData && x.userData.tile);
+    if (tl) { const [tx, ty] = tl.userData.tile, uv = geo.attributes.uv, dims = [[d, h], [d, h], [w, d], [w, d], [w, h], [w, h]];
+      for (let f = 0; f < 6; f++) for (let v = 0; v < 4; v++) { const i = f * 4 + v; uv.setXY(i, uv.getX(i) * dims[f][0] / tx, uv.getY(i) * dims[f][1] / ty); } }
+    const m = new THREE.Mesh(geo, mat); m.castShadow = m.receiveShadow = true; return m;
+  };
+  const cyl = (rt, rb, h, mat, seg = 20) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, seg), mat); m.castShadow = m.receiveShadow = true; return m; };
+  const put = (parent, m, x, y, z) => { m.position.set(x, y, z); parent.add(m); return m; };
+  // strut between two local points (for lattice towers and braces)
+  const strut = (parent, a, b, mat, th = .14) => { const m = box(th, th, a.distanceTo(b), mat); m.position.copy(a).add(b).multiplyScalar(.5); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), b.clone().sub(a).normalize()); parent.add(m); return m; };
+
+  /* ---------- navigation and work lights ---------- */
+  const lights = [];
+  function light(parent, x, y, z, color, size, mode = 'steady', ph = 0) {
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowW, color: lin(color), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+    sp.scale.setScalar(size); put(parent, sp, x, y, z); lights.push({ s: sp, mode, ph }); return sp;
+  }
+
+  const NOISE = `
+    float hash(vec2 p){ p = fract(p*vec2(123.34, 456.21)); p += dot(p, p+45.32); return fract(p.x*p.y); }
+    float noise(vec2 p){ vec2 i=floor(p), f=fract(p); vec2 u=f*f*(3.-2.*f);
+      return mix(mix(hash(i),hash(i+vec2(1,0)),u.x), mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x), u.y); }
+    float fbm(vec2 p){ float v=0., a=.5; for(int i=0;i<4;i++){ v+=a*noise(p); p*=2.03; a*=.5; } return v; }`;
+  const WAVES = `
+    float H(vec2 p){
+      return .32*sin(dot(p, vec2(.857,.514))*.30 + uTime*1.0)
+           + .18*sin(dot(p, vec2(-.371,.928))*.52 + uTime*1.5)
+           + .08*sin(dot(p, vec2(.936,-.351))*1.25 + uTime*2.3)
+           + .05*sin(dot(p, vec2(-.6,-.8))*1.9 + uTime*2.9);
+    }`;
+  const CLOUD = `
+    const float CLOUD_H = 46.;
+    float cloudD(vec2 q, float t){
+      vec2 w = q*.011 + vec2(t*.0035, t*.0016);
+      float n = fbm(w + vec2(fbm(w*2.1 + 3.1), fbm(w*1.9 - 1.7))*.9);
+      float d = smoothstep(.52, .8, n);
+      return d * (.55 + .45*fbm(q*.07 + t*.01));
+    }`;
+  const waveH = (x, z, t) =>
+      .32 * Math.sin((x * .857 + z * .514) * .30 + t * 1.0)
+    + .18 * Math.sin((x * -.371 + z * .928) * .52 + t * 1.5)
+    + .08 * Math.sin((x * .936 + z * -.351) * 1.25 + t * 2.3)
+    + .05 * Math.sin((x * -.6 + z * -.8) * 1.9 + t * 2.9);
+
+  /* ---------- Ocean: wave displacement, streaky whitecaps, sun glint, fresnel, fog ---------- */
+  const oceanU = {
+    uTime: { value: 0 }, uDeep: { value: new THREE.Color('#030B1E') }, uShallow: { value: new THREE.Color('#123566') },
+    uFoam: { value: new THREE.Color('#E4EEFA') }, uFog: { value: HAZE.clone() }, uFogNear: { value: 150 }, uFogFar: { value: 420 },
+    uSun: { value: SUN_DIR.clone() },
+    uIsl: { value: [[1, 1, 14], [-30, -34, 7], [36, 22, 5], [-24, 14, 3.5], [-50, 8, 8], [64, 16, 6.5], [-10, -64, 9], [88, -30, 7], [4, 36, 5]].map(a => new THREE.Vector3(...a)) }
+  };
+  const ocean = new THREE.Mesh(new THREE.PlaneGeometry(700, 700, 220, 220), new THREE.ShaderMaterial({
+    uniforms: oceanU,
+    vertexShader: `
+      uniform float uTime; varying vec3 vW; varying float vH; varying vec3 vN;
+      ${WAVES}
+      void main(){
+        vec4 w = modelMatrix*vec4(position,1.);
+        float h = H(w.xz), hx = H(w.xz+vec2(.25,0.)), hz = H(w.xz+vec2(0.,.25));
+        w.y += h; vH = h; vW = w.xyz;
+        vN = normalize(vec3(-(hx-h)/.25, 1., -(hz-h)/.25));
+        gl_Position = projectionMatrix*viewMatrix*w;
+      }`,
+    fragmentShader: `
+      uniform float uTime, uFogNear, uFogFar; uniform vec3 uDeep, uShallow, uFoam, uFog, uSun; uniform vec3 uIsl[9];
+      varying vec3 vW; varying float vH; varying vec3 vN;
+      ${NOISE}
+      ${CLOUD}
+      float h1(float n){ return fract(sin(n*91.345)*47453.5453); }
+      void main(){
+        vec2 p = vW.xz;
+        vec2 wind = vec2(.857,.514), perp = vec2(-.514,.857);
+        // a spectrum of 24 wind waves: long swell down to small chop, each moving at its own deep-water speed
+        vec2 grad = vec2(0.); float crest = 0., hs = 0.;
+        for (int i = 0; i < 24; i++) {
+          float fi = float(i), u = fi/23.;
+          float lambda = mix(11., .38, pow(u, .75));
+          float ang = (h1(fi + 1.3) - .5) * mix(.9, 2.0, u);
+          vec2 d = vec2(wind.x*cos(ang) - wind.y*sin(ang), wind.x*sin(ang) + wind.y*cos(ang));
+          float k = 6.2831/lambda, w = sqrt(9.8*k)*.6, a = lambda*mix(.006, .012, u);
+          float ph = k*dot(d, p) - w*uTime + h1(fi + 7.1)*6.2831;
+          float sn = sin(ph);
+          hs += a*sn;
+          grad += a*k*cos(ph)*d;
+          crest += a*k*pow(max(sn, 0.), 8.);
+        }
+        float hv = hs*1.25 + vH*.35;
+        vec3 deepC = vec3(.50,.76,.90), lightC = vec3(.64,.86,.95);
+        vec3 col = mix(deepC, lightC, smoothstep(-.4, .5, hv));
+        float sh = 0.;
+        for (int i = 0; i < 9; i++) { float dd = length(p - uIsl[i].xy) - uIsl[i].z; sh = max(sh, 1. - smoothstep(-2., 7., dd)); }
+        col = mix(col, vec3(.76,.93,.93), sh*.55);
+        float fn = noise(p*3.2 + vec2(-uTime*.35, uTime*.12))*.6 + noise(p*8. + uTime*.2)*.4;
+        float foam = smoothstep(.66, .72, crest*1.05 + (fn - .5)*.3);
+        col = mix(col, vec3(1.), foam*.75);
+        float dist = length(cameraPosition - vW);
+        col = mix(col, uFog, smoothstep(uFogNear, uFogFar, dist));
+        gl_FragColor = vec4(col, 1.);
+      }`
+  }));
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(800, 32, 16), new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { uHaze: { value: HAZE.clone() }, uTop: { value: new THREE.Color('#071430') }, uSunC: { value: new THREE.Color('#F6D9A8') }, uSun: { value: SUN_DIR.clone() } },
+    vertexShader: `varying vec3 vD; void main(){ vD = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+    fragmentShader: `uniform vec3 uHaze, uTop, uSunC, uSun; varying vec3 vD;
+      void main(){ float h = clamp(vD.y, 0., 1.);
+        vec3 c = mix(uHaze, uTop, smoothstep(0., .45, h));
+        float s = pow(max(dot(vD, normalize(uSun)), 0.), 24.);
+        c += uSunC * s * .5 + vec3(.15,.12,.08) * pow(1. - h, 8.);
+        gl_FragColor = vec4(c, 1.); }`
+  }));
+  sky.visible = false;
+  ocean.rotation.x = -Math.PI / 2;
+  ocean.position.set(30, 0, -26);
+  scene.add(ocean);
+
+  /* ---------- Shoreline foam ring for any outline r(θ) ---------- */
+  const foamU = [];
+  function foamRing(cx, cz, rFn, inner = .96, outerAdd = 2.2) {
+    const N = 160, pos = [], edge = [], idx = [];
+    for (let i = 0; i <= N; i++) {
+      const a = i / N * Math.PI * 2, r = rFn(a);
+      pos.push(cx + Math.cos(a) * r * inner, .08, cz + Math.sin(a) * r * inner); edge.push(0);
+      pos.push(cx + Math.cos(a) * (r + outerAdd), .08, cz + Math.sin(a) * (r + outerAdd)); edge.push(1);
+      if (i < N) { const k = i * 2; idx.push(k, k + 1, k + 2, k + 1, k + 3, k + 2); }
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('aEdge', new THREE.Float32BufferAttribute(edge, 1));
+    g.setIndex(idx);
+    const u = { uTime: { value: 0 } }; foamU.push(u);
+    const m = new THREE.Mesh(g, new THREE.ShaderMaterial({
+      uniforms: u, transparent: true, depthWrite: false,
+      vertexShader: `uniform float uTime; attribute float aEdge; varying float vE; varying vec2 vP; ${WAVES} void main(){ vE=aEdge; vP=position.xz; vec3 pp = position; pp.y += H(position.xz) + .04; gl_Position=projectionMatrix*modelViewMatrix*vec4(pp,1.); }`,
+      fragmentShader: `uniform float uTime; varying float vE; varying vec2 vP; ${NOISE}
+        void main(){
+          float bands = .55 + .45*sin(vE*14. - uTime*2.2 + noise(vP*.8)*4.);
+          float n = noise(vP*2.4 + uTime*.4);
+          float a = (1.-vE) * (1.-vE) * smoothstep(.2,.7, n*bands + (1.-vE)*.5);
+          gl_FragColor = vec4(vec3(.93,.96,1.), a*.95);
+        }`
+    }));
+    scene.add(m); return m;
+  }
+
+  /* ---------- Island builder: extruded low-poly rock, mossy top, rocky hill, boulders ---------- */
+  // value noise in JS (same idea as the shader) for terrain
+  const hash2 = (x, y) => { const v = Math.sin(x * 127.1 + y * 311.7) * 43758.5453; return v - Math.floor(v); };
+  const vnoise = (x, y) => { const xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi, u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
+    const a = hash2(xi, yi), b = hash2(xi + 1, yi), c = hash2(xi, yi + 1), d = hash2(xi + 1, yi + 1); return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v; };
+  const fbm2 = (x, y, o = 5) => { let v = 0, a = .5; for (let i = 0; i < o; i++) { v += a * vnoise(x, y); x *= 2.03; y *= 2.03; a *= .5; } return v; };
+  const C = h => new THREE.Color(h);
+  const cGrass = C('#5FB074'), cGrass2 = C('#86CC84'), cDry = C('#C8D98E'), cWet = C('#9BB3AE'), cRockD = C('#8E8F9A'), cRockL = C('#C9C8CE'), cMoss = C('#6DBB7C'), cMoss2 = C('#9ED68E'), cPave = C('#DAD8D2');
+
+  function island(cx, cz, R, seed, height = 3, plateau = null) {
+    const rFn = a => R * (1 + .24 * Math.sin(3 * a + seed) + .12 * Math.sin(7 * a + seed * 2) + .06 * Math.sin(13 * a + seed * 3));
+    const heightAt = (x, z) => {
+      const r = Math.hypot(x, z), a = Math.atan2(z, x);
+      const e = rFn(a) * (1 + (fbm2(x * .25 + seed, z * .25 - seed, 3) - .5) * .35);
+      let inside = 1 - smooth(clamp((r - e * .8) / (e * .24)));
+      let pf = 0;
+      if (plateau) { pf = 1 - smooth(clamp((Math.hypot(x - plateau.x, z - plateau.z) - plateau.r * .7) / (plateau.r * .3))); inside = Math.max(inside, pf); }
+      let h = inside * (1 + fbm2(x * .1 + seed * 3, z * .1, 4) * height * 1.5 + Math.pow(fbm2(x * .32 + seed, z * .32 + seed, 4), 2) * 2.6) - (1 - inside) * 2;
+      if (plateau) h += (plateau.h - h) * pf;
+      return { h, pf };
+    };
+    const S = R * 3.2, seg = R > 9 ? 170 : 90;
+    const geo = new THREE.PlaneGeometry(S, S, seg, seg); geo.rotateX(-Math.PI / 2);
+    const pa = geo.attributes.position, cols = new Float32Array(pa.count * 3), col = new THREE.Color();
+    for (let i = 0; i < pa.count; i++) {
+      const x = pa.getX(i), z = pa.getZ(i), { h, pf } = heightAt(x, z);
+      pa.setY(i, h);
+      const n = fbm2(x * .7 + 9, z * .7, 4), crack = vnoise(x * 3.1, z * 3.1);
+      col.copy(cRockD).lerp(cRockL, clamp(n * 1.3 - .15));
+      if (crack > .82) col.multiplyScalar(.7);
+      const m = smooth(clamp((fbm2(x * .16 + 5, z * .16 - 3, 4) - .22) / .2)) * smooth(clamp((h - .5) / .9));
+      const gn = fbm2(x * .9 - 3, z * .9 + 7, 3);
+      col.lerp(gn > .56 ? cGrass2 : gn > .44 ? cGrass : cMoss, m * .93);
+      if (m > .4 && crack < .2) col.lerp(cDry, .45);
+      col.lerp(cWet, 1 - smooth(clamp((h + .1) / .9)));
+      col.lerp(cPave, pf * pf * .45);
+      const lc = col.clone().convertSRGBToLinear(); cols.set([lc.r, lc.g, lc.b], i * 3);
+    }
+    geo.setAttribute('color', new THREE.BufferAttribute(cols, 3));
+    geo.computeVertexNormals();
+    const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1, metalness: 0 }));
+    mesh.castShadow = mesh.receiveShadow = true;
+    const g = new THREE.Group(); g.add(mesh); g.position.set(cx, 0, cz); scene.add(g);
+    foamRing(cx, cz, a => rFn(a) * .9, .9, 2.6);
+    return { g, heightAt: (x, z) => heightAt(x - cx, z - cz).h };
+  }
+
+  /* Zones: harbour island · training barge · crew pontoon · offshore platform */
+  const Z = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(42, 0, -8), new THREE.Vector3(18, 0, -44), new THREE.Vector3(64, 0, -58)];
+
+  /* Zone 0 — harbour island */
+  const home = island(0, 0, 12.5, 1.3, 3, { x: 3, z: 4, r: 11, h: 3 });
+  const isA = island(-30, -34, 6, 4.1, 2.2);     // small outlying islets for scale
+  const isB = island(36, 22, 4.5, 2.7, 1.8);
+  const isC = island(-24, 14, 3, 5.5, 1.4);
+  const isD = island(-50, 8, 7, 6.3, 2.6), isE = island(64, 16, 5.5, 7.7, 2), isF = island(-10, -64, 8, 8.9, 2.8),
+        isG = island(88, -30, 6, 9.6, 2.2), isH = island(4, 36, 4.5, 3.3, 1.8), isI = island(-40, -64, 3.5, 2.2, 1.4);
+  const TOP = 3;
+  const harbour = new THREE.Group(); scene.add(harbour);
+  put(harbour, box(5, 3, 4, bldA), 4, TOP + 1.5, 3);
+  put(harbour, box(5.3, .3, 4.3, roofT), 4, TOP + 3.1, 3);
+  put(harbour, box(2, 1.2, 1.6, greySteel), 3, TOP + 3.8, 2.5);
+  put(harbour, box(.9, .5, .9, greySteel), 5.3, TOP + 3.5, 1.9);
+  put(harbour, cyl(.04, .04, 2.4, dark, 6), 5.8, TOP + 4.4, 4.4);
+  light(harbour, 5.8, TOP + 5.7, 4.4, '#FF2A1A', 1.6, 'blink', .3);
+  put(harbour, box(3, 2, 2.6, bldB), -1, TOP + 1, 6);
+  put(harbour, box(2.4, 1.6, 2, bldA), -4.5, TOP + .8, 5.5);
+  [[8.5, 6, 0, 0], [8.5, 7.4, 2, 0], [10.8, 6, 1, 0], [10.8, 7.4, 3, 0], [10.8, 6.7, 4, 1.1]].forEach(([x, z, ci, y2]) => put(harbour, box(2, 1.1, 1.2, cont[ci]), x, TOP + .55 + y2, z));
+  put(harbour, box(14, .7, 3.6, concT), 18, .9, 3.5);
+  for (let i = 0; i < 6; i++) { put(harbour, cyl(.25, .25, 2.6, legT, 8), 12 + i * 2.4, -.4, 2); put(harbour, cyl(.25, .25, 2.6, legT, 8), 12 + i * 2.4, -.4, 5); }
+  for (let i = 0; i < 5; i++) { put(harbour, cyl(.13, .17, .35, dark, 8), 12.6 + i * 2.8, 1.42, 5.05); put(harbour, cyl(.28, .28, .8, dark, 10), 12.6 + i * 2.8, .7, 5.45); }
+  [13, 17.5, 22].forEach((x, i) => { put(harbour, cyl(.05, .07, 2.6, greySteel, 6), x, 2.55, 1.9); put(harbour, box(.5, .12, .25, dark), x, 3.85, 2.05); light(harbour, x, 3.75, 2.15, '#FFC98A', 2.2, 'flood', i); });
+  const qc = new THREE.Group(); put(harbour, qc, 20, 1.25, 1.6);
+  put(qc, box(.4, 6, .4, orangeSteel), -1, 3, 0); put(qc, box(.4, 6, .4, orangeSteel), 1, 3, 0);
+  put(qc, box(2.6, .4, .4, orangeSteel), 0, 5.6, 0);
+  put(qc, box(.4, .4, 7, orangeSteel), 0, 6.1, -1.5);
+  put(qc, box(.9, .7, .9, greySteel), 0, 5.7, -3.6);
+  light(qc, 0, 6.5, -4.9, '#FF2A1A', 1.4, 'blink', 1.1);
+  const lh = new THREE.Group(); put(scene, lh, -7, home.heightAt(-7, -5) - .3, -5);
+  put(lh, cyl(.9, 1.2, 6, lhM, 24), 0, 3, 0);
+  put(lh, cyl(1.35, 1.35, .25, greySteel, 24), 0, 6.1, 0);
+  const rail = new THREE.Mesh(new THREE.TorusGeometry(1.3, .035, 4, 40), dark); rail.rotation.x = Math.PI / 2; put(lh, rail, 0, 6.55, 0);
+  put(lh, cyl(.7, .7, 1.1, glassM, 16), 0, 6.85, 0);
+  put(lh, new THREE.Mesh(new THREE.ConeGeometry(.95, .9, 16), M('#B8322A', { roughness: .5 })), 0, 7.85, 0);
+  put(lh, cyl(.05, .05, .5, dark, 6), 0, 8.5, 0);
+  const lamp = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowW, color: lin('#FFE3B0'), transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  lamp.scale.setScalar(4); put(lh, lamp, 0, 6.85, 0);
+  // two opposed light beams sweeping round
+  const beamGeo = new THREE.ConeGeometry(4.2, 36, 32, 1, true); beamGeo.translate(0, -18, 0); beamGeo.rotateZ(Math.PI / 2);
+  const beamMat = new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+    vertexShader: `varying float vL; varying float vF; void main(){ vL = position.x/36.; vec4 mv = modelViewMatrix*vec4(position,1.); vF = abs(dot(normalize(normalMatrix*normal), normalize(-mv.xyz))); gl_Position = projectionMatrix*mv; }`,
+    fragmentShader: `varying float vL; varying float vF; void main(){ float a = pow(1. - clamp(vL, 0., 1.), 1.6) * pow(vF, 2.2) * .5; gl_FragColor = vec4(vec3(1.,.9,.72)*a, a); }` });
+  const beamPivot = new THREE.Group(); beamPivot.position.y = 6.85; lh.add(beamPivot);
+  [0, Math.PI].forEach(r => { const b = new THREE.Mesh(beamGeo, beamMat); b.rotation.y = r; b.rotation.z = -.05; beamPivot.add(b); });
+  /* vegetation: conifers, broadleaf clumps and bushes, instanced */
+  {
+    const veg = { canopy: [], cone: [], trunk: [], bush: [] };
+    const greens = ['#3C5A28', '#4A6B2E', '#5A7A34', '#33502A', '#6A8540', '#415F2C'];
+    const plant = (isl, cx, cz, R, n, avoid = []) => {
+      let tries = 0, placed = 0;
+      while (placed < n && tries < n * 25) {
+        tries++;
+        const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * R * 1.1, x = cx + Math.cos(a) * r, z = cz + Math.sin(a) * r;
+        const y = isl.heightAt(x, z);
+        if (y < .85 || avoid.some(([ax, az, ar]) => Math.hypot(x - ax, z - az) < ar)) continue;
+        const kind = rnd(), s = .55 + rnd() * .75;
+        if (kind < .38) { veg.cone.push([x, y + 1.3 * s, z, s]); veg.cone.push([x, y + 2.1 * s, z, s * .7]); veg.trunk.push([x, y, z, s * .9]); }
+        else if (kind < .76) { veg.canopy.push([x, y + 1.15 * s, z, s]); if (rnd() < .65) veg.canopy.push([x + (rnd() - .5) * s, y + .9 * s, z + (rnd() - .5) * s, s * .72]); veg.trunk.push([x, y, z, s]); }
+        else veg.bush.push([x, y + .18, z, .45 + rnd() * .5]);
+        placed++;
+      }
+    };
+    plant(home, 0, 0, 13, 135, [[3, 4, 8.6], [-7, -5, 2.2], [20, 3, 9], [10.4, -1.6, 4.4]]);
+    plant(isA, -30, -34, 6.5, 48); plant(isB, 36, 22, 5, 28); plant(isC, -24, 14, 3.4, 15);
+    plant(isD, -50, 8, 7.5, 62); plant(isE, 64, 16, 6, 36); plant(isF, -10, -64, 8.5, 72); plant(isG, 88, -30, 6.5, 42); plant(isH, 4, 36, 5, 28); plant(isI, -40, -64, 3.8, 12);
+    const dummy = new THREE.Object3D(), col = new THREE.Color();
+    const leafMat = new THREE.MeshStandardMaterial({ roughness: .92, flatShading: true });
+    const inst = (geo, mat, arr, fn, tint = true) => {
+      if (!arr.length) return;
+      const im = new THREE.InstancedMesh(geo, mat, arr.length); im.castShadow = true; im.receiveShadow = true;
+      arr.forEach((e, i) => { fn(dummy, e, i); dummy.updateMatrix(); im.setMatrixAt(i, dummy.matrix); if (tint) { col.set(greens[(i * 7) % greens.length]).convertSRGBToLinear().multiplyScalar(.8 + ((i * 37) % 10) / 25); im.setColorAt(i, col); } });
+      scene.add(im);
+    };
+    inst(new THREE.IcosahedronGeometry(1, 1), leafMat, veg.canopy, (d, [x, y, z, s]) => { d.position.set(x, y, z); d.scale.set(s * .95, s * .8, s * .95); d.rotation.set(0, x * 2, 0); });
+    inst(new THREE.ConeGeometry(.75, 1.9, 7), leafMat, veg.cone, (d, [x, y, z, s]) => { d.position.set(x, y, z); d.scale.setScalar(s); d.rotation.set(0, z, 0); });
+    inst(new THREE.IcosahedronGeometry(.6, 1), leafMat, veg.bush, (d, [x, y, z, s]) => { d.position.set(x, y, z); d.scale.set(s * 1.35, s * .65, s * 1.2); d.rotation.set(0, x * 3, 0); });
+    inst(new THREE.CylinderGeometry(.08, .12, 1, 6), M('#4A3726', { roughness: 1 }), veg.trunk, (d, [x, y, z, s]) => { d.position.set(x, y + .5 * s, z); d.scale.setScalar(s); d.rotation.set(0, 0, 0); }, false);
+  }
+
+  /* ---------- people: jointed low-poly workers with simple animation ---------- */
+  const vestM = M('#FF6A1A', { roughness: .6 }), navyM = M('#2E3E5C', { roughness: .8 }), greyM = M('#7C838C', { roughness: .8 }),
+        trouserM = M('#26303F', { roughness: .85 }), bootM = M('#16181C', { roughness: .7 }), stripeM = M('#E6E9EC', { roughness: .3, metalness: .4 }),
+        hatW = M('#F4F4F2', { roughness: .4 }), hatY = M('#F2C14E', { roughness: .45 });
+  function makeWorker(top = navyM, hat = hatY) {
+    const g = new THREE.Group(), body = new THREE.Group(); g.add(body);
+    const torso = box(.34, .42, .22, top); torso.position.y = .8; body.add(torso);
+    const stripe = box(.35, .04, .23, stripeM); stripe.position.y = .73; stripe.castShadow = false; body.add(stripe);
+    const pelvis = box(.3, .12, .2, trouserM); pelvis.position.y = .55; pelvis.castShadow = false; body.add(pelvis);
+    const head = new THREE.Mesh(new THREE.SphereGeometry(.11, 10, 8), skin); head.position.y = 1.13; body.add(head);
+    const helmet = new THREE.Mesh(new THREE.SphereGeometry(.125, 10, 6, 0, Math.PI * 2, 0, Math.PI / 2), hat); helmet.position.y = 1.16; body.add(helmet);
+    const brim = new THREE.Mesh(new THREE.CylinderGeometry(.15, .15, .02, 12), hat); brim.position.set(0, 1.16, .02); body.add(brim);
+    const limb = (x, y, len, w, mat, foot) => {
+      const pv = new THREE.Group(); pv.position.set(x, y, 0);
+      const l = box(w, len, w, mat); l.position.y = -len / 2; l.castShadow = false; pv.add(l);
+      if (foot) { const f = box(w + .02, .07, w + .1, bootM); f.position.set(0, -len - .02, .04); f.castShadow = false; pv.add(f); }
+      else { const hd = new THREE.Mesh(new THREE.SphereGeometry(.05, 6, 5), skin); hd.position.y = -len - .03; pv.add(hd); }
+      body.add(pv); return pv;
+    };
+    const legL = limb(-.08, .52, .48, .11, trouserM, true), legR = limb(.08, .52, .48, .11, trouserM, true);
+    const armL = limb(-.225, .98, .42, .085, top), armR = limb(.225, .98, .42, .085, top);
+    return { g, body, torso, legL, legR, armL, armR, crate: null };
+  }
+  const setTop = (w, mat) => { w.torso.material = mat; w.armL.children[0].material = mat; w.armR.children[0].material = mat; };
+  function pose(w, mode, t, ph = 0) {
+    const s = Math.sin(t * 7 + ph);
+    w.legL.rotation.set(0, 0, 0); w.legR.rotation.set(0, 0, 0); w.armL.rotation.set(0, 0, 0); w.armR.rotation.set(0, 0, 0);
+    w.body.position.y = 0; w.body.rotation.set(0, 0, 0);
+    if (mode === 'walk' || mode === 'carry') {
+      w.legL.rotation.x = s * .55; w.legR.rotation.x = -s * .55;
+      w.body.position.y = Math.abs(Math.cos(t * 7 + ph)) * .035;
+      if (mode === 'walk') { w.armL.rotation.x = -s * .45; w.armR.rotation.x = s * .45; }
+      else { w.armL.rotation.x = w.armR.rotation.x = -1.2; w.armL.rotation.z = .15; w.armR.rotation.z = -.15; }
+    } else if (mode === 'hammer') {
+      const k = Math.max(0, Math.sin(t * 5 + ph));
+      w.armR.rotation.x = -1.0 - k * 1.4; w.armL.rotation.x = -.7; w.body.rotation.x = .14;
+    } else if (mode === 'signal') {
+      w.armL.rotation.z = -(1.5 + Math.sin(t * 3 + ph) * .5); w.armR.rotation.z = 1.5 + Math.sin(t * 3 + ph + Math.PI) * .5;
+    } else if (mode === 'crouch') {
+      w.body.position.y = -.17; w.body.rotation.x = .5; w.legL.rotation.x = -1.0; w.legR.rotation.x = -.55;
+      w.armL.rotation.x = -1.0 + Math.sin(t * 4 + ph) * .35; w.armR.rotation.x = -1.0 - Math.sin(t * 4 + ph) * .35;
+    } else if (mode === 'point') {
+      w.armR.rotation.x = -1.5; w.armR.rotation.z = Math.sin(t * .8 + ph) * .25; w.armL.rotation.x = Math.sin(t * 1.3 + ph) * .08;
+    } else { w.armL.rotation.x = Math.sin(t * 1.4 + ph) * .06; w.armR.rotation.x = -Math.sin(t * 1.4 + ph) * .06; w.body.rotation.y = Math.sin(t * .4 + ph) * .25; }
+    if (w.crate) w.crate.visible = mode === 'carry';
+  }
+  const pathAt = (pts, u, out) => { const n = pts.length, f = (((u % 1) + 1) % 1) * n, i = Math.floor(f), a = pts[i], b = pts[(i + 1) % n], k = f - i; out.x = a[0] + (b[0] - a[0]) * k; out.z = a[1] + (b[1] - a[1]) * k; out.h = Math.atan2(b[0] - a[0], b[1] - a[1]); return out; };
+  const crew = [];
+  function addCrew(parent, y, o) {
+    const w = makeWorker(o.top || navyM, o.hat || hatY); parent.add(w.g);
+    if (o.carry) { const c = box(.36, .28, .3, cont[(crew.length) % 5]); c.position.set(0, .84, .34); w.body.add(c); w.crate = c; }
+    w.g.position.set(o.x || 0, y, o.z || 0); w.g.rotation.y = o.h || 0;
+    crew.push(Object.assign({ w, y }, o)); return w;
+  }
+
+  // move everything added to the scene since `from` into one group, so it can float as a unit
+  function adopt(from, center) {
+    const g = new THREE.Group(); g.position.copy(center);
+    scene.children.slice(from).filter(o => !o.userData.person && !(o.material && o.material.isShaderMaterial)).forEach(o => { scene.remove(o); o.position.sub(center); g.add(o); });
+    scene.add(g); return g;
+  }
+
+  /* Zone 1 — training barge with a checkpoint gate */
+  const bargeFrom = scene.children.length;
+  const Y1 = Z[1], BD = 1.3;
+  put(scene, box(20, 1.8, 8, steelT), Y1.x, .25, Y1.z);
+  put(scene, box(19.6, .2, 7.6, deckT), Y1.x, BD - .05, Y1.z);
+  put(scene, box(19.6, .06, .3, yellow), Y1.x, BD + .07, Y1.z - 3.4);
+  put(scene, box(19.6, .06, .3, yellow), Y1.x, BD + .07, Y1.z + 3.4);
+  const rectR = (hw, hd) => a => { const c = Math.abs(Math.cos(a)), s = Math.abs(Math.sin(a)); return Math.min(hw / Math.max(c, .001), hd / Math.max(s, .001)); };
+  foamRing(Y1.x, Y1.z, rectR(10.4, 4.4), 1, 1.4);
+  for (let i = 0; i < 4; i++) { put(scene, box(2.4, 1.4, 1.6, i % 2 ? cabinG : cabinW), Y1.x - 7 + i * 3.2, BD + .7, Y1.z - 2.6); put(scene, box(2.4, 1.4, 1.6, i === 2 ? cabinO : cabinW), Y1.x - 7 + i * 3.2, BD + .7, Y1.z + 2.6); }
+  [[-9.4, -3.5], [9.4, 3.5], [9.4, -3.5]].forEach(([x, z], i) => { put(scene, cyl(.06, .08, 3, greySteel, 6), Y1.x + x, BD + 1.5, Y1.z + z); light(scene, Y1.x + x, BD + 3.1, Y1.z + z, '#FFC98A', 2.4, 'flood', i * 2); });
+  const gate = new THREE.Group();
+  [-1.4, 1.4].forEach(z => put(gate, box(.35, 2.4, .35, whiteSteel), 0, 1.2, z));
+  put(gate, box(.4, .4, 3.2, orangeSteel), 0, 2.5, 0);
+  light(gate, 0, 2.8, -1.4, '#3BFF7A', 1.1, 'steady'); light(gate, 0, 2.8, 1.4, '#3BFF7A', 1.1, 'steady', 1);
+  const scan = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 2.2), new THREE.MeshBasicMaterial({ color: '#FF5A1F', transparent: true, opacity: .15, side: THREE.DoubleSide, depthWrite: false }));
+  scan.rotation.y = Math.PI / 2; put(gate, scan, 0, 1.15, 0);
+  gate.position.set(Y1.x + 2, BD, Y1.z); scene.add(gate);
+  const bargeG = adopt(bargeFrom, new THREE.Vector3(Z[1].x, 0, Z[1].z));
+  const walkers = Array.from({ length: 12 }, (_, i) => { const w = makeWorker(navyM, hatY); bargeG.add(w.g); return { w, phase: i / 12, bad: i % 4 === 1 }; });
+
+  /* Zone 2 — floating crew pontoon with huts */
+  const Y2 = Z[2], PD = .8;
+  const pontoonFrom = scene.children.length;
+  put(scene, box(17, 1.2, 15, steelT), Y2.x, .2, Y2.z);
+  put(scene, box(16.6, .15, 14.6, deckT), Y2.x, PD - .02, Y2.z);
+  [[-8, -7], [8, -7], [-8, 7], [8, 7]].forEach(([x, z], i) => { put(scene, cyl(.05, .07, 2.4, greySteel, 6), Y2.x + x, PD + 1.2, Y2.z + z); light(scene, Y2.x + x, PD + 2.5, Y2.z + z, '#FFC98A', 2.2, 'flood', i); });
+  foamRing(Y2.x, Y2.z, rectR(8.5, 7.5), 1, 1.3);
+  const crews = [[-4.5, -3.5], [4.5, -3.5], [-4.5, 3.5], [4.5, 3.5]].map(([hx, hz]) => {
+    put(scene, box(2.6, 1.6, 1.8, hx > 0 ? cabinG : cabinW), Y2.x + hx, PD + .8, Y2.z + hz - 1.4);
+    put(scene, box(2.8, .2, 2, orangeSteel), Y2.x + hx, PD + 1.7, Y2.z + hz - 1.4);
+    const members = Array.from({ length: 5 }, (_, k) => ({ w: makeWorker(k === 0 ? vestM : navyM, k === 0 ? hatW : hatY), a: k / 5 * Math.PI * 2 }));
+    return { hx, hz: hz + .6, members };
+  });
+  put(scene, box(1.4, .15, 5.7, deckT), Y2.x + 1, PD, Y2.z + 10.35);
+  const pontoonG = adopt(pontoonFrom, new THREE.Vector3(Z[2].x, 0, Z[2].z));
+  crews.forEach(c => c.members.forEach(m => pontoonG.add(m.w.g)));
+
+  /* Zone 3 — offshore platform */
+  const Y3 = Z[3], DH = 10;
+  const plat = new THREE.Group(); plat.position.copy(Y3); scene.add(plat);
+  const legs = [[-5.5, -4.5], [5.5, -4.5], [-5.5, 4.5], [5.5, 4.5]];
+  legs.forEach(([x, z]) => { put(plat, cyl(.7, .9, DH + 4, legT, 16), x, DH / 2 - 2, z); put(plat, cyl(1.1, 1.1, .6, orangeSteel, 16), x, .1, z); });
+  [[0, 1], [2, 3], [0, 2], [1, 3]].forEach(([i, j]) => [[1, 5.5], [5.5, 1]].forEach(([y1, y2]) => strut(plat, new THREE.Vector3(legs[i][0], y1, legs[i][1]), new THREE.Vector3(legs[j][0], y2, legs[j][1]), yellowSteel, .24)));
+  [[0, 1], [2, 3], [0, 2], [1, 3]].forEach(([i, j]) => strut(plat, new THREE.Vector3(legs[i][0], 3.2, legs[i][1]), new THREE.Vector3(legs[j][0], 3.2, legs[j][1]), yellowSteel, .2));
+  foamRing(Y3.x, Y3.z, a => 7.2 + Math.sin(a * 4) * 1.2, .7, 1.8);
+  put(plat, box(15, 1.2, 12, steelT), 0, DH, 0);
+  put(plat, box(14.6, .12, 11.6, deckT), 0, DH + .66, 0);
+  for (const z of [-5.9, 5.9]) put(plat, box(15, .5, .06, yellowSteel), 0, DH + .95, z);
+  for (const x of [-7.4, 7.4]) put(plat, box(.06, .5, 12, yellowSteel), x, DH + .95, 0);
+  const mods = [
+    [-1.6, 1.6, 2.4, 3.6, modW], [1.4, 2.4, 2.8, 3.2, modG], [4.6, 1.4, 2.6, 3.4, modO],
+    [-3.4, 1.2, 3, 3, modG], [1.6, 1.6, 2.6, 3.2, modW], [4.6, 2.2, 2.4, 3, modW]
+  ].map(([x, h, w, d, m], i) => { const mm = box(w, h, d, m); mm.position.set(x, DH + .72 + h / 2, i < 3 ? -2.8 : 2.2); mm.userData.h = h; plat.add(mm); return mm; });
+  // drilling derrick: a tapered lattice tower with obstruction lights on top
+  const derrick = new THREE.Group(); put(plat, derrick, -5.4, DH + .72, -3.6);
+  put(derrick, box(3.2, .5, 3.2, steelT), 0, .25, 0);
+  const DT = 12.5, cornerAt = (sx, sz, y) => { const r = 1.25 + (.42 - 1.25) * (y / DT); return new THREE.Vector3(sx * r, y + .5, sz * r); };
+  const cs = [[1, 1], [1, -1], [-1, -1], [-1, 1]], lv = [0, 2.5, 5, 7.5, 10, 12.5];
+  cs.forEach(([a, b]) => strut(derrick, cornerAt(a, b, 0), cornerAt(a, b, DT), whiteSteel, .17));
+  for (let l = 1; l < lv.length; l++) cs.forEach(([a, b], ci) => { const [c, d] = cs[(ci + 1) % 4];
+    strut(derrick, cornerAt(a, b, lv[l]), cornerAt(c, d, lv[l]), whiteSteel, .09);
+    strut(derrick, cornerAt(a, b, lv[l - 1]), cornerAt(c, d, lv[l]), M('#C23A26', { roughness: .6 }), .07); });
+  put(derrick, box(1.2, .6, 1.2, orangeSteel), 0, DT + .8, 0);
+  light(derrick, 0, DT + 1.35, 0, '#FF2A1A', 2.2, 'blink');
+  light(derrick, 0, DT + 1.6, 0, '#FFFFFF', 3, 'strobe', .8);
+  light(derrick, 0, DT * .55 + .5, 0, '#FF2A1A', 1.4, 'blink', 1);
+  // helideck with perimeter lights
+  const heli = new THREE.Group(); put(plat, heli, -9, DH + 2.6, 4);
+  put(heli, new THREE.Mesh(new THREE.CylinderGeometry(3, 3, .25, 40), [M('#2E3640'), heliT, M('#2E3640')]), 0, 0, 0);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(2.2, .09, 6, 40), yellow); ring.rotation.x = Math.PI / 2; put(heli, ring, 0, .15, 0);
+  put(heli, box(.25, .06, 1.4, white), -.45, .16, 0); put(heli, box(.25, .06, 1.4, white), .45, .16, 0); put(heli, box(.9, .06, .25, white), 0, .16, 0);
+  for (let i = 0; i < 10; i++) { const a = i / 10 * Math.PI * 2; light(heli, Math.cos(a) * 2.95, .25, Math.sin(a) * 2.95, '#3BFF7A', .7, 'steady', i); }
+  [[-7.5, 2.8], [-7.5, 5.2]].forEach(([x, z]) => strut(plat, new THREE.Vector3(x, DH + .6, z), new THREE.Vector3(x - 1.3, DH + 2.5, z), greySteel, .2));
+  // pedestal crane
+  const crane = new THREE.Group(); put(plat, crane, 5.8, DH + .7, 4.4);
+  put(crane, cyl(.45, .55, 3, whiteSteel, 16), 0, 1.5, 0);
+  put(crane, box(1.4, 1.1, 1.2, orangeSteel), .3, 3.3, 0);
+  const jib = new THREE.Group(); put(crane, jib, 0, 3, 0);
+  const arm = box(9, .4, .4, orangeSteel); arm.position.x = -4.2; arm.rotation.z = -.35; jib.add(arm);
+  put(jib, box(.05, 4, .05, dark), -8.2, -.4, 0);
+  const hook = put(jib, box(1.2, .5, .8, cont[1]), -8.2, -2.6, 0);
+  light(jib, -8.45, 1.75, 0, '#FF2A1A', 1.5, 'blink', .5);
+  // flare boom
+  const boom = box(.35, .35, 10, greySteel); boom.position.set(9.5, DH + 4, -5); boom.rotation.set(-.55, .9, 0); plat.add(boom);
+  const flame = new THREE.Mesh(new THREE.ConeGeometry(.7, 2.6, 10), new THREE.MeshBasicMaterial({ color: lin('#FF7A2E'), transparent: true, opacity: .9 }));
+  const flameCore = new THREE.Mesh(new THREE.ConeGeometry(.35, 1.6, 10), new THREE.MeshBasicMaterial({ color: lin('#FFE08A') }));
+  const flameG = new THREE.Group(); flameG.add(flame, flameCore); flameCore.position.y = -.3;
+  flameG.position.set(13.3, DH + 8.2, -7.7); plat.add(flameG);
+  light(plat, 13.3, DH + 8.2, -7.7, '#FF8A3A', 7, 'flicker');
+  const flameLight = new THREE.PointLight(0xff7a2e, 1.4, 22); flameLight.position.copy(flameG.position); plat.add(flameLight);
+  // deck floodlights
+  [[-7, -5.6], [7, -5.6], [7, 5.6]].forEach(([x, z], i) => { put(plat, cyl(.06, .08, 2.2, greySteel, 6), x, DH + 1.8, z); light(plat, x, DH + 3, z, '#FFD7A0', 2.8, 'flood', i); });
+  const floodLight = new THREE.PointLight(0xffd2a0, 1.1, 30); floodLight.position.set(0, DH + 6, 0); plat.add(floodLight);
+
+  /* ---------- Supply vessel built from primitives ---------- */
+  function makeShip() {
+    const g = new THREE.Group();
+    const sh = new THREE.Shape();
+    sh.moveTo(-5.2, -1.35); sh.lineTo(2.6, -1.35); sh.quadraticCurveTo(4.6, -1.1, 5.6, 0); sh.quadraticCurveTo(4.6, 1.1, 2.6, 1.35); sh.lineTo(-5.2, 1.35); sh.lineTo(-5.2, -1.35);
+    const hullGeo = new THREE.ExtrudeGeometry(sh, { depth: 1.5, bevelEnabled: false, curveSegments: 18 });
+    hullGeo.rotateX(-Math.PI / 2);
+    const hull = new THREE.Mesh(hullGeo, [M('#1B2027', { roughness: .7 }), M('#FFFFFF', { map: hullSideTex, roughness: .45, metalness: .2 })]);
+    hull.castShadow = true; hull.receiveShadow = true; hull.position.y = -.7; g.add(hull);
+    const deckGeo = new THREE.ExtrudeGeometry(sh, { depth: .1, bevelEnabled: false }); deckGeo.rotateX(-Math.PI / 2);
+    const deck = new THREE.Mesh(deckGeo, M('#FFFFFF', { map: shipDeckTex, roughness: .8, metalness: .2 })); deck.scale.set(.96, 1, .9); deck.position.y = .82; deck.receiveShadow = true; g.add(deck);
+    // bulwark along the cargo deck
+    put(g, box(7, .35, .08, whiteSteel), -1.6, 1.08, 1.2); put(g, box(7, .35, .08, whiteSteel), -1.6, 1.08, -1.2);
+    put(g, box(2.6, 1.5, 2.3, shipHouse), 1.9, 1.65, 0);
+    put(g, box(1.8, .9, 2.1, bridgeM), 2.2, 2.85, 0);
+    put(g, box(2.1, .12, 2.5, whiteSteel), 2.2, 3.35, 0);
+    put(g, box(.7, .1, .7, dark), 1.6, 3.46, 0);
+    put(g, cyl(.06, .07, 1.7, whiteSteel, 6), 1.8, 4.2, 0);
+    put(g, box(.6, .07, .07, whiteSteel), 1.8, 4.6, 0);
+    put(g, new THREE.Mesh(new THREE.CylinderGeometry(.18, .18, .06, 16), white), 2.6, 3.5, .6);
+    put(g, box(.7, 1.1, .9, whiteSteel), .2, 1.4, .7); put(g, box(.72, .25, .92, orangeSteel), .2, 1.85, .7); put(g, box(.5, .05, .7, dark), .2, 1.98, .7);
+    [[-1.6, -.6, 0], [-1.6, .6, 2], [-3.4, -.6, 1], [-3.4, .6, 3]].forEach(([x, z, ci]) => put(g, box(1.6, .7, 1.05, cont[ci]), x, 1.25, z));
+    put(g, box(.15, .4, 2.5, whiteSteel), -5, 1.05, 0);
+    // A-frame crane at the stern
+    strut(g, new THREE.Vector3(-4.9, .9, 1), new THREE.Vector3(-5.3, 3, 0), orangeSteel, .12); strut(g, new THREE.Vector3(-4.9, .9, -1), new THREE.Vector3(-5.3, 3, 0), orangeSteel, .12);
+    // navigation lights: red to port, green to starboard, white masthead and stern
+    light(g, 2.3, 3.0, -1.3, '#FF2A1A', 1.1, 'steady'); light(g, 2.3, 3.0, 1.3, '#2BFF6A', 1.1, 'steady');
+    light(g, 1.8, 5.1, 0, '#FFFFFF', 1.2, 'steady'); light(g, -5.2, 1.5, 0, '#FFFFFF', .9, 'steady');
+    light(g, .8, 2.6, 0, '#FFD7A0', 2.2, 'flood');
+    scene.add(g); return g;
+  }
+  const ship = makeShip();
+
+  /* people at work */
+  addCrew(bargeG, BD + .05, { x: 5.4, z: 1.5, h: -Math.PI / 2, mode: 'signal', top: vestM, hat: hatW });
+  addCrew(bargeG, BD + .05, { x: 1.0, z: -1.3, h: 0, mode: 'point', top: vestM, hat: hatW });
+  addCrew(bargeG, BD + .05, { x: -6.6, z: -1.2, h: Math.PI, mode: 'hammer' });
+  addCrew(bargeG, BD + .05, { x: 7.4, z: 1.4, h: 0, mode: 'crouch', top: vestM });
+  const quay = [[12.6, 2.5], [23.2, 2.5], [23.2, 4.4], [12.6, 4.4]];
+  addCrew(harbour, 1.25, { path: quay, speed: .03, ph: 0, mode: 'carry', top: vestM, carry: true });
+  addCrew(harbour, 1.25, { path: quay, speed: .03, ph: .5, mode: 'carry', carry: true });
+  addCrew(harbour, 1.25, { x: 20.6, z: 4.7, h: Math.PI, mode: 'signal', top: vestM, hat: hatW });
+  addCrew(harbour, TOP, { path: [[1, .4], [7, .4], [7, 8.2], [1, 8.2]], speed: .018, ph: .2, mode: 'walk' });
+  addCrew(harbour, TOP, { x: 9.6, z: 4.85, h: 0, mode: 'point', top: vestM, hat: hatW });
+  const DY = DH + .72, corridor = [[-6.6, -.3], [6.6, -.3], [6.6, .35], [-6.6, .35]];
+  addCrew(plat, DY, { path: corridor, speed: .028, ph: 0, mode: 'walk', top: vestM });
+  addCrew(plat, DY, { path: corridor, speed: .028, ph: .55, mode: 'carry', carry: true });
+  addCrew(plat, DY, { x: 3.0, z: -.75, h: Math.PI, mode: 'hammer', top: vestM });
+  addCrew(plat, DY, { x: 3.4, z: 5.1, h: Math.PI / 2, mode: 'signal', top: vestM, hat: hatW });
+  addCrew(plat, DY, { x: -3.3, z: -1.2, h: -Math.PI / 2, mode: 'hammer' });
+  addCrew(plat, DY, { x: -6.6, z: 1.6, h: Math.PI / 2, mode: 'point', top: vestM, hat: hatW });
+  addCrew(ship, .88, { x: -4.6, z: .55, h: -Math.PI / 2, mode: 'crouch', top: vestM });
+  addCrew(ship, .88, { x: -4.55, z: -.6, h: Math.PI / 2, mode: 'point', hat: hatW });
+
+  /* ---------- Soft shadows on the water under floating things ---------- */
+  const shadowTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 6, 64, 64, 64); gr.addColorStop(0, 'rgba(2,8,18,.75)'); gr.addColorStop(1, 'rgba(2,8,18,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
+  const waterShadow = (w, d) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, d), new THREE.MeshBasicMaterial({ map: shadowTex, transparent: true, depthWrite: false, fog: false })); m.rotation.x = -Math.PI / 2; scene.add(m); return m; };
+  const shipShadow = waterShadow(15, 5.5), bargeShadow = waterShadow(26, 13), pontShadow = waterShadow(22, 20), platShadow = waterShadow(26, 22);
+  platShadow.position.set(Z[3].x + 1.5, .5, Z[3].z - .5);
+
+  /* ---------- Helicopter (circles the island, lands on the helideck in step 4) ---------- */
+  function makeHeli() {
+    const g = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), white); body.scale.set(1.7, .95, .95); body.castShadow = true; g.add(body);
+    const nose = new THREE.Mesh(new THREE.SphereGeometry(.72, 16, 12), glassM); nose.position.set(1.05, .15, 0); nose.scale.set(1, .8, .95); g.add(nose);
+    put(g, box(1.6, .22, 1.92, acc), -.1, -.15, 0);
+    put(g, box(3.4, .28, .28, white), -2.6, .25, 0);
+    put(g, box(.7, 1.1, .12, acc), -4.1, .7, 0);
+    put(g, box(.5, .08, 1.2, white2), -3.9, .3, 0);
+    [-.65, .65].forEach(z => { put(g, box(2.8, .1, .1, dark), 0, -1.15, z); put(g, box(.08, .5, .08, dark), .6, -.9, z); put(g, box(.08, .5, .08, dark), -.6, -.9, z); });
+    put(g, cyl(.12, .12, .45, dark, 8), 0, 1.05, 0);
+    const rotor = new THREE.Group(); rotor.position.y = 1.3; g.add(rotor);
+    [0, Math.PI / 2].forEach(a => { const b = box(7.4, .05, .26, dark); b.rotation.y = a; rotor.add(b); });
+    const disc = new THREE.Mesh(new THREE.CircleGeometry(3.7, 32), new THREE.MeshBasicMaterial({ color: '#C9D4E3', transparent: true, opacity: .12, depthWrite: false, side: THREE.DoubleSide }));
+    disc.rotation.x = -Math.PI / 2; rotor.add(disc);
+    const tail = new THREE.Group(); tail.position.set(-4.1, .8, .12); g.add(tail);
+    [0, Math.PI / 2].forEach(a => { const b = box(1.3, .14, .04, dark); b.rotation.z = a; tail.add(b); });
+    light(g, -.2, 1.05, 0, '#FF2A1A', 1.4, 'blink', .2); light(g, .2, -.4, -.95, '#FF2A1A', .7, 'steady'); light(g, .2, -.4, .95, '#2BFF6A', .7, 'steady'); light(g, -4.3, 1.3, 0, '#FFFFFF', 1, 'strobe', .4);
+    g.scale.setScalar(.85);
+    scene.add(g); return { g, rotor, tail };
+  }
+  const copter = makeHeli();
+  const heliShadow = waterShadow(7, 5);
+  const deckPos = new THREE.Vector3(Z[3].x - 9, 10 + 2.6 + 1.15, Z[3].z + 4);
+  // island helipad on its own raised plinth, clear of the ops building, trees, walkers and the pier
+  const PX = 10.4, PZ = -1.6;
+  let padTop = -9; for (let k = 0; k < 12; k++) { const a2 = k / 12 * Math.PI * 2; padTop = Math.max(padTop, home.heightAt(PX + Math.cos(a2) * 2.8, PZ + Math.sin(a2) * 2.8)); } padTop = Math.max(padTop, home.heightAt(PX, PZ)) + .25;
+  const padYaw = .5, padPos = new THREE.Vector3(PX, padTop + 1.15, PZ);
+  {
+    const pad = new THREE.Group(); pad.position.set(PX, padTop, PZ); scene.add(pad);
+    put(pad, cyl(2.8, 3.1, 4, concT, 40), 0, -2, 0);
+    put(pad, new THREE.Mesh(new THREE.CylinderGeometry(2.6, 2.6, .12, 40), [M('#3A3F45', { roughness: .9 }), heliT, M('#3A3F45')]), 0, .06, 0).receiveShadow = true;
+    for (let i = 0; i < 8; i++) { const a2 = i / 8 * Math.PI * 2; light(pad, Math.cos(a2) * 2.5, .2, Math.sin(a2) * 2.5, '#3BFF7A', .55, 'steady', i); }
+  }
+  const bez = (a, b, c, d, t) => { const u = 1 - t; return a.clone().multiplyScalar(u * u * u).addScaledVector(b, 3 * u * u * t).addScaledVector(c, 3 * u * t * t).addScaledVector(d, t * t * t); };
+  let heliYaw = 0;
+
+  /* ---------- cursor on the water ---------- */
+  const rippleMat = () => new THREE.MeshBasicMaterial({ color: lin('#FFB089'), transparent: true, opacity: 0, depthWrite: false, side: THREE.DoubleSide, fog: false });
+  const cursorMark = new THREE.Group(); scene.add(cursorMark);
+  const markRing = new THREE.Mesh(new THREE.RingGeometry(.9, 1.08, 48), rippleMat()); markRing.rotation.x = -Math.PI / 2; cursorMark.add(markRing);
+  const markDot = new THREE.Mesh(new THREE.CircleGeometry(.22, 20), rippleMat()); markDot.rotation.x = -Math.PI / 2; cursorMark.add(markDot);
+  const ripples = [0, 1, 2].map(i => { const r = new THREE.Mesh(new THREE.RingGeometry(.92, 1, 48), rippleMat()); r.rotation.x = -Math.PI / 2; cursorMark.add(r); return r; });
+  const ray = new THREE.Raycaster(), seaPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), hitP = new THREE.Vector3();
+  let markA = 0;
+  const pickables = [bargeG, pontoonG, harbour, home.g, plat, ship];
+
+  /* ---------- Particles: flare smoke, funnel exhaust, bow spray ---------- */
+  function emitter(N, color, size, life, opacity) {
+    const pos = new Float32Array(N * 3).map((v, i) => i % 3 === 1 ? -999 : 0), lifeA = new Float32Array(N).map(() => Math.random()), vel = Array.from({ length: N }, () => new THREE.Vector3());
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    g.setAttribute('aLife', new THREE.BufferAttribute(lifeA, 1));
+    const u = { uColor: { value: new THREE.Color(color) }, uSize: { value: size }, uScale: { value: 400 }, uOpacity: { value: opacity } };
+    const pts = new THREE.Points(g, new THREE.ShaderMaterial({
+      uniforms: u, transparent: true, depthWrite: false,
+      vertexShader: `attribute float aLife; uniform float uSize, uScale; varying float vL;
+        void main(){ vL = aLife; vec4 mv = modelViewMatrix*vec4(position,1.); gl_PointSize = uSize*(.5 + aLife*1.8)*uScale / -mv.z; gl_Position = projectionMatrix*mv; }`,
+      fragmentShader: `uniform vec3 uColor; uniform float uOpacity; varying float vL;
+        void main(){ float d = length(gl_PointCoord - .5); float a = smoothstep(.5, .05, d) * (1. - vL) * smoothstep(0., .08, vL) * uOpacity; gl_FragColor = vec4(uColor, a); }`
+    }));
+    pts.frustumCulled = false; scene.add(pts);
+    return {
+      u,
+      update(dt, origin, active, spawnVel, gravity = 0, drift = new THREE.Vector3()) {
+        for (let i = 0; i < N; i++) {
+          lifeA[i] += dt / life;
+          if (lifeA[i] >= 1) {
+            if (!active) { lifeA[i] = 1; pos[i * 3 + 1] = -999; continue; }
+            lifeA[i] = Math.random() * .05; pos[i * 3] = origin.x; pos[i * 3 + 1] = origin.y; pos[i * 3 + 2] = origin.z; spawnVel(vel[i]);
+          }
+          vel[i].y -= gravity * dt; vel[i].addScaledVector(drift, dt);
+          pos[i * 3] += vel[i].x * dt; pos[i * 3 + 1] += vel[i].y * dt; pos[i * 3 + 2] += vel[i].z * dt;
+        }
+        g.attributes.position.needsUpdate = true; g.attributes.aLife.needsUpdate = true;
+      }
+    };
+  }
+  const flareSmoke = emitter(70, '#3B3430', 7, 5, .55);
+  const exhaust = emitter(40, '#D5DCE6', 3, 2.6, .45);
+  const spray = emitter(90, '#FFFFFF', 1.1, .9, .9);
+  const WIND = new THREE.Vector3(.9, 0, .5);
+  const tmpO = new THREE.Vector3();
+
+  /* ---------- Route the ship sails as you scroll ---------- */
+  // route checked for clearance: the hull keeps at least 1 m from the barge, pontoon, platform legs and islands
+  const stops = [new THREE.Vector3(17, 0, 7.8), new THREE.Vector3(42, 0, -16.6), new THREE.Vector3(19, 0, -29.3), new THREE.Vector3(52, 0, -50)];
+  const curve = new THREE.CatmullRomCurve3([
+    stops[0], new THREE.Vector3(30, 0, 9.6), new THREE.Vector3(50, 0, 5), new THREE.Vector3(57.5, 0, -7), new THREE.Vector3(54, 0, -15.5), stops[1],
+    new THREE.Vector3(32, 0, -18.5), new THREE.Vector3(28, 0, -27.6), new THREE.Vector3(23.5, 0, -29.2), stops[2],
+    new THREE.Vector3(13, 0, -29.4), new THREE.Vector3(5.5, 0, -31.5), new THREE.Vector3(2.5, 0, -38), new THREE.Vector3(1.5, 0, -48),
+    new THREE.Vector3(8, 0, -56.5), new THREE.Vector3(24, 0, -58.5), new THREE.Vector3(42, 0, -53), stops[3]
+  ], false, 'centripetal', .5);
+  const stopT = stops.map(s => { let best = 0, bd = 1e9; for (let i = 0; i <= 800; i++) { const d = curve.getPointAt(i / 800).distanceTo(s); if (d < bd) { bd = d; best = i / 800; } } return best; });
+  stopT[0] = 0; stopT[3] = 1;
+  const curveLen = curve.getLength();
+
+  /* ---------- Wake ribbon ---------- */
+  const WN = 90;
+  const wakeGeo = new THREE.BufferGeometry();
+  const wakePos = new Float32Array(WN * 2 * 3), wakeT = new Float32Array(WN * 2), wakeS = new Float32Array(WN * 2);
+  const wakeIdx = [];
+  for (let i = 0; i < WN; i++) { wakeT[i * 2] = wakeT[i * 2 + 1] = i / (WN - 1); wakeS[i * 2] = -1; wakeS[i * 2 + 1] = 1; if (i < WN - 1) { const k = i * 2; wakeIdx.push(k, k + 1, k + 2, k + 1, k + 3, k + 2); } }
+  wakeGeo.setAttribute('position', new THREE.BufferAttribute(wakePos, 3));
+  wakeGeo.setAttribute('aT', new THREE.BufferAttribute(wakeT, 1));
+  wakeGeo.setAttribute('aS', new THREE.BufferAttribute(wakeS, 1));
+  wakeGeo.setIndex(wakeIdx);
+  const wakeU = { uTime: { value: 0 }, uStrength: { value: .3 } };
+  const wake = new THREE.Mesh(wakeGeo, new THREE.ShaderMaterial({
+    uniforms: wakeU, transparent: true, depthWrite: false,
+    vertexShader: `uniform float uTime; attribute float aT; attribute float aS; varying float vT; varying float vS; varying vec2 vP; ${WAVES}
+      void main(){ vT=aT; vS=aS; vP=position.xz; vec3 pp = position; pp.y = H(position.xz) + .06; gl_Position=projectionMatrix*modelViewMatrix*vec4(pp,1.); }`,
+    fragmentShader: `uniform float uTime, uStrength; varying float vT; varying float vS; varying vec2 vP; ${NOISE}
+      void main(){
+        float edge = 1. - pow(abs(vS), 3.);
+        float arms = smoothstep(.62, 1., abs(vS));
+        float n = noise(vP*3.4 + vec2(uTime*.8, 0.))*.6 + noise(vP*9. - uTime*.5)*.4;
+        float foam = smoothstep(.32 + vT*.38, .62 + vT*.25, n);
+        float a = ((1. - vT)*(1. - vT)*edge*.95 + arms*(1. - vT)*.85) * foam * uStrength * 1.5;
+        gl_FragColor = vec4(vec3(.9,.95,1.), clamp(a, 0., 1.));
+      }`
+  }));
+  wake.frustumCulled = false; scene.add(wake);
+
+  /* ---------- Birds ---------- */
+  const birdMat = new THREE.MeshBasicMaterial({ color: '#F4F7FB', side: THREE.DoubleSide });
+  const wingGeo = new THREE.BufferGeometry();
+  wingGeo.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, -.15, 0, 0, .15, .9, 0, -.05], 3));
+  const birds = Array.from({ length: 22 }, (_, i) => {
+    const g = new THREE.Group();
+    const l = new THREE.Mesh(wingGeo, birdMat), r = new THREE.Mesh(wingGeo, birdMat); r.scale.x = -1;
+    g.add(l, r); g.scale.setScalar(.9); scene.add(g);
+    const home = i < 12 ? Z[0] : i < 17 ? Z[3] : Z[1];
+    const sh = new THREE.Mesh(new THREE.PlaneGeometry(1.4, .5), new THREE.MeshBasicMaterial({ color: '#02060F', transparent: true, opacity: .35, depthWrite: false, fog: false }));
+    sh.rotation.x = -Math.PI / 2; scene.add(sh);
+    return { g, l, r, sh, home, rad: 9 + (i % 5) * 3, h: 9 + (i % 4) * 2.2, sp: .25 + (i % 3) * .08, ph: i * .9, flap: 6 + (i % 3) };
+  });
+
+  /* ---------- Clouds between camera and sea ---------- */
+  const cloudU = { uTime: { value: 0 }, uSun: { value: SUN_DIR.clone() } };
+  const cloudLayer = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), new THREE.ShaderMaterial({
+    uniforms: cloudU, transparent: true, depthWrite: false, side: THREE.DoubleSide,
+    vertexShader: `varying vec2 vP; void main(){ vec4 w = modelMatrix*vec4(position,1.); vP = w.xz; gl_Position = projectionMatrix*viewMatrix*w; }`,
+    fragmentShader: `uniform float uTime; uniform vec3 uSun; varying vec2 vP; ${NOISE} ${CLOUD}
+      void main(){
+        float d = cloudD(vP, uTime);
+        float lit = clamp(d - cloudD(vP + uSun.xz*6., uTime)*.8 + .55, 0., 1.);   // sunward edges brighter
+        vec3 c = mix(vec3(.55,.62,.72), vec3(1.,.98,.95), lit);
+        gl_FragColor = vec4(c, d*.5);
+      }`
+  }));
+  cloudLayer.rotation.x = -Math.PI / 2; cloudLayer.position.set(30, 46, -26); cloudLayer.renderOrder = 5; cloudLayer.visible = false;
+
+  /* ---------- Camera: high, steep, following the ship ---------- */
+  const camF = new THREE.Vector3(10, 0, 4), cam = { pitch: .66, dist: 176, yaw: .785 };
+  const PITCH = [.62, .6, .6, .58], DISTS = [78, 66, 70, 76];
+  const LHP = new THREE.Vector3(-7, 0, -5);
+  const wrapA = a => Math.atan2(Math.sin(a), Math.cos(a));
+
+  const tags = [...document.querySelectorAll('.tag3d')];
+  const tagAnchors = [lh.position.clone().add(new THREE.Vector3(0, 9, 0)), new THREE.Vector3(Y1.x + 2, 5, Y1.z), new THREE.Vector3(Y2.x, 4, Y2.z), new THREE.Vector3(Y3.x, 17, Y3.z)];
+  const proj = new THREE.Vector3();
+
+  let W = 0, H = 0, mob = false;
+  function resize() { W = innerWidth; H = innerHeight; mob = W < 820; renderer.setSize(W, H, false); camera.aspect = W / H; camera.updateProjectionMatrix(); }
+  addEventListener('resize', resize); resize();
+
+  let mx = 0, my = 0, tmx = 0, tmy = 0;
+  addEventListener('pointermove', e => { tmx = e.clientX / W - .5; tmy = e.clientY / H - .5; }, { passive: true });
+
+  const clock = new THREE.Clock();
+  let flowS = 0, sail = 0, speed = 0, first = true, prevYaw = .785, bank = 0, heroAmt = 1;
+  const shipM = { h: 0, r: 0, p: 0, yaw: .45 };
+  const look = new THREE.Vector3();
+  const tmpP = new THREE.Vector3(), tmpT = new THREE.Vector3(), tmpPath = {};
+
+  function loop() {
+    requestAnimationFrame(loop);
+    const hidden = ui.after;
+    canvas.style.opacity = hidden ? 0 : 1;
+    fades.forEach(el => el.style.opacity = hidden ? 0 : 1);
+    if (hidden && !first) return;
+    const dt = Math.min(clock.getDelta(), 0.25);
+    const t = REDUCE ? 0 : clock.elapsedTime;
+    const k = REDUCE ? 1 : 1 - Math.exp(-dt * 2.0);
+
+    oceanU.uTime.value = t; wakeU.uTime.value = t; foamU.forEach(u => u.uTime.value = t);
+    flowS += (clamp(ui.flow * 4 - 0.5, 0, 3) - flowS) * k;
+    heroAmt = ui.flow > 0 ? smooth(clamp(1 - ui.flow * 8)) * (1 - smooth(ui.hero)) : 1 - smooth(ui.hero) * .85;
+
+
+    /* ship */
+    let want;
+    if (ui.flow <= 0) want = 0;
+    else { const s = clamp(ui.flow * 4 - .25, 0, 3); const a = Math.min(2, Math.floor(s)); want = stopT[a] + (stopT[a + 1] - stopT[a]) * smooth(clamp(s - a)); }
+    const prev = sail;
+    sail += (want - sail) * (REDUCE ? 1 : 1 - Math.exp(-dt * 1.2));
+    const inst = dt > 0 ? Math.abs(sail - prev) * curveLen / dt : 0;
+    speed += (inst - speed) * .08;
+    const u = clamp(sail, 0, 1);
+    curve.getPointAt(u, tmpP); curve.getTangentAt(u, tmpT);
+    // ship rides the actual wave surface: heave from the centre, pitch from bow vs stern, roll from port vs starboard
+    const yawS = Math.atan2(-tmpT.z, tmpT.x);
+    const hC = waveH(tmpP.x, tmpP.z, t), hBow = waveH(tmpP.x + tmpT.x * 5, tmpP.z + tmpT.z * 5, t), hSt = waveH(tmpP.x - tmpT.x * 5, tmpP.z - tmpT.z * 5, t);
+    const hPort = waveH(tmpP.x - tmpT.z * 1.4, tmpP.z + tmpT.x * 1.4, t), hStar = waveH(tmpP.x + tmpT.z * 1.4, tmpP.z - tmpT.x * 1.4, t);
+    // smoothed so the hull eases over the swell instead of twitching
+    const sm = REDUCE ? 1 : 1 - Math.exp(-dt * 2.2);
+    shipM.h += (hC * .75 - shipM.h) * sm;
+    shipM.r += (Math.atan2(hPort - hStar, 2.8) * .4 - shipM.r) * sm;
+    shipM.p += (Math.atan2(hBow - hSt, 10) * .5 - clamp(speed * .003, 0, .02) - shipM.p) * sm;
+    shipM.yaw += wrapA(yawS - shipM.yaw) * (REDUCE ? 1 : 1 - Math.exp(-dt * 3.5));
+    ship.rotation.order = 'YZX';
+    ship.position.set(tmpP.x, shipM.h, tmpP.z);
+    ship.rotation.set(shipM.r, shipM.yaw, shipM.p);
+    shipShadow.position.set(tmpP.x + 1.4, hC + .2, tmpP.z - .4); shipShadow.rotation.z = yawS;
+    knots.textContent = (speed * 1.6).toFixed(1) + ' kn';
+
+    /* wake */
+    const wakeLen = clamp(.012 + speed * .006, .012, .09);
+    wakeU.uStrength.value = clamp(.18 + speed * .1, .18, .75);
+    for (let i = 0; i < WN; i++) {
+      const uu = clamp(u - (i / (WN - 1)) * wakeLen, 0, 1);
+      curve.getPointAt(uu, tmpP); curve.getTangentAt(uu, tmpT);
+      const back = -4.6 * (1 - i / (WN - 1));
+      const px = tmpP.x + tmpT.x * back, pz = tmpP.z + tmpT.z * back;
+      const w = .7 + (i / (WN - 1)) * 3.4;
+      const nx = -tmpT.z, nz = tmpT.x;
+      wakePos.set([px + nx * w, .12, pz + nz * w, px - nx * w, .12, pz - nz * w], i * 6);
+    }
+    wakeGeo.attributes.position.needsUpdate = true;
+
+    /* camera: satellite view on the hero; once sailing it looks out from the lighthouse side and zooms toward where the ship is heading */
+    {
+      const i0 = Math.min(2, Math.floor(flowS)), f = smooth(clamp(flowS - i0));
+      let pitch = PITCH[i0] + (PITCH[i0 + 1] - PITCH[i0]) * f, dist = DISTS[i0] + (DISTS[i0 + 1] - DISTS[i0]) * f;
+      pitch += (.66 - pitch) * heroAmt; dist += (176 - dist) * heroAmt;
+      if (mob) dist *= 1.3;
+      const flowAmt = 1 - heroAmt;
+      const heading = Z[i0].clone().lerp(Z[i0 + 1], f);
+      const focus = heroAmt > .5 ? ship.position.clone().setY(0).lerp(Z[0], .35) : ship.position.clone().setY(0).lerp(heading, .42);
+      focus.y = smooth(clamp(flowS - 2)) * 5 * flowAmt;   // lift the aim to the platform deck at the end
+      camF.lerp(focus, 1 - Math.exp(-dt * 1.6));
+      const dir = ship.position.clone().sub(LHP).setY(0); if (dir.lengthSq() < 1) dir.set(1, 0, .4); dir.normalize();
+      const yawT = .785 + wrapA(Math.atan2(-dir.x, -dir.z) - .785) * flowAmt * .22;
+      cam.yaw += wrapA(yawT - cam.yaw) * k * .8;
+      cam.pitch += (pitch - cam.pitch) * k; cam.dist += (dist - cam.dist) * k;
+      mx += (tmx - mx) * k * .3; my += (tmy - my) * k * .3;
+      const swing = .10 + flowAmt * .12;
+      const yw = cam.yaw + (REDUCE ? 0 : Math.sin(t * .04) * .05) + mx * swing;
+      const pt = clamp(cam.pitch - my * (.05 + flowAmt * .08), .3, 1.2);
+      const off = new THREE.Vector3(Math.sin(yw) * Math.cos(pt), Math.sin(pt), Math.cos(yw) * Math.cos(pt)).multiplyScalar(cam.dist);
+      const right = new THREE.Vector3(Math.cos(yw), 0, -Math.sin(yw)), fwd = new THREE.Vector3(-Math.sin(yw), 0, -Math.cos(yw));
+      look.copy(camF);
+      if (!mob) look.addScaledVector(right, -cam.dist * .17);     // text sits on the left, so frame the ship to the right
+      else look.addScaledVector(fwd, -cam.dist * .16);           // text sits at the bottom, so frame the ship higher
+      camera.position.copy(look).add(off);
+      if (!REDUCE) camera.position.add(new THREE.Vector3(Math.sin(t * .61) * .3, Math.sin(t * .83 + 1) * .2, Math.cos(t * .47) * .3).multiplyScalar(cam.dist / 60 * .25));
+      camera.lookAt(look);
+      const yawVel = dt > 0 ? (yw - prevYaw) / dt : 0; prevYaw = yw;
+      bank += (clamp(-yawVel * .25, -.04, .04) - bank) * .05;
+      
+      sky.position.copy(camera.position);
+      sun.target.position.copy(camF); sun.position.copy(camF).addScaledVector(SUN_DIR, 90);
+    }
+
+    /* the pointer touches the sea: a marker ring with ripples spreading out */
+    {
+      const want = pointer.over && !ui.after ? 1 : 0;
+      markA += (want - markA) * .12;
+      ray.setFromCamera({ x: pointer.x / W * 2 - 1, y: -(pointer.y / H) * 2 + 1 }, camera);
+      const hits = markA > .01 ? ray.intersectObjects(pickables, true) : [];
+      if (hits.length && hits[0].point.y > .4) cursorMark.position.copy(hits[0].point).add(new THREE.Vector3(0, .08, 0));
+      else if (ray.ray.intersectPlane(seaPlane, hitP)) cursorMark.position.set(hitP.x, waveH(hitP.x, hitP.z, t) + .12, hitP.z);
+      const sc = clamp(cam.dist / 45, .8, 2.6);
+      cursorMark.scale.setScalar(sc);
+      markRing.material.opacity = .85 * markA; markDot.material.opacity = .9 * markA;
+      markRing.rotation.z = t * .8;
+      ripples.forEach((r, i) => { const ph = ((REDUCE ? .5 : t * .55) + i / 3) % 1; r.scale.setScalar(1 + ph * 3.2); r.material.opacity = (1 - ph) * .55 * markA; });
+    }
+
+    /* barge and pontoon float on the swell */
+    const floatOn = (g, cx, cz, lx, lz, amp) => {
+      const h = waveH(cx, cz, t);
+      g.position.y = h * amp;
+      g.rotation.z = Math.atan2(waveH(cx + lx, cz, t) - waveH(cx - lx, cz, t), lx * 2) * amp;
+      g.rotation.x = -Math.atan2(waveH(cx, cz + lz, t) - waveH(cx, cz - lz, t), lz * 2) * amp;
+      return h;
+    };
+    const hb = floatOn(bargeG, Z[1].x, Z[1].z, 9, 3.5, .55);
+    const hp = floatOn(pontoonG, Z[2].x, Z[2].z, 7.5, 7, .5);
+    bargeShadow.position.set(Z[1].x + 1.5, hb + .15, Z[1].z - .5);
+    pontShadow.position.set(Z[2].x + 1.5, hp + .15, Z[2].z - .5);
+    platShadow.position.y = waveH(Z[3].x, Z[3].z, t) + .15;
+
+    /* helicopter: circles the island on the hero, sets down on the island pad once you scroll
+       (so it never sits between the camera and the barge or pontoon), then flies to the platform in step 4 */
+    {
+      const ha = t * .16, circ = new THREE.Vector3(Z[0].x + Math.cos(ha) * 24, 16 + Math.sin(t * .5) * .8, Z[0].z + Math.sin(ha) * 20);
+      const park = smooth(clamp(ui.flow * 14));
+      const land = smooth(clamp((ui.flow * 4 - 2.6) / 1.1));
+      let hpos, hnext;
+      if (land > 0) {
+        const up = padPos.clone().add(new THREE.Vector3(0, 9, 0)), mid = deckPos.clone().add(new THREE.Vector3(-14, 10, 6));
+        hpos = bez(padPos, up, mid, deckPos, land); hnext = bez(padPos, up, mid, deckPos, Math.min(1, land + .02));
+      } else if (park > 0) {
+        const above = padPos.clone().add(new THREE.Vector3(0, 7, 0));
+        hpos = park < .6 ? circ.clone().lerp(above, park / .6) : above.clone().lerp(padPos, (park - .6) / .4);
+        hnext = park < .6 ? above : padPos.clone().add(new THREE.Vector3(Math.cos(padYaw), 0, -Math.sin(padYaw)));
+      } else {
+        hpos = circ; hnext = new THREE.Vector3(Z[0].x + Math.cos(ha + .05) * 24, hpos.y, Z[0].z + Math.sin(ha + .05) * 20);
+      }
+      const onGround = (park > .995 && land === 0) || land > .995;
+      const dirYaw = Math.atan2(-(hnext.z - hpos.z), hnext.x - hpos.x);
+      if (!onGround && Math.hypot(hnext.x - hpos.x, hnext.z - hpos.z) > .05) heliYaw += wrapA(dirYaw - heliYaw) * (REDUCE ? 1 : 1 - Math.exp(-dt * 4));
+      copter.g.position.copy(hpos);
+      copter.g.rotation.set(0, heliYaw, onGround ? 0 : -.12);
+      copter.rotor.rotation.y += dt * (onGround ? 6 : 26);
+      copter.tail.rotation.z += dt * (onGround ? 10 : 40);
+      const overWater = !onGround && !(park > .8 && land < .05);
+      heliShadow.position.set(hpos.x + hpos.y * .9, overWater ? waveH(hpos.x, hpos.z, t) + .2 : -50, hpos.z - hpos.y * .3);
+      heliShadow.material.opacity = clamp(1 - hpos.y / 40, .2, .8);
+      heliShadow.rotation.z = heliYaw;
+    }
+
+    /* particles */
+    const pScale = H * .5;
+    [flareSmoke, exhaust, spray].forEach(e => e.u.uScale.value = pScale);
+    plat.localToWorld(tmpO.copy(flameG.position).add(new THREE.Vector3(0, 1.4, 0)));
+    flareSmoke.update(dt, tmpO, !REDUCE, v => v.set((Math.random() - .5) * .6, 2.2 + Math.random(), (Math.random() - .5) * .6), 0, WIND);
+    ship.localToWorld(tmpO.set(.2, 2.1, .7));
+    exhaust.update(dt, tmpO, !REDUCE, v => v.set((Math.random() - .5) * .3, 1.6 + Math.random() * .6, (Math.random() - .5) * .3), 0, WIND);
+    ship.localToWorld(tmpO.set(5.3, .5, 0));
+    spray.update(dt, tmpO, !REDUCE && speed > 1.2, v => { const side = Math.random() < .5 ? 1 : -1; v.set(tmpT.x * 3 - tmpT.z * side * (2 + Math.random() * 2), 2 + Math.random() * 2.5, tmpT.z * 3 + tmpT.x * side * (2 + Math.random() * 2)); }, 9);
+
+    /* lighthouse, cranes, flare */
+    // lighthouse: the lamp flares each time a beam swings toward the viewer
+    beamPivot.rotation.y = t * .9; beamPivot.visible = false;
+    lh.getWorldPosition(tmpO);
+    const toCam = camera.position.clone().sub(tmpO).setY(0).normalize();
+    const facing = Math.pow(Math.abs(Math.cos(beamPivot.rotation.y) * toCam.x - Math.sin(beamPivot.rotation.y) * toCam.z), 14);
+    lamp.visible = false;
+    lights.forEach(L => { L.s.visible = false; return;
+      const tt = t + L.ph; let o;
+      if (L.mode === 'blink') o = (tt % 2) < .9 ? 1 : .06;
+      else if (L.mode === 'strobe') o = (tt % 1.7) < .1 ? 1 : 0;
+      else if (L.mode === 'flicker') o = .75 + Math.sin(tt * 13) * .12 + Math.sin(tt * 7.3) * .1;
+      else if (L.mode === 'flood') o = .8 + Math.sin(tt * 2.3) * .03;
+      else o = .9 + Math.sin(tt * 1.7) * .08;
+      L.s.material.opacity = REDUCE && L.mode !== 'steady' && L.mode !== 'flood' ? .8 : o;
+    });
+    qc.rotation.y = REDUCE ? 0 : Math.sin(t * .25) * .4;
+    jib.rotation.y = REDUCE ? 0 : Math.sin(t * .3) * .9;
+    hook.position.y = -2.6 + (REDUCE ? 0 : Math.sin(t * .8) * .5);
+    const fl = REDUCE ? 1 : 1 + Math.sin(t * 13) * .12 + Math.sin(t * 7.3) * .1;
+    flameG.scale.set(1, fl, 1); flameLight.intensity = 1.1 + fl * .5;
+
+    /* barge: candidates walk through the gate; passes get a hi-vis vest, the rest are turned away */
+    walkers.forEach((it, i) => {
+      const uu = (it.phase + t * .04) % 1, x = -9 + uu * 18, passed = x > 2;
+      let z = ((i % 3) - 1) * .6, h = Math.PI / 2;
+      const outX = 4.4;
+      if (it.bad && x > outX) { z += Math.min(2.4, (x - outX) * 1.2); h = Math.atan2(1, 1.2); }
+      it.w.g.position.set(x, BD + .05, z); it.w.g.rotation.y = h;
+      setTop(it.w, passed ? (it.bad ? greyM : vestM) : navyM);
+      it.w.g.visible = !(it.bad && x > outX + 2.4);
+      pose(it.w, 'walk', t, i * 1.3);
+    });
+    scan.material.opacity = .1 + (REDUCE ? 0 : (Math.sin(t * 3) * .5 + .5) * .12);
+
+    /* pontoon: crews mill around their huts, then line up at the gangway */
+    const tight = smooth(clamp(ui.flow * 4 - 1.6));
+    crews.forEach((c, ci) => c.members.forEach((m, mi) => {
+      const a = m.a + (REDUCE ? 0 : t * .2) + ci;
+      const lx = c.hx + Math.cos(a) * 2, lz = c.hz + .45 + Math.sin(a) * 1.05;
+      const qx = -2.4 + ci * 1.6, qz = 6.6 - mi * .85;
+      m.w.g.position.set(lx + (qx - lx) * tight, PD + .06, lz + (qz - lz) * tight);
+      let mode = 'walk', h = Math.atan2(-2 * Math.sin(a), 1.3 * Math.cos(a));
+      if (tight > .97) { mode = mi === 0 ? 'signal' : 'idle'; h = 0; }
+      else if (tight > .03) h = Math.atan2(qx - lx, qz - lz);
+      m.w.g.rotation.y = h;
+      if (mi) setTop(m.w, tight > .5 ? vestM : navyM);
+      pose(m.w, mode, t, ci * 5 + mi);
+    }));
+
+    /* everyone else at work */
+    crew.forEach((c, i) => {
+      if (c.path) { pathAt(c.path, (c.ph || 0) + t * c.speed, tmpPath); c.w.g.position.set(tmpPath.x, c.y, tmpPath.z); c.w.g.rotation.y = tmpPath.h; }
+      pose(c.w, c.mode, t, i * 1.7);
+    });
+
+    /* platform modules */
+    const rise = smooth(clamp((ui.flow * 4 - 2.5) / 1.3));
+    mods.forEach((m, i) => { const s = clamp(rise * mods.length - i); m.visible = s > .01; m.scale.set(1, Math.max(.001, s), 1); m.position.y = DH + .72 + m.userData.h * s / 2 + (1 - s) * 3; });
+
+    /* birds + clouds */
+    birds.forEach(b => {
+      const a = b.ph + t * b.sp;
+      b.g.position.set(b.home.x + Math.cos(a) * b.rad, b.h + Math.sin(t * .7 + b.ph) * .8, b.home.z + Math.sin(a) * b.rad * .8);
+      b.g.rotation.y = -a;
+      const glide = Math.sin(t * .35 + b.ph * 1.7) > .2 ? .12 : 1;
+      const fl2 = REDUCE ? .2 : Math.sin(t * b.flap + b.ph) * .55 * glide + .08;
+      b.l.rotation.z = fl2; b.r.rotation.z = -fl2;
+      b.sh.position.set(b.g.position.x + b.g.position.y * .9, waveH(b.g.position.x, b.g.position.z, t) + .15, b.g.position.z - b.g.position.y * .3);
+      b.sh.rotation.z = b.g.rotation.y;
+    });
+    cloudU.uTime.value = t;
+
+    /* labels */
+    tags.forEach((el, i) => {
+      proj.copy(tagAnchors[i]).project(camera);
+      const x = (proj.x * .5 + .5) * W, y = (-proj.y * .5 + .5) * H;
+      const show = proj.z < 1 && x > 20 && x < W - 150 && y > 130 && y < H - 40 && ui.flow > 0.02 && ui.flow < 0.995 && Math.abs(i - flowS) < .6;
+      el.classList.toggle('on', show);
+      el.style.transform = `translate(${x - 14}px,${y - 40}px)`;
+    });
+
+    renderer.render(scene, camera);
+    if (first) { first = false; finish(); }
+  }
+  loop();
+})();
+</script>
+</body>
+</html>
